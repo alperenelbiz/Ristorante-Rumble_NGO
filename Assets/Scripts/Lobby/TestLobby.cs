@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 public class TestLobby : MonoBehaviour
 {
+    private Lobby hostLobby;
+    private float heartbeatTimer;
+
     private async void Start()
     {
         await UnityServices.InitializeAsync();
@@ -19,14 +22,35 @@ public class TestLobby : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
+    private void Update()
+    {
+        HandleLobbyHeartbeat();
+    }
+
+    private async void HandleLobbyHeartbeat()
+    {
+        if (hostLobby != null)
+        {
+            heartbeatTimer -= Time.deltaTime;
+            if (heartbeatTimer < 0f)
+            {
+                float heartbeatTimerMax = 15;
+                heartbeatTimer = heartbeatTimerMax;
+
+                await LobbyService.Instance.SendHeartbeatPingAsync(hostLobby.Id);
+            }
+        }
+    }
+
     public async void CreateLobby()
     {
         try
         {
-
             string lobbyName = "Test Lobby";
             int maxPlayers = 4;
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers);
+
+            hostLobby = lobby;
 
             Debug.Log("Lobby created: " + lobby.Name + " with ID: " + lobby.Id);
         }
@@ -40,6 +64,7 @@ public class TestLobby : MonoBehaviour
     {
         try
         {
+            //QueryLobbiesOptions queryLobbiesOptions = new QueryLobbiesOptions
             QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync();
 
             Debug.Log(queryResponse.Results.Count);
