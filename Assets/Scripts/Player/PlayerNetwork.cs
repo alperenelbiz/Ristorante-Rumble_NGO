@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
 {
+    [SerializeField] private Transform spawnedObjectPrefab;
+
     // client cann write into the server by this method
     private NetworkVariable<MyCustomData> randomNumber = new NetworkVariable<MyCustomData>(
         new MyCustomData
@@ -41,12 +43,14 @@ public class PlayerNetwork : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsOwner) return; 
+        if (!IsOwner) return;
 
         if (Input.GetKeyDown(KeyCode.T))
         {
+            Transform spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
+            spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
             //TestServerRpc(new ServerRpcParams());
-            TestClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 /*sends the message to specific client 1*/ } } });
+            //TestClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 /*sends the message to specific client 1*/ } } });
             /*randomNumber.Value = new MyCustomData
             {
                 _int = Random.Range(0, 100),
