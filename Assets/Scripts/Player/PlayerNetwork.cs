@@ -9,6 +9,8 @@ public class PlayerNetwork : NetworkBehaviour
 {
     [SerializeField] private Transform spawnedObjectPrefab;
 
+    private Transform spawnedObjectTransform;
+
     // client cann write into the server by this method
     private NetworkVariable<MyCustomData> randomNumber = new NetworkVariable<MyCustomData>(
         new MyCustomData
@@ -47,7 +49,7 @@ public class PlayerNetwork : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Transform spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
+            spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
             spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
             //TestServerRpc(new ServerRpcParams());
             //TestClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 /*sends the message to specific client 1*/ } } });
@@ -57,6 +59,11 @@ public class PlayerNetwork : NetworkBehaviour
                 _bool = false,
                 message = "All your base are belong to us!"
             };*/
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            spawnedObjectTransform.GetComponent<NetworkObject>().Despawn(true);
         }
 
         Vector3 moveDir = new Vector3(0, 0, 0);
