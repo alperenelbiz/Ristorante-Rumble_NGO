@@ -18,9 +18,7 @@ public class PlayerNetwork : NetworkBehaviour
         {
             _int = 56,
             _bool = true,
-        }, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner)
-    {
-    };
+        }, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public struct MyCustomData : INetworkSerializable
     {
@@ -57,6 +55,7 @@ public class PlayerNetwork : NetworkBehaviour
         {
             spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
             spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
+
             //TestServerRpc(new ServerRpcParams());
             //TestClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 /*sends the message to specific client 1*/ } } });
             /*randomNumber.Value = new MyCustomData
