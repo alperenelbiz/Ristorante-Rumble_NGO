@@ -10,6 +10,7 @@ public class PlayerNetwork : NetworkBehaviour
     [SerializeField] private Transform spawnedObjectPrefab;
 
     private Transform spawnedObjectTransform;
+    private Animator animator;
 
     // client cann write into the server by this method
     private NetworkVariable<MyCustomData> randomNumber = new NetworkVariable<MyCustomData>(
@@ -43,6 +44,11 @@ public class PlayerNetwork : NetworkBehaviour
         };
     }
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (!IsOwner) return;
@@ -66,15 +72,29 @@ public class PlayerNetwork : NetworkBehaviour
             spawnedObjectTransform.GetComponent<NetworkObject>().Despawn(true);
         }
 
-        Vector3 moveDir = new Vector3(0, 0, 0);
+        Move();
+    }
 
-        if (Input.GetKey(KeyCode.W)) moveDir.z = +1f;
-        if (Input.GetKey(KeyCode.S)) moveDir.z = -1f;
-        if (Input.GetKey(KeyCode.A)) moveDir.x = -1f;
-        if (Input.GetKey(KeyCode.D)) moveDir.x = +1f;
+    private void Move()
+    {
+        Vector3 moveDir = Vector3.zero;
 
+        if (Input.GetKey(KeyCode.W)) moveDir.z += 1f;
+        if (Input.GetKey(KeyCode.S)) moveDir.z -= 1f;
+        if (Input.GetKey(KeyCode.A)) moveDir.x -= 1f;
+        if (Input.GetKey(KeyCode.D)) moveDir.x += 1f;
+
+        moveDir.Normalize();
         float moveSpeed = 3f;
+
         transform.position += moveDir * moveSpeed * Time.deltaTime;
+
+        // Update Animator
+        float speed = moveDir.magnitude * moveSpeed;
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", speed);
+        }
     }
 
     [ServerRpc] //send message from server to server
