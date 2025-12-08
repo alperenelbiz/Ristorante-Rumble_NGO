@@ -26,5 +26,5 @@
         "**/Logs/**": true,
         "**/Build/**": true
     },
-    "dotnet.defaultSolution": "<YourProject>.sln"
+    "dotnet.defaultSolution": "Ristorante-Rumble_NGO.sln"
 }
