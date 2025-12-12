@@ -26,5 +26,8 @@
         "**/Logs/**": true,
         "**/Build/**": true
     },
-    "dotnet.defaultSolution": "Ristorante-Rumble_NGO.sln"
+    "dotnet.defaultSolution": "Ristorante-Rumble_NGO.sln",
+    "dotrush.roslyn.projectOrSolutionFiles": [
+        "d:\\Alperen Elbiz\\Projects\\Unity Projects\\Ristorante-Rumble_NGO\\Ristorante-Rumble_NGO.sln"
+    ]
 }
