@@ -23,17 +23,17 @@
 
 | Özellik | Öncelik | Açıklama |
 |---------|---------|----------|
-| Relay Entegrasyonu | 🔴 Kritik | İnternet üzerinden bağlantı |
-| Lobiye Katılma | 🔴 Kritik | ID/Kod ile katılım |
-| Lobiden Ayrılma | 🔴 Kritik | Temiz çıkış |
-| Lobi UI Sistemi | 🔴 Kritik | Kullanıcı arayüzü |
+| ~~Relay Entegrasyonu~~ | ✅ Tamamlandı | İnternet üzerinden bağlantı |
+| ~~Lobiye Katılma~~ | ✅ Tamamlandı | ID/Kod ile katılım |
+| ~~Lobiden Ayrılma~~ | ✅ Tamamlandı | Temiz çıkış |
+| ~~Lobi UI Sistemi~~ | ✅ Tamamlandı | Kullanıcı arayüzü |
 | Oyuncu Veri Yönetimi | 🟡 Orta | İsim, karakter seçimi |
-| Lobi Polling | 🟡 Orta | Gerçek zamanlı güncelleme |
-| Oyun Başlatma Akışı | 🔴 Kritik | Host'un oyunu başlatması |
+| ~~Lobi Polling~~ | ✅ Tamamlandı | Gerçek zamanlı güncelleme |
+| ~~Oyun Başlatma Akışı~~ | ✅ Tamamlandı | Host'un oyunu başlatması |
 | Sahne Yönetimi | 🟡 Orta | Lobi → Oyun geçişi |
 | Oyuncu Spawn Sistemi | 🟡 Orta | Spawn noktaları |
 | Bağlantı Kopma Yönetimi | 🟡 Orta | Reconnection |
-| Quick Join | 🟢 Düşük | Hızlı eşleşme |
+| ~~Quick Join~~ | ✅ Tamamlandı | Hızlı eşleşme |
 | Özel Lobi (Şifreli) | 🟢 Düşük | Arkadaşlarla oynama |
 
 ---
@@ -42,12 +42,12 @@
 
 ### Faz 1: Temel Lobi Sistemi 🔴 (Öncelikli)
 
-#### 1.1 Relay Servis Entegrasyonu
-- [ ] Unity Relay paketini projeye ekle
-- [ ] `RelayManager.cs` oluştur
-- [ ] Allocation oluşturma implementasyonu
-- [ ] Join Code alma/kullanma sistemi
-- [ ] UnityTransport ile Relay bağlantısı
+#### 1.1 Relay Servis Entegrasyonu ✅
+- [x] Unity Relay paketini projeye ekle
+- [x] `RelayManager.cs` oluştur
+- [x] Allocation oluşturma implementasyonu
+- [x] Join Code alma/kullanma sistemi
+- [x] UnityTransport ile Relay bağlantısı
 
 ```csharp
 // Örnek Relay Manager yapısı
@@ -60,17 +60,17 @@ public class RelayManager : MonoBehaviour
 }
 ```
 
-#### 1.2 Lobi Yönetim Sistemi
-- [ ] `LobbyManager.cs` oluştur (TestLobby'yi genişlet)
-- [ ] Singleton pattern uygula
-- [ ] Event sistemi ekle (OnLobbyCreated, OnLobbyJoined, vb.)
+#### 1.2 Lobi Yönetim Sistemi ✅
+- [x] `LobbyManager.cs` oluştur (TestLobby'yi genişlet)
+- [x] Singleton pattern uygula
+- [x] Event sistemi ekle (OnLobbyCreated, OnLobbyJoined, vb.)
 
 **Gerekli Metodlar:**
-- [ ] `CreateLobby(string lobbyName, int maxPlayers, bool isPrivate)`
-- [ ] `JoinLobbyById(string lobbyId)`
-- [ ] `JoinLobbyByCode(string lobbyCode)`
-- [ ] `QuickJoinLobby()`
-- [ ] `LeaveLobby()`
+- [x] `CreateLobby(string lobbyName, int maxPlayers, bool isPrivate)`
+- [x] `JoinLobbyById(string lobbyId)`
+- [x] `JoinLobbyByCode(string lobbyCode)`
+- [x] `QuickJoinLobby()`
+- [x] `LeaveLobby()`
 - [ ] `KickPlayer(string playerId)`
 - [ ] `UpdateLobbyData(Dictionary<string, string> data)`
 - [ ] `UpdatePlayerData(Dictionary<string, string> data)`
@@ -93,42 +93,42 @@ public struct LobbyPlayerData
 
 ---
 
-### Faz 2: UI Sistemi 🔴 (Öncelikli)
+### Faz 2: UI Sistemi ✅ (Tamamlandı)
 
 #### 2.1 Ana Menü UI
-- [ ] `MainMenuUI.cs` oluştur
-- [ ] Play butonu
-- [ ] Settings butonu
-- [ ] Quit butonu
+- [x] `MainMenuUI.cs` oluştur
+- [x] Play butonu
+- [x] Settings butonu
+- [x] Quit butonu
 
 #### 2.2 Lobi Tarayıcı UI
-- [ ] `LobbyBrowserUI.cs` oluştur
-- [ ] Lobi listesi görüntüleme
-- [ ] Refresh butonu
-- [ ] Create Lobby butonu
-- [ ] Quick Join butonu
+- [x] `LobbyBrowserUI.cs` oluştur
+- [x] Lobi listesi görüntüleme
+- [x] Refresh butonu
+- [x] Create Lobby butonu
+- [x] Quick Join butonu
 - [ ] Lobi filtreleme (opsiyonel)
 
 #### 2.3 Lobi Oluşturma UI
-- [ ] `CreateLobbyUI.cs` oluştur
-- [ ] Lobi ismi input
-- [ ] Maksimum oyuncu seçimi
+- [x] `CreateLobbyUI.cs` oluştur
+- [x] Lobi ismi input
+- [x] Maksimum oyuncu seçimi
 - [ ] Oyun modu seçimi
 - [ ] Public/Private toggle
-- [ ] Create butonu
+- [x] Create butonu
 
 #### 2.4 Lobi Odası UI
-- [ ] `LobbyRoomUI.cs` oluştur
-- [ ] Oyuncu listesi
-- [ ] Ready butonu
-- [ ] Leave butonu
-- [ ] Start Game butonu (sadece host)
+- [x] `LobbyRoomUI.cs` oluştur
+- [x] Oyuncu listesi
+- [x] Ready butonu
+- [x] Leave butonu
+- [x] Start Game butonu (sadece host)
 - [ ] Chat sistemi (opsiyonel)
-- [ ] Lobi kodu gösterimi
+- [x] Lobi kodu gösterimi
 
 #### 2.5 UI Prefab'ları
-- [ ] LobbyPlayerCard prefab
-- [ ] LobbyListItem prefab
+- [x] LobbyPlayerCard prefab (PlayerItem)
+- [x] LobbyListItem prefab (LobbyItem)
 - [ ] Loading screen prefab
 
 ---
@@ -291,7 +291,7 @@ Assets/
 | Netcode for GameObjects | ✅ Yüklü | Ana network framework |
 | Unity Lobby | ✅ Yüklü | Lobi servisi |
 | Unity Authentication | ✅ Yüklü | Kimlik doğrulama |
-| Unity Relay | ❓ Kontrol Et | P2P bağlantı |
+| Unity Relay | ✅ Yüklü | P2P bağlantı |
 | Unity Transport | ✅ Yüklü | Network transport |
 | TextMeshPro | ✅ Yüklü | UI text |
 
@@ -335,46 +335,46 @@ com.unity.services.relay
 
 ### Hafta 1: Temel Altyapı
 
-#### 📍 Gün 1-2: Relay Kurulumu
+#### 📍 Gün 1-2: Relay Kurulumu ✅
 ```
-1. ☐ Unity Dashboard'da Relay servisini aktifleştir
+1. ☑ Unity Dashboard'da Relay servisini aktifleştir
    → dashboard.unity3d.com → Proje Seç → Multiplayer → Relay
-2. ☐ com.unity.services.relay paketini ekle
+2. ☑ com.unity.services.relay paketini ekle
    → Window → Package Manager → + → Add package by name
-3. ☐ RelayManager.cs oluştur
-4. ☐ Host için CreateRelay() yaz
-5. ☐ Client için JoinRelay() yaz
-6. ☐ Test et (ParrelSync ile)
+3. ☑ RelayManager.cs oluştur
+4. ☑ Host için CreateRelay() yaz
+5. ☑ Client için JoinRelay() yaz
+6. ☑ Test et (ParrelSync ile)
 ```
 
-#### 📍 Gün 3-4: LobbyManager Geliştir
+#### 📍 Gün 3-4: LobbyManager Geliştir ✅
 ```
-1. ☐ TestLobby.cs'i LobbyManager.cs olarak yeniden yaz
-2. ☐ Singleton pattern ekle
-3. ☐ JoinLobbyById() ekle
-4. ☐ JoinLobbyByCode() ekle  
-5. ☐ LeaveLobby() ekle
-6. ☐ Lobby Polling ekle (güncelleme almak için)
-7. ☐ Relay kodunu Lobby data'ya kaydetme
+1. ☑ TestLobby.cs'i LobbyManager.cs olarak yeniden yaz
+2. ☑ Singleton pattern ekle
+3. ☑ JoinLobbyById() ekle
+4. ☑ JoinLobbyByCode() ekle  
+5. ☑ LeaveLobby() ekle
+6. ☑ Lobby Polling ekle (güncelleme almak için)
+7. ☑ Relay kodunu Lobby data'ya kaydetme
 ```
 
-#### 📍 Gün 5: Bağlantı Testi
+#### 📍 Gün 5: Bağlantı Testi ✅
 ```
-1. ☐ Host: Lobi oluştur → Relay başlat → NetworkManager.StartHost()
-2. ☐ Client: Lobi bul → Relay kodunu al → JoinRelay() → NetworkManager.StartClient()
-3. ☐ 2 pencerede test et (ParrelSync)
+1. ☑ Host: Lobi oluştur → Relay başlat → NetworkManager.StartHost()
+2. ☑ Client: Lobi bul → Relay kodunu al → JoinRelay() → NetworkManager.StartClient()
+3. ☑ 2 pencerede test et (ParrelSync)
 ```
 
 ---
 
 ### Hafta 2: UI & Akış
 
-#### 📍 Gün 6-7: Temel UI
+#### 📍 Gün 6-7: Temel UI ✅
 ```
-1. ☐ MainMenuUI.cs - Ana menü
-2. ☐ LobbyBrowserUI.cs - Lobi listesi
-3. ☐ LobbyRoomUI.cs - Lobi odası (oyuncu listesi, ready, start)
-4. ☐ Butonları LobbyManager'a bağla
+1. ☑ MainMenuUI.cs - Ana menü
+2. ☑ LobbyBrowserUI.cs - Lobi listesi
+3. ☑ LobbyRoomUI.cs - Lobi odası (oyuncu listesi, ready, start)
+4. ☑ Butonları LobbyManager'a bağla
 ```
 
 #### 📍 Gün 8-9: Oyun Başlatma Akışı
@@ -434,21 +434,21 @@ Gün 15+:   Chat sistemi, arkadaş sistemi, polish
 
 Geliştirmeye başlamadan önce bu adımları tamamla:
 
-### Unity Dashboard Kurulumu
+### Unity Dashboard Kurulumu ✅
 ```
-1. ☐ dashboard.unity3d.com adresine git
-2. ☐ Projeyi seç (Ristorante-Rumble_NGO)
-3. ☐ Multiplayer > Relay servisini aktifleştir
-4. ☐ Multiplayer > Lobby servisini kontrol et (aktif olmalı)
-5. ☐ Project Settings > Services'dan proje ID'sini Unity'ye bağla
+1. ☑ dashboard.unity3d.com adresine git
+2. ☑ Projeyi seç (Ristorante-Rumble_NGO)
+3. ☑ Multiplayer > Relay servisini aktifleştir
+4. ☑ Multiplayer > Lobby servisini kontrol et (aktif olmalı)
+5. ☑ Project Settings > Services'dan proje ID'sini Unity'ye bağla
 ```
 
-### Unity Editör Kurulumu
+### Unity Editör Kurulumu ✅
 ```
-1. ☐ Edit > Project Settings > Services > Link Project
-2. ☐ Package Manager'dan Relay paketini kontrol et:
+1. ☑ Edit > Project Settings > Services > Link Project
+2. ☑ Package Manager'dan Relay paketini kontrol et:
    → com.unity.services.relay (yoksa ekle)
-3. ☐ ParrelSync'in çalıştığını kontrol et:
+3. ☑ ParrelSync'in çalıştığını kontrol et:
    → ParrelSync > Clones Manager
 ```
 
@@ -485,6 +485,6 @@ Geliştirmeye başlamadan önce bu adımları tamamla:
 
 ---
 
-*Son Güncelleme: 8 Aralık 2024*  
-*Versiyon: 1.1 - Adım Adım Uygulama Rehberi Eklendi*
+*Son Güncelleme: 13 Aralık 2025*  
+*Versiyon: 1.3 - Lobi UI Sistemi Tamamlandı*
 

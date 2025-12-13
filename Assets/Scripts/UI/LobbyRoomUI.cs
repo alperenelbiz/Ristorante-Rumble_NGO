@@ -40,6 +40,14 @@ public class LobbyRoomUI : MonoBehaviour
         startGameButton.onClick.AddListener(StartGame);
         leaveButton.onClick.AddListener(LeaveLobby);
         copyCodeButton.onClick.AddListener(CopyLobbyCode);
+
+        if (LobbyManager.Instance.IsInLobby)
+        {
+            isReady = false;
+            if (readyButtonText != null)
+                readyButtonText.text = "Ready";
+            UpdateUI();
+        }
     }
 
     private void OnDisable()

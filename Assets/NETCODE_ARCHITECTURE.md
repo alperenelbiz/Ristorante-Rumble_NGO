@@ -840,15 +840,18 @@ Scripts/
 │   └── OwnerNetworkAnimator.cs  # Client-authoritative animator
 │
 ├── Lobby/
-│   └── TestLobby.cs            # Unity Lobby Service entegrasyonu
+│   ├── TestLobby.cs            # Unity Lobby Service entegrasyonu (eski)
+│   └── LobbyManager.cs         # ✅ Tam lobi yönetimi + Relay entegrasyonu
 │
-├── UI/
-│   └── NetworkManagerUI.cs      # Host/Client/Server butonları
+├── Network/
+│   ├── RelayManager.cs         # ✅ Relay allocation/join
+│   └── ConnectionManager.cs    # Bağlantı yönetimi
 │
-└── (Gelecek)
-    ├── LobbyManager.cs          # Tam lobi yönetimi
-    ├── RelayManager.cs          # Relay entegrasyonu
-    └── ConnectionManager.cs     # Bağlantı yönetimi
+├── Testing/
+│   └── RelayTest.cs            # ✅ Test UI scripti
+│
+└── UI/
+    └── NetworkManagerUI.cs      # Host/Client/Server butonları
 ```
 
 ---
@@ -864,5 +867,5 @@ Scripts/
 
 ---
 
-*Son Güncelleme: 8 Aralık 2024*
+*Son Güncelleme: 13 Aralık 2024*
 

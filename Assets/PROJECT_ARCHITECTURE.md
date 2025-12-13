@@ -401,6 +401,7 @@ ScriptableObjects/
 ### Faz 1: Temel Altyapı
 - [x] Network Manager kurulumu (NGO)
 - [x] Lobi sistemi (LobbyManager + RelayManager)
+- [x] Lobi UI sistemi (MainMenuUI, LobbyBrowserUI, LobbyRoomUI, CreateLobbyUI)
 - [ ] Temel oyuncu hareketi
 - [ ] Faz geçiş sistemi
 
