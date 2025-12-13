@@ -14,6 +14,7 @@ public class LobbyManager : MonoBehaviour
 
     public event Action<Lobby> OnLobbyCreated;
     public event Action<Lobby> OnLobbyJoined;
+    public event Action<Lobby> OnLobbyUpdated;
     public event Action OnLobbyLeft;
     public event Action<List<Lobby>> OnLobbyListUpdated;
     public event Action OnGameStarting;
@@ -117,7 +118,7 @@ public class LobbyManager : MonoBehaviour
 
     private async void HandleLobbyPoll()
     {
-        if (joinedLobby == null || IsHost) return;
+        if (joinedLobby == null) return;
 
         pollTimer -= Time.deltaTime;
         if (pollTimer <= 0f)
@@ -126,8 +127,9 @@ public class LobbyManager : MonoBehaviour
             try
             {
                 joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
+                OnLobbyUpdated?.Invoke(joinedLobby);
 
-                if (joinedLobby.Data != null &&
+                if (!IsHost && joinedLobby.Data != null &&
                     joinedLobby.Data.TryGetValue(KEY_RELAY_CODE, out var relayData) &&
                     !string.IsNullOrEmpty(relayData.Value))
                 {

@@ -399,8 +399,8 @@ ScriptableObjects/
 ## 11. Özellik Yol Haritası
 
 ### Faz 1: Temel Altyapı
-- [ ] Network Manager kurulumu (NGO)
-- [ ] Lobi sistemi
+- [x] Network Manager kurulumu (NGO)
+- [x] Lobi sistemi (LobbyManager + RelayManager)
 - [ ] Temel oyuncu hareketi
 - [ ] Faz geçiş sistemi
 
