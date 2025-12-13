@@ -398,12 +398,20 @@ ScriptableObjects/
 
 ## 11. Özellik Yol Haritası
 
-### Faz 1: Temel Altyapı
+### Faz 1: Temel Altyapı ✅
 - [x] Network Manager kurulumu (NGO)
 - [x] Lobi sistemi (LobbyManager + RelayManager)
 - [x] Lobi UI sistemi (MainMenuUI, LobbyBrowserUI, LobbyRoomUI, CreateLobbyUI)
-- [ ] Temel oyuncu hareketi
+- [x] Temel oyuncu hareketi (PlayerNetwork.cs)
 - [ ] Faz geçiş sistemi
+
+### Faz 1.5: Oyun Akışı 🔴 (Aktif)
+> Detaylı rehber: [PHASE3_GAMEFLOW_ROADMAP.md](./PHASE3_GAMEFLOW_ROADMAP.md)
+- [ ] Sahne yönetimi (Lobby → Game)
+- [ ] Loading screen
+- [ ] Player spawn sistemi
+- [ ] GameManager (state yönetimi)
+- [ ] Team sistemi (5v5)
 
 ### Faz 2: Gündüz Fazı
 - [ ] Mutfak sistemi

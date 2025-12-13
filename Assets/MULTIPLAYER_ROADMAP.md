@@ -485,6 +485,18 @@ Geliştirmeye başlamadan önce bu adımları tamamla:
 
 ---
 
+---
+
+## 📄 İlgili Dökümanlar
+
+| Döküman | Açıklama |
+|---------|----------|
+| [PHASE3_GAMEFLOW_ROADMAP.md](./PHASE3_GAMEFLOW_ROADMAP.md) | Faz 3 detaylı geliştirme rehberi |
+| [PROJECT_ARCHITECTURE.md](./PROJECT_ARCHITECTURE.md) | Proje genel mimarisi |
+| [NETCODE_ARCHITECTURE.md](./NETCODE_ARCHITECTURE.md) | NGO teknik referans |
+
+---
+
 *Son Güncelleme: 13 Aralık 2025*  
-*Versiyon: 1.3 - Lobi UI Sistemi Tamamlandı*
+*Versiyon: 1.4 - Faz 3 Roadmap Eklendi*
 
