@@ -1,13 +1,14 @@
 {
-  "files.exclude": {
-    "**/*.meta": true,
-    "**/Library/": true,
-    "**/Temp/": true,
-    "**/Logs/": true,
-    "**/obj/": true,
-    "**/Build/": true,
-    "**/UserSettings/": true,
-    "**/ProjectSettings/": true,
-    "**/Packages/": true
-  }
+    "files.exclude": {
+        "**/*.meta": true,
+        "**/Library/": true,
+        "**/Temp/": true,
+        "**/Logs/": true,
+        "**/obj/": true,
+        "**/Build/": true,
+        "**/UserSettings/": true,
+        "**/ProjectSettings/": true,
+        "**/Packages/": true
+    },
+    "dotnet.defaultSolution": "Ristorante-Rumble_NGO.slnx"
 }
