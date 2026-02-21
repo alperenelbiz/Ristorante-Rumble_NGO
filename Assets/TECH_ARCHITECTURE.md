@@ -1027,7 +1027,6 @@ ROUND DÖNGÜSÜ:
 | `LobbyItemUI.cs` | `Scripts/UI/` | ✅ Tam — prefab component |
 | `LoadingScreenUI.cs` | `Scripts/UI/` | ✅ Tam — DDOL loading panel |
 | `NetworkManagerUI.cs` | `Scripts/UI/` | ✅ Debug — Host/Client/Server butonları |
-| `RelayTest.cs` | `Scripts/Testing/` | ✅ Test — LobbyManager entegrasyon testi |
 
 ### Data Assets
 
@@ -1046,9 +1045,6 @@ ROUND DÖNGÜSÜ:
 |-------|-------|
 | `MainMenu.unity` | ✅ Aktif — menü + lobi UI + DDOL managers |
 | `Game.unity` | ✅ Aktif — oyun sahnesi (GameManager, TeamManager, SpawnManager, Camera, Lighting) |
-| `Movement.unity` | ⚠️ Test — player movement testi, silinebilir |
-| `SampleScene.unity` | ⚠️ Eski — kullanılmıyor, silinebilir |
-| `TEST.unity` | ⚠️ Eski — kullanılmıyor, silinebilir |
 
 ### Prefab'lar
 
