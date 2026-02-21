@@ -93,7 +93,11 @@ public class LobbyRoomUI : MonoBehaviour
         lobbyNameText.text = lobby.Name;
         lobbyCodeText.text = $"Code: {lobby.LobbyCode}";
 
-        startGameButton.gameObject.SetActive(LobbyManager.Instance.IsHost);
+        bool isHost = LobbyManager.Instance.IsHost;
+        startGameButton.gameObject.SetActive(isHost);
+
+        if (isHost)
+            startGameButton.interactable = LobbyManager.Instance.AreAllPlayersReady();
 
         UpdatePlayerList(lobby.Players);
     }
@@ -115,17 +119,21 @@ public class LobbyRoomUI : MonoBehaviour
                 {
                     string displayId = player.Id.Length > 8 ? player.Id.Substring(0, 8) + "..." : player.Id;
                     bool isHost = player.Id == LobbyManager.Instance.JoinedLobby?.HostId;
-                    text.text = isHost ? $"{displayId} (Host)" : displayId;
+                    bool ready = LobbyManager.Instance.IsPlayerReady(player.Id);
+                    string readyTag = ready ? " [R]" : "";
+                    text.text = isHost ? $"{displayId} (Host){readyTag}" : $"{displayId}{readyTag}";
                 }
             }
         }
     }
 
-    private void ToggleReady()
+    private async void ToggleReady()
     {
         isReady = !isReady;
         if (readyButtonText != null)
             readyButtonText.text = isReady ? "Not Ready" : "Ready";
+
+        await LobbyManager.Instance.SetPlayerReady(isReady);
     }
 
     private async void StartGame()
@@ -160,6 +168,7 @@ public class LobbyRoomUI : MonoBehaviour
     private void OnGameStarting()
     {
         Debug.Log("[LobbyRoomUI] Game is starting!");
+        lobbyRoomPanel.SetActive(false);
     }
 }
 

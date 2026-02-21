@@ -853,25 +853,26 @@ ROUND DÖNGÜSÜ:
 - [x] MainMenuUI, LobbyBrowserUI, CreateLobbyUI, LobbyRoomUI
 - [x] LobbyItemUI, NetworkManagerUI (debug)
 
-### Faz 1.5: Player Movement 🟡 AKTİF
+### Faz 1.5: Player Movement ✅ TAMAMLANDI
 - [x] PlayerMovement.cs (Rigidbody, Input System, sprint, jump)
 - [x] OwnerNetworkAnimator (client-auth animasyon)
 - [x] Player Animated prefab
-- [ ] Movement → faz bazlı ayrıştırma (DayMovement + NightMovement)
+- [ ] Movement → faz bazlı ayrıştırma (DayMovement + NightMovement) — Faz 5'e ertelendi
 
-### Faz 2: Game Flow 🔴 SONRAKİ
-- [ ] ConnectionManager (state machine)
-- [ ] SceneController (sahne geçişi)
-- [ ] Game.unity sahnesi
-- [ ] PlayerSpawnManager (takım bazlı spawn)
-- [ ] GameManager (state: Waiting → Day → Night → GameOver)
-- [ ] PhaseManager (timer, geçiş logic)
-- [ ] TeamManager (5v5 atama, NetworkList)
-- [ ] PlayerReadyManager (lobi ready sync)
-- [ ] LoadingScreenUI
-- [ ] CameraManager (çift kamera geçişi)
-- [ ] Input Action Map swap (Day ↔ Night)
-- [ ] Lighting geçişi (gündüz ↔ gece)
+### Faz 2: Game Flow ✅ TAMAMLANDI
+- [x] GameEvents.cs (static event bus + GameState enum)
+- [x] SceneController (sahne geçişi, DDOL)
+- [x] Game.unity sahnesi
+- [x] PlayerSpawnManager (takım bazlı spawn)
+- [x] GameManager (state: Waiting → Starting → Day → Transition → Night → loop, PhaseManager merged)
+- [x] TeamManager (5v5 atama, NetworkList)
+- [x] Ready system (Lobby API player data ile, network sync)
+- [x] LoadingScreenUI (DDOL)
+- [x] CameraManager (Cinemachine 3.x priority swap)
+- [x] LightingManager (day/night lerp)
+- [x] PhaseSettingsSO (data-driven faz ayarları)
+- [ ] ConnectionManager (state machine) — Faz 8'e ertelendi
+- [ ] Input Action Map swap (Day ↔ Night) — Faz 5'e ertelendi
 
 ### Faz 3: Day Phase — Core Loop
 - [ ] ScriptableObject veri yapıları (RecipeSO, IngredientSO, PlaceableItemSO)
@@ -1008,40 +1009,53 @@ ROUND DÖNGÜSÜ:
 
 | Dosya | Konum | Durum |
 |-------|-------|-------|
-| `LobbyManager.cs` | `Scripts/Lobby/` | ✅ Tam — create, join, list, leave, poll, relay entegrasyonu |
+| `GameEvents.cs` | `Scripts/Core/` | ✅ Tam — static event bus + GameState enum |
+| `SceneController.cs` | `Scripts/Core/` | ✅ Tam — DDOL, NGO scene management |
+| `CameraManager.cs` | `Scripts/Camera/` | ✅ Tam — Cinemachine 3.x priority swap |
+| `GameManager.cs` | `Scripts/Game/` | ✅ Tam — state machine + phase timer |
+| `TeamManager.cs` | `Scripts/Game/` | ✅ Tam — NetworkList team assignment |
+| `LightingManager.cs` | `Scripts/Game/` | ✅ Tam — day/night light lerp |
+| `LobbyManager.cs` | `Scripts/Lobby/` | ✅ Tam — lobby + relay + ready + scene transition |
 | `RelayManager.cs` | `Scripts/Network/` | ✅ Tam — allocation, join, cleanup |
-| `PlayerMovement.cs` | `Scripts/Player/` | ✅ Temel — Rigidbody hareket, sprint, jump, ground check |
+| `PlayerMovement.cs` | `Scripts/Player/` | ✅ Temel — Rigidbody hareket + camera target |
+| `PlayerSpawnManager.cs` | `Scripts/Player/` | ✅ Tam — team-based custom spawn |
 | `OwnerNetworkAnimator.cs` | `Scripts/Player/` | ✅ Tam — client-auth animasyon sync |
 | `MainMenuUI.cs` | `Scripts/UI/` | ✅ Tam — panel yönetimi |
 | `LobbyBrowserUI.cs` | `Scripts/UI/` | ✅ Tam — lobi listesi, refresh, join |
 | `CreateLobbyUI.cs` | `Scripts/UI/` | ✅ Tam — isim, slider, create |
-| `LobbyRoomUI.cs` | `Scripts/UI/` | ⚠️ Ready butonu sadece client-side (network sync yok) |
+| `LobbyRoomUI.cs` | `Scripts/UI/` | ✅ Tam — network ready sync via Lobby API |
 | `LobbyItemUI.cs` | `Scripts/UI/` | ✅ Tam — prefab component |
+| `LoadingScreenUI.cs` | `Scripts/UI/` | ✅ Tam — DDOL loading panel |
 | `NetworkManagerUI.cs` | `Scripts/UI/` | ✅ Debug — Host/Client/Server butonları |
 | `RelayTest.cs` | `Scripts/Testing/` | ✅ Test — LobbyManager entegrasyon testi |
 
+### Data Assets
+
+| Dosya | Konum | Durum |
+|-------|-------|-------|
+| `PhaseSettingsSO.cs` | `Data/Settings/` | ✅ SO — faz süreleri, min player |
+
 ### Silinen Dosyalar
-- `ConnectionManager.cs` — boş stub, Faz 2'de yeniden implement edilecek
 - `TestLobby.cs` — deprecated, LobbyManager tarafından tam olarak replace edilmişti
-- `PlayerNetwork.cs` — PlayerMovement.cs ile replace edildi (önceki branch'te silinmişti)
+- `PlayerNetwork.cs` — PlayerMovement.cs ile replace edildi
 - `red.mat` — test materyali
 
 ### Sahneler
 
 | Sahne | Durum |
 |-------|-------|
-| `MainMenu.unity` | ✅ Aktif — menü + lobi UI |
-| `Movement.unity` | ⚠️ Test — player movement testi, ileride silinebilir |
+| `MainMenu.unity` | ✅ Aktif — menü + lobi UI + DDOL managers |
+| `Game.unity` | ✅ Aktif — oyun sahnesi (GameManager, TeamManager, SpawnManager, Camera, Lighting) |
+| `Movement.unity` | ⚠️ Test — player movement testi, silinebilir |
 | `SampleScene.unity` | ⚠️ Eski — kullanılmıyor, silinebilir |
 | `TEST.unity` | ⚠️ Eski — kullanılmıyor, silinebilir |
-| `Game.unity` | ❌ Henüz yok — Faz 2'de oluşturulacak |
 
 ### Prefab'lar
 
 | Prefab | Durum |
 |--------|-------|
 | `Player/Player.prefab` | ⚠️ Eski — orijinal player |
-| `Player/Player Animated.prefab` | ✅ Aktif — animasyonlu player |
+| `Player/Player Animated.prefab` | ✅ Aktif — animasyonlu player (NetworkObject) |
 | `Player/Armature.prefab` | ✅ Aktif — model/armature |
 | `UI/LobbyItem.prefab` | ✅ Aktif |
 | `UI/PlayerItem.prefab` | ✅ Aktif |

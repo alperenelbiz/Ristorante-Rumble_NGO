@@ -23,6 +23,7 @@ public class LobbyManager : MonoBehaviour
     private Lobby joinedLobby;
     private float heartbeatTimer;
     private float pollTimer;
+    private bool gameStarted;
 
     private const string KEY_RELAY_CODE = "RelayJoinCode";
     private const float HEARTBEAT_INTERVAL = 15f;
@@ -99,7 +100,7 @@ public class LobbyManager : MonoBehaviour
 
     private async void HandleHeartbeat()
     {
-        if (hostLobby == null) return;
+        if (hostLobby == null || gameStarted) return;
 
         heartbeatTimer -= Time.deltaTime;
         if (heartbeatTimer <= 0f)
@@ -118,7 +119,7 @@ public class LobbyManager : MonoBehaviour
 
     private async void HandleLobbyPoll()
     {
-        if (joinedLobby == null) return;
+        if (joinedLobby == null || gameStarted) return;
 
         pollTimer -= Time.deltaTime;
         if (pollTimer <= 0f)
@@ -285,9 +286,12 @@ public class LobbyManager : MonoBehaviour
 
         try
         {
+            LoadingScreenUI.Instance?.Show("Preparing the game...");
+
             string relayCode = await RelayManager.Instance.CreateRelay(hostLobby.MaxPlayers - 1);
             if (string.IsNullOrEmpty(relayCode))
             {
+                LoadingScreenUI.Instance?.Hide();
                 Debug.LogError("[LobbyManager] Failed to create relay!");
                 return false;
             }
@@ -301,7 +305,11 @@ public class LobbyManager : MonoBehaviour
             });
 
             NetworkManager.Singleton.StartHost();
-            
+
+            SceneController.Instance?.SubscribeToSceneEvents();
+            SceneController.Instance?.LoadGameScene();
+
+            gameStarted = true;
             OnGameStarting?.Invoke();
             Debug.Log("[LobbyManager] Game started as HOST!");
 
@@ -309,6 +317,7 @@ public class LobbyManager : MonoBehaviour
         }
         catch (Exception e)
         {
+            LoadingScreenUI.Instance?.Hide();
             Debug.LogError($"[LobbyManager] Start game failed: {e.Message}");
             return false;
         }
@@ -318,22 +327,91 @@ public class LobbyManager : MonoBehaviour
     {
         try
         {
+            LoadingScreenUI.Instance?.Show("Joining to the game...");
+
             bool success = await RelayManager.Instance.JoinRelay(relayCode);
             if (!success)
             {
+                LoadingScreenUI.Instance?.Hide();
                 Debug.LogError("[LobbyManager] Failed to join relay!");
                 return;
             }
 
             NetworkManager.Singleton.StartClient();
-            
+
+            SceneController.Instance?.SubscribeToSceneEvents();
+
+            gameStarted = true;
             OnGameStarting?.Invoke();
             Debug.Log("[LobbyManager] Joined game as CLIENT!");
         }
         catch (Exception e)
         {
+            LoadingScreenUI.Instance?.Hide();
             Debug.LogError($"[LobbyManager] Join game failed: {e.Message}");
         }
+    }
+
+    #endregion
+
+    #region Ready System
+
+    public async Task SetPlayerReady(bool isReady)
+    {
+        if (joinedLobby == null) return;
+
+        try
+        {
+            var options = new UpdatePlayerOptions
+            {
+                Data = new Dictionary<string, PlayerDataObject>
+                {
+                    { "ready", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, isReady ? "1" : "0") }
+                }
+            };
+
+            joinedLobby = await LobbyService.Instance.UpdatePlayerAsync(joinedLobby.Id, PlayerId, options);
+            Debug.Log($"[LobbyManager] Player ready: {isReady}");
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.LogError($"[LobbyManager] Set ready failed: {e.Message}");
+        }
+    }
+
+    public bool AreAllPlayersReady()
+    {
+        if (joinedLobby == null) return false;
+        if (joinedLobby.Players.Count < 2) return false;
+
+        foreach (var player in joinedLobby.Players)
+        {
+            if (player.Data == null ||
+                !player.Data.TryGetValue("ready", out var readyData) ||
+                readyData.Value != "1")
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool IsPlayerReady(string playerId)
+    {
+        if (joinedLobby == null) return false;
+
+        foreach (var player in joinedLobby.Players)
+        {
+            if (player.Id == playerId)
+            {
+                return player.Data != null &&
+                       player.Data.TryGetValue("ready", out var readyData) &&
+                       readyData.Value == "1";
+            }
+        }
+
+        return false;
     }
 
     #endregion
@@ -344,6 +422,7 @@ public class LobbyManager : MonoBehaviour
     {
         hostLobby = null;
         joinedLobby = null;
+        gameStarted = false;
         RelayManager.Instance?.Cleanup();
     }
 

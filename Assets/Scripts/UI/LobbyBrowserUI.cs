@@ -102,7 +102,7 @@ public class LobbyBrowserUI : MonoBehaviour
 
     private void GoBack()
     {
-        FindObjectOfType<MainMenuUI>().ShowMainMenu();
+        FindFirstObjectByType<MainMenuUI>().ShowMainMenu();
     }
 }
 

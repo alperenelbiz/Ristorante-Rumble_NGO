@@ -40,6 +40,9 @@ public class PlayerMovement : NetworkBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         sprintAction = InputSystem.actions.FindAction("Sprint");
+
+        if (CameraManager.Instance != null)
+            CameraManager.Instance.SetFollowTarget(transform);
     }
 
     private void Update()
