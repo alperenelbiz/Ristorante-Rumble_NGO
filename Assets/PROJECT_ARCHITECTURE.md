@@ -1,5 +1,7 @@
 # Ristorante Rumble - Proje Mimarisi
 
+> Son Güncelleme: 22 Şubat 2026
+
 ## 1. Oyun Genel Bakış
 
 **Ristorante Rumble**, gündüz restoran yönetimi ve gece soygun/PvP savaşı içeren **5v5 rekabetçi multiplayer** bir oyundur.
@@ -41,20 +43,29 @@
 │                       CORE SYSTEMS                               │
 ├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
-│  │ GameManager  │  │ PhaseManager │  │ NetworkManager│           │
-│  │              │  │              │  │              │            │
-│  │ • Oyun       │  │ • Gündüz/    │  │ • NGO        │            │
-│  │   durumu     │  │   Gece geçiş │  │ • Lobby      │            │
-│  │ • Skorlama   │  │ • Zamanlayıcı│  │ • Sync       │            │
-│  └──────────────┘  └──────────────┘  └──────────────┘            │
+│  ┌──────────────┐  ┌────────────────┐  ┌──────────────┐          │
+│  │ GameManager  │  │ SceneController│  │ NetworkManager│         │
+│  │ ✅ implemente│  │ ✅ implemente  │  │ ✅ implemente│          │
+│  │ • Oyun state │  │ • Sahne geçişi │  │ • NGO        │          │
+│  │ • Faz timer  │  │ • DDOL         │  │ • Lobby      │          │
+│  │ • PhaseManager│ │ • NGO scene mgr│  │ • Sync       │          │
+│  │   merged     │  │                │  │              │          │
+│  └──────────────┘  └────────────────┘  └──────────────┘          │
+│                                                                  │
+│  ┌──────────────┐  ┌──────────────┐  ┌────────────────┐          │
+│  │ TeamManager  │  │ CameraManager│  │LightingManager │          │
+│  │ ✅ implemente│  │ ✅ implemente│  │ ✅ implemente  │          │
+│  │ • Takım      │  │ • Cinemachine│  │ • Day/night    │          │
+│  │   ataması    │  │ • Priority   │  │   light lerp   │          │
+│  │ • 5v5        │  │   swap       │  │                │          │
+│  └──────────────┘  └──────────────┘  └────────────────┘          │
 │                                                                  │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
-│  │ TeamManager  │  │ ReputationMgr│  │ EconomyManager│           │
-│  │              │  │              │  │              │            │
-│  │ • Takım      │  │ • İtibar     │  │ • Para       │            │
-│  │   ataması    │  │   hesaplama  │  │   yönetimi   │            │
-│  │ • 5v5        │  │ • Kazanma    │  │ • Kasa       │            │
+│  │ GameEvents   │  │ ReputationMgr│  │ EconomyManager│           │
+│  │ ✅ implemente│  │ ⬜ planlanıyor│  │ ⬜ planlanıyor│           │
+│  │ • Static     │  │ • İtibar     │  │ • Para       │            │
+│  │   event bus  │  │   hesaplama  │  │   yönetimi   │            │
+│  │ • GameState  │  │ • Kazanma    │  │ • Kasa       │            │
 │  └──────────────┘  └──────────────┘  └──────────────┘            │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
@@ -280,12 +291,17 @@
 ### 7.2 Network Objeler
 ```
 NetworkObjects:
-├── Player
-│   ├── NetworkTransform
-│   ├── Health (NetworkVariable)
-│   ├── Inventory (NetworkVariable)
-│   └── PlayerClass (NetworkVariable)
+
+── ✅ İMPLEMENTE ──────────────────────────────
+
+├── Player (Player Animated.prefab)
+│   ├── NetworkObject
+│   ├── NetworkTransform (owner-authoritative)
+│   ├── OwnerNetworkAnimator (client-auth anim sync)
+│   └── PlayerMovement (NetworkBehaviour)
 │
+── ⬜ PLANLANYOR ───────────────────────────────
+
 ├── Restaurant
 │   ├── Safe (NetworkVariable - money)
 │   ├── Freezer (NetworkVariable - ingredients)
@@ -309,134 +325,216 @@ NetworkObjects:
 
 ## 8. Sahne Yapısı
 
+> 2 sahne, additive yok. NGO SceneManager ile geçiş.
+
 ```
 Scenes/
-├── MainMenu/
-│   ├── MainMenu.unity          # Ana menü
-│   └── Lobby.unity             # Multiplayer lobi
+├── MainMenu.unity               # Menü + Lobi UI
+│   ├── NetworkManager (DontDestroyOnLoad)
+│   ├── LobbyManager (DontDestroyOnLoad)
+│   ├── RelayManager (DontDestroyOnLoad)
+│   ├── LoadingScreen Canvas (DontDestroyOnLoad)
+│   ├── EventSystem
+│   └── Canvas (MainMenu + Lobby UI panels)
 │
-├── Game/
-│   ├── GameScene.unity         # Ana oyun sahnesi
-│   │   ├── Restaurant_TeamA    # A takımı restoranı
-│   │   ├── Restaurant_TeamB    # B takımı restoranı
-│   │   ├── Shops               # Ortak dükklar
-│   │   └── CombatArea          # Gece savaş alanı
-│   │
-│   └── (Additive scenes)
-│       ├── DayPhase.unity      # Gündüz UI/sistemler
-│       └── NightPhase.unity    # Gece UI/sistemler
+└── Game.unity                   # Ana oyun sahnesi (NetworkManager.SceneManager ile yüklenir)
+    ├── GameManager
+    ├── TeamManager
+    ├── PlayerSpawnManager
+    ├── CameraManager
+    │   ├── DayCamera (CinemachineCamera — top down)
+    │   └── NightCamera (CinemachineCamera — 3rd person, başlangıçta deaktif)
+    ├── LightingManager
+    │   ├── DayLighting (warm, bright)
+    │   └── NightLighting (cool, dark)
+    ├── Environment
+    │   ├── Restaurant_TeamA (planlanıyor)
+    │   ├── Restaurant_TeamB (planlanıyor)
+    │   ├── Shops (planlanıyor)
+    │   └── NightArena (planlanıyor)
+    ├── SpawnPoints
+    │   ├── TeamA_Day_Spawns[]
+    │   ├── TeamB_Day_Spawns[]
+    │   ├── TeamA_Night_Spawns[]
+    │   └── TeamB_Night_Spawns[]
+    └── Canvas (Game HUD — planlanıyor)
 ```
 
 ---
 
 ## 9. Prefab Yapısı
 
+### ✅ Mevcut Prefab'lar
 ```
 Prefabs/
 ├── Player/
-│   ├── Player.prefab           # Ana oyuncu prefab
-│   ├── Chef.prefab             # Chef varyantı
-│   ├── Runner.prefab           # Runner varyantı
-│   └── Fighter.prefab          # Fighter varyantı
+│   ├── Player.prefab              # Orijinal player (eski)
+│   ├── Player Animated.prefab     # Aktif player — NetworkObject + NetworkTransform + OwnerNetworkAnimator
+│   └── Armature.prefab            # Model/armature
 │
+└── UI/
+    ├── LobbyItem.prefab           # Lobi listesi item
+    └── PlayerItem.prefab          # Lobi oda player item
+```
+
+### ⬜ Planlanıyor
+```
+Prefabs/
 ├── Restaurant/
-│   ├── CookingStation.prefab   # Pişirme istasyonu
-│   ├── ServingCounter.prefab   # Servis tezgahı
-│   ├── Freezer.prefab          # Buzdolabı
-│   ├── Safe.prefab             # Kasa
-│   └── Chair.prefab            # Müşteri sandalyesi
+│   ├── CookingStation.prefab      # Pişirme istasyonu
+│   ├── ServingCounter.prefab      # Servis tezgahı
+│   ├── Freezer.prefab             # Buzdolabı
+│   ├── Safe.prefab                # Kasa
+│   └── Chair.prefab               # Müşteri sandalyesi
 │
 ├── Characters/
-│   ├── Customer.prefab         # Normal müşteri
-│   └── FakeCustomer.prefab     # Sahte müşteri
+│   ├── Customer.prefab            # Normal müşteri (NavMesh)
+│   └── FakeCustomer.prefab        # Sahte müşteri
 │
-├── Items/
-│   ├── Ingredients/            # Malzeme prefabları
-│   ├── Dishes/                 # Yemek prefabları
-│   └── Weapons/                # Silah prefabları
+├── Combat/
+│   ├── Projectile.prefab          # NetworkObject — mermi
+│   └── DroppedMoney.prefab        # NetworkObject — düşürülen para
 │
-├── UI/
-│   ├── OrderUI.prefab          # Sipariş göstergesi
-│   ├── ReputationBar.prefab    # İtibar barı
-│   └── PhaseTimer.prefab       # Faz zamanlayıcısı
-│
-└── Network/
-    ├── DroppedMoney.prefab     # Düşürülen para
-    └── Projectile.prefab       # Mermi/projektil
+└── UI/
+    ├── OrderBubble.prefab         # World-space sipariş baloncuğu
+    └── DamageNumber.prefab        # World-space hasar UI
 ```
 
 ---
 
 ## 10. ScriptableObject Yapısı
 
+### ✅ Mevcut
 ```
-ScriptableObjects/
+Assets/Data/
+└── Settings/
+    ├── PhaseSettingsSO.cs         # SO tanımı — faz süreleri, min player
+    └── PhaseSettings.asset        # Instance
+```
+
+### ⬜ Planlanıyor
+```
+Assets/Data/
 ├── Recipes/
-│   ├── Recipe.cs               # Tarif base class
-│   └── [TarifAdı].asset        # Her tarif için asset
+│   ├── RecipeSO.cs                # Tarif base class
+│   └── [TarifAdı].asset
 │
 ├── Ingredients/
-│   ├── Ingredient.cs           # Malzeme base class
-│   └── [MalzemeAdı].asset      # Her malzeme için asset
+│   ├── IngredientSO.cs            # Malzeme base class
+│   └── [MalzemeAdı].asset
 │
 ├── Weapons/
-│   ├── WeaponData.cs           # Silah base class
-│   └── [SilahAdı].asset        # Her silah için asset
+│   ├── WeaponSO.cs                # Silah base class
+│   └── [SilahAdı].asset
+│
+├── Restaurant/
+│   ├── RestaurantLayoutSO.cs      # Başlangıç layout tanımı
+│   ├── PlaceableItemSO.cs         # Yerleştirilebilir obje base class
+│   ├── KitchenItems/              # Fırın, ızgara, kesme tahtası...
+│   ├── LoungeItems/               # Masa varyantları
+│   └── StorageItems/              # Buzdolabı varyantları
 │
 ├── Upgrades/
-│   ├── UpgradeData.cs          # Upgrade base class
-│   ├── KitchenUpgrades/        # Mutfak geliştirmeleri
-│   └── LoungeUpgrades/         # Lounge geliştirmeleri
+│   ├── UpgradeSO.cs               # Upgrade base class
+│   ├── Permanent/                 # Kalıcı upgrade'ler
+│   └── RoundBased/                # Round bazlı upgrade'ler
 │
-└── GameSettings/
-    ├── PhaseSettings.asset     # Faz süreleri
-    ├── EconomySettings.asset   # Ekonomi değerleri
-    └── ReputationSettings.asset# İtibar değerleri
+└── Settings/
+    ├── EconomySettingsSO.cs       # Fiyatlar, kazanç çarpanları
+    ├── ReputationSettingsSO.cs    # İtibar formülleri
+    └── CombatSettingsSO.cs        # Hasar çarpanları, respawn süresi
 ```
 
 ---
 
 ## 11. Özellik Yol Haritası
 
-### Faz 1: Temel Altyapı ✅
-- [x] Network Manager kurulumu (NGO)
-- [x] Lobi sistemi (LobbyManager + RelayManager)
-- [x] Lobi UI sistemi (MainMenuUI, LobbyBrowserUI, LobbyRoomUI, CreateLobbyUI)
-- [x] Temel oyuncu hareketi (PlayerNetwork.cs)
-- [ ] Faz geçiş sistemi
+> TECH_ARCHITECTURE.md §9 ile hizalı 10 fazlı plan. Detaylı açıklamalar orada.
+> Arşiv: [PHASE3_GAMEFLOW_ROADMAP.md](./Documentation/Archive/PHASE3_GAMEFLOW_ROADMAP.md) — Faz 2 detaylı geliştirme geçmişi
 
-### Faz 1.5: Oyun Akışı 🔴 (Aktif)
-> Detaylı rehber: [PHASE3_GAMEFLOW_ROADMAP.md](./PHASE3_GAMEFLOW_ROADMAP.md)
-- [ ] Sahne yönetimi (Lobby → Game)
-- [ ] Loading screen
-- [ ] Player spawn sistemi
-- [ ] GameManager (state yönetimi)
-- [ ] Team sistemi (5v5)
+### Faz 0: Network & Lobby Altyapısı ✅ TAMAMLANDI
+- [x] NetworkManager + UnityTransport
+- [x] RelayManager (allocation/join)
+- [x] LobbyManager (create/join/list/leave/poll)
+- [x] Anonim authentication
+- [x] ParRelSync test ortamı
 
-### Faz 2: Gündüz Fazı
-- [ ] Mutfak sistemi
-- [ ] Sipariş/Müşteri sistemi
-- [ ] Envanter sistemi
-- [ ] Dükkan sistemi
-- [ ] Upgrade sistemi
+### Faz 1: UI Sistemi ✅ TAMAMLANDI
+- [x] MainMenuUI, LobbyBrowserUI, CreateLobbyUI, LobbyRoomUI
+- [x] LobbyItemUI, NetworkManagerUI (debug)
 
-### Faz 3: Gece Fazı
-- [ ] Combat sistemi
-- [ ] Silah sistemi
-- [ ] Soygun/Kasa sistemi
-- [ ] Respawn/Spectator sistemi
+### Faz 1.5: Player Movement ✅ TAMAMLANDI
+- [x] PlayerMovement.cs (Rigidbody, Input System, sprint, jump)
+- [x] OwnerNetworkAnimator (client-auth animasyon)
+- [x] Player Animated prefab
+- [ ] Movement → faz bazlı ayrıştırma (DayMovement + NightMovement) — Faz 5'e ertelendi
 
-### Faz 4: Gelişmiş Mekanikler
-- [ ] Sahte müşteri sistemi
-- [ ] Sınıf yetenekleri
-- [ ] İtibar etkileri
-- [ ] Kazanma koşulu
+### Faz 2: Game Flow ✅ TAMAMLANDI
+- [x] GameEvents.cs (static event bus + GameState enum)
+- [x] SceneController (sahne geçişi, DDOL)
+- [x] Game.unity sahnesi
+- [x] PlayerSpawnManager (takım bazlı spawn)
+- [x] GameManager (state machine + phase timer, PhaseManager merged)
+- [x] TeamManager (5v5 atama, NetworkList)
+- [x] Ready system (Lobby API player data ile)
+- [x] LoadingScreenUI (DDOL)
+- [x] CameraManager (Cinemachine 3.x priority swap)
+- [x] LightingManager (day/night lerp)
+- [x] PhaseSettingsSO (data-driven faz ayarları)
+- [ ] ConnectionManager (state machine) — Faz 8'e ertelendi
+- [ ] Input Action Map swap (Day ↔ Night) — Faz 5'e ertelendi
 
-### Faz 5: Polish
-- [ ] UI/UX
-- [ ] Ses efektleri
-- [ ] Görsel efektler
-- [ ] Optimizasyon
+### Faz 3: Day Phase — Core Loop ⬜
+- [ ] SO veri yapıları (RecipeSO, IngredientSO, PlaceableItemSO)
+- [ ] RestaurantManager + SlotSystem
+- [ ] KitchenManager + CookingStation
+- [ ] CustomerManager + Customer NPC (NavMesh)
+- [ ] OrderSystem (sipariş, timer)
+- [ ] PlayerInteraction (al, koy, servis et)
+- [ ] Temel yemek pişirme akışı
+- [ ] World-space UI (sipariş baloncuğu, sabır barı)
+
+### Faz 4: Economy & Shops & Restaurant Upgrade ⬜
+- [ ] EconomyManager (takım para yönetimi)
+- [ ] ShopManager (malzeme, silah, upgrade, ekipman)
+- [ ] PlayerInventory (NetworkVariable)
+- [ ] UpgradeSO + UpgradeManager (kademeli reset)
+- [ ] Restoran yerleştirme modu (slot highlight, server validation)
+- [ ] SafeSystem (kasa)
+- [ ] Buzdolabı sistemi
+
+### Faz 5: Night Phase — Combat ⬜
+- [ ] WeaponSO veri yapıları
+- [ ] WeaponSystem (equip, ateş, reload)
+- [ ] CombatManager (server-side hit detection, hasar)
+- [ ] HealthSystem (HP, ölüm, respawn timer)
+- [ ] NightMovement (3rd person shooter)
+- [ ] NightCameraController
+- [ ] CrosshairUI, HealthBarUI
+
+### Faz 6: Night Phase — Heist/Soygun ⬜
+- [ ] HeistManager (kasa etkileşim, para çalma)
+- [ ] DroppedMoney (ölünce para düşürme)
+- [ ] SpectatorSystem
+- [ ] Respawn sistemi
+
+### Faz 7: Advanced Mechanics ⬜
+- [ ] FakeCustomerSystem
+- [ ] Player sınıfları (Chef, Runner, Fighter)
+- [ ] ReputationManager (itibar, kazanma koşulu)
+- [ ] Game Over ekranı
+
+### Faz 8: Connection Reliability & Polish ⬜
+- [ ] ConnectionManager hata yönetimi
+- [ ] Graceful disconnect
+- [ ] Reconnection desteği
+
+### Faz 9: Audio, VFX, Juice ⬜
+- [ ] Ses, müzik, VFX, UI animasyonları
+
+### Faz 10: Playtest & Balance ⬜
+- [ ] SO değerleriyle balance tuning
+- [ ] Playtest feedback döngüsü
 
 ---
 
@@ -456,5 +554,5 @@ ScriptableObjects/
 
 ---
 
-*Bu döküman Ristorante Rumble oyun tasarım dökümanına (GDD) dayanmaktadır.*
+*Bu döküman Ristorante Rumble oyun tasarım dökümanıdır (GDD). Teknik detaylar için bkz. TECH_ARCHITECTURE.md.*
 
