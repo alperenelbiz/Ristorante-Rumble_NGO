@@ -1035,10 +1035,11 @@ GameObject:
   - component: {fileID: 7569493316224276954}
   - component: {fileID: -6577596890459650206}
   - component: {fileID: -1891151337545844133}
+  - component: {fileID: -3341844685759661537}
   - component: {fileID: -7064038014474174156}
   - component: {fileID: 1915246078168995816}
   - component: {fileID: 8091165705914615095}
-  - component: {fileID: -3341844685759661537}
+  - component: {fileID: 5183596147207184707}
   m_Layer: 8
   m_Name: Player Animated
   m_TagString: Player
@@ -1161,6 +1162,23 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &-3341844685759661537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.NetworkRigidbody
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 1
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &-7064038014474174156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,7 +1286,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &-3341844685759661537
+--- !u!114 &5183596147207184707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1277,14 +1295,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4416926081852918481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Script: {fileID: 11500000, guid: cbed2d037be123a4994bd8be36be9448, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.NetworkRigidbody
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkRigidbodyBaseExpanded: 0
-  UseRigidBodyForMotion: 1
-  AutoUpdateKinematicState: 1
-  AutoSetKinematicOnDespawn: 1
+  interactRange: 2.5
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
