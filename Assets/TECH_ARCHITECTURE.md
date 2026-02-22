@@ -1,6 +1,6 @@
 # Ristorante Rumble — Teknoloji & Mimari Kılavuzu
 
-> Son Güncelleme: 21 Şubat 2026
+> Son Güncelleme: 23 Şubat 2026
 > Versiyon: 1.0
 
 ---
@@ -874,18 +874,25 @@ ROUND DÖNGÜSÜ:
 - [ ] ConnectionManager (state machine) — Faz 8'e ertelendi
 - [ ] Input Action Map swap (Day ↔ Night) — Faz 5'e ertelendi
 
-### Faz 3: Day Phase — Core Loop
-- [ ] ScriptableObject veri yapıları (RecipeSO, IngredientSO, PlaceableItemSO)
-- [ ] RestaurantManager + SlotSystem (slot-based yerleşim, bkz. §3)
-- [ ] KitchenManager + CookingStation
-- [ ] CustomerManager + Customer NPC (NavMesh)
-- [ ] OrderSystem (sipariş oluşturma, timer)
-- [ ] PlayerInteraction (al, koy, servis et)
-- [ ] Temel yemek pişirme akışı (malzeme → istasyon → yemek → servis)
-- [ ] World-space UI (sipariş baloncuğu, sabır barı)
+### Faz 3: Day Phase — Core Loop 🔶 DEVAM EDİYOR
+- [x] ScriptableObject veri yapıları (RecipeSO, IngredientSO, DayPhaseSettingsSO, NetworkStructs, CookingStationType)
+- [x] RecipeDatabase (SO registry singleton, index↔SO mapping)
+- [x] RestaurantManager + Restaurant (static layout, team restaurants)
+- [x] CookingStation (state machine: idle→cooking→done→burned, throttled sync)
+- [x] ServingCounter (NetworkList plated dishes)
+- [x] IngredientSource (infinite MVP)
+- [x] EconomyManager (server-auth team money, NetworkVariable) — Faz 4'ten öne alındı
+- [x] PlayerInteraction (E/Q interaction, carry system, RPCs)
+- [x] RecipeSelectUI (recipe select popup)
+- [x] CookingProgressUI (world-space progress bar)
+- [x] DayPhaseHUD (money, timer, carried item)
+- [x] GameEvents day phase events (CookingStarted, CookingCompleted, MoneyChanged, DayPhaseCleanup)
+- [x] Table (seat reference, customer system hazırlığı)
+- [ ] CustomerManager + Customer NPC — başka developer yapıyor
+- [ ] OrderSystem (sipariş, timer) — customer system'e bağlı
 
 ### Faz 4: Economy & Shops & Restaurant Upgrade
-- [ ] EconomyManager (takım para yönetimi)
+- [x] EconomyManager (takım para yönetimi) — Faz 3'te implemente edildi
 - [ ] ShopManager (malzeme, silah, upgrade, restoran ekipmanı)
 - [ ] PlayerInventory (NetworkVariable)
 - [ ] UpgradeSO + UpgradeManager (kalıcı + round bazlı + tüketime dayalı, bkz. §3.3)
@@ -1005,21 +1012,59 @@ ROUND DÖNGÜSÜ:
 
 ## 13. Mevcut Codebase Durumu
 
-### Aktif Scriptler
+> Son Güncelleme: 23 Şubat 2026
+
+### Aktif Scriptler — Core & Game
 
 | Dosya | Konum | Durum |
 |-------|-------|-------|
-| `GameEvents.cs` | `Scripts/Core/` | ✅ Tam — static event bus + GameState enum |
+| `GameEvents.cs` | `Scripts/Core/` | ✅ Tam — static event bus + GameState enum + day phase events |
 | `SceneController.cs` | `Scripts/Core/` | ✅ Tam — DDOL, NGO scene management |
 | `CameraManager.cs` | `Scripts/Camera/` | ✅ Tam — Cinemachine 3.x priority swap |
-| `GameManager.cs` | `Scripts/Game/` | ✅ Tam — state machine + phase timer |
+| `GameManager.cs` | `Scripts/Game/` | ✅ Tam — state machine + phase timer + DayPhaseCleanup |
 | `TeamManager.cs` | `Scripts/Game/` | ✅ Tam — NetworkList team assignment |
 | `LightingManager.cs` | `Scripts/Game/` | ✅ Tam — day/night light lerp |
-| `LobbyManager.cs` | `Scripts/Lobby/` | ✅ Tam — lobby + relay + ready + scene transition |
-| `RelayManager.cs` | `Scripts/Network/` | ✅ Tam — allocation, join, cleanup |
+| `EconomyManager.cs` | `Scripts/Game/` | ✅ Tam — server-auth team money (NetworkVariable) |
+
+### Aktif Scriptler — Day Phase
+
+| Dosya | Konum | Durum |
+|-------|-------|-------|
+| `CookingStation.cs` | `Scripts/DayPhase/` | ✅ Tam — cooking state machine, burn timer, throttled sync |
+| `ServingCounter.cs` | `Scripts/DayPhase/` | ✅ Tam — NetworkList plated dishes |
+| `IngredientSource.cs` | `Scripts/DayPhase/` | ✅ Tam — ingredient pickup point (infinite MVP) |
+| `Table.cs` | `Scripts/DayPhase/` | ✅ Tam — seat reference (customer system için) |
+| `RecipeDatabase.cs` | `Scripts/DayPhase/` | ✅ Tam — SO registry singleton, index↔SO mapping |
+| `NetworkStructs.cs` | `Scripts/DayPhase/` | ✅ Tam — OrderData, CookingStationData, CarriedItemData |
+| `CookingStationType.cs` | `Scripts/DayPhase/` | ✅ Tam — enum |
+
+### Aktif Scriptler — Restaurant
+
+| Dosya | Konum | Durum |
+|-------|-------|-------|
+| `Restaurant.cs` | `Scripts/Restaurant/` | ✅ Tam — team restaurant container (stations, sources, counter, tables) |
+| `RestaurantManager.cs` | `Scripts/Restaurant/` | ✅ Tam — singleton, team restaurant lookup |
+
+### Aktif Scriptler — Player
+
+| Dosya | Konum | Durum |
+|-------|-------|-------|
 | `PlayerMovement.cs` | `Scripts/Player/` | ✅ Temel — Rigidbody hareket + camera target |
 | `PlayerSpawnManager.cs` | `Scripts/Player/` | ✅ Tam — team-based custom spawn |
 | `OwnerNetworkAnimator.cs` | `Scripts/Player/` | ✅ Tam — client-auth animasyon sync |
+| `PlayerInteraction.cs` | `Scripts/Player/` | ✅ Tam — E/Q interaction, carry system, RPCs |
+
+### Aktif Scriptler — Network & Lobby
+
+| Dosya | Konum | Durum |
+|-------|-------|-------|
+| `LobbyManager.cs` | `Scripts/Lobby/` | ✅ Tam — lobby + relay + ready + scene transition |
+| `RelayManager.cs` | `Scripts/Network/` | ✅ Tam — allocation, join, cleanup |
+
+### Aktif Scriptler — UI
+
+| Dosya | Konum | Durum |
+|-------|-------|-------|
 | `MainMenuUI.cs` | `Scripts/UI/` | ✅ Tam — panel yönetimi |
 | `LobbyBrowserUI.cs` | `Scripts/UI/` | ✅ Tam — lobi listesi, refresh, join |
 | `CreateLobbyUI.cs` | `Scripts/UI/` | ✅ Tam — isim, slider, create |
@@ -1027,12 +1072,18 @@ ROUND DÖNGÜSÜ:
 | `LobbyItemUI.cs` | `Scripts/UI/` | ✅ Tam — prefab component |
 | `LoadingScreenUI.cs` | `Scripts/UI/` | ✅ Tam — DDOL loading panel |
 | `NetworkManagerUI.cs` | `Scripts/UI/` | ✅ Debug — Host/Client/Server butonları |
+| `RecipeSelectUI.cs` | `Scripts/UI/HUD/` | ✅ Tam — recipe select popup for cooking stations |
+| `DayPhaseHUD.cs` | `Scripts/UI/HUD/` | ✅ Tam — money, timer, carried item display |
+| `CookingProgressUI.cs` | `Scripts/UI/World/` | ✅ Tam — world-space cooking progress bar |
 
 ### Data Assets
 
 | Dosya | Konum | Durum |
 |-------|-------|-------|
 | `PhaseSettingsSO.cs` | `Data/Settings/` | ✅ SO — faz süreleri, min player |
+| `DayPhaseSettingsSO.cs` | `Data/Settings/` | ✅ SO — economy, kitchen, MVP settings |
+| `IngredientSO.cs` | `Data/Ingredients/` | ✅ SO — ingredient definition |
+| `RecipeSO.cs` | `Data/Recipes/` | ✅ SO — recipe definition + IngredientAmount struct |
 
 ### Silinen Dosyalar
 - `TestLobby.cs` — deprecated, LobbyManager tarafından tam olarak replace edilmişti
@@ -1044,17 +1095,18 @@ ROUND DÖNGÜSÜ:
 | Sahne | Durum |
 |-------|-------|
 | `MainMenu.unity` | ✅ Aktif — menü + lobi UI + DDOL managers |
-| `Game.unity` | ✅ Aktif — oyun sahnesi (GameManager, TeamManager, SpawnManager, Camera, Lighting) |
+| `Game.unity` | ✅ Aktif — oyun sahnesi (managers + restaurants + cooking stations + UI) |
 
 ### Prefab'lar
 
 | Prefab | Durum |
 |--------|-------|
 | `Player/Player.prefab` | ⚠️ Eski — orijinal player |
-| `Player/Player Animated.prefab` | ✅ Aktif — animasyonlu player (NetworkObject) |
+| `Player/Player Animated.prefab` | ✅ Aktif — animasyonlu player (NetworkObject + PlayerInteraction) |
 | `Player/Armature.prefab` | ✅ Aktif — model/armature |
 | `UI/LobbyItem.prefab` | ✅ Aktif |
 | `UI/PlayerItem.prefab` | ✅ Aktif |
+| `UI/RecipeButton.prefab` | ✅ Aktif — recipe select button template |
 
 ---
 

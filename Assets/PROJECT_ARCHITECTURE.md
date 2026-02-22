@@ -1,6 +1,6 @@
 # Ristorante Rumble - Proje Mimarisi
 
-> Son Güncelleme: 22 Şubat 2026
+> Son Güncelleme: 23 Şubat 2026
 
 ## 1. Oyun Genel Bakış
 
@@ -484,15 +484,19 @@ Assets/Data/
 - [ ] ConnectionManager (state machine) — Faz 8'e ertelendi
 - [ ] Input Action Map swap (Day ↔ Night) — Faz 5'e ertelendi
 
-### Faz 3: Day Phase — Core Loop ⬜
-- [ ] SO veri yapıları (RecipeSO, IngredientSO, PlaceableItemSO)
-- [ ] RestaurantManager + SlotSystem
-- [ ] KitchenManager + CookingStation
-- [ ] CustomerManager + Customer NPC (NavMesh)
-- [ ] OrderSystem (sipariş, timer)
-- [ ] PlayerInteraction (al, koy, servis et)
-- [ ] Temel yemek pişirme akışı
-- [ ] World-space UI (sipariş baloncuğu, sabır barı)
+### Faz 3: Day Phase — Core Loop 🔶 DEVAM EDİYOR
+- [x] SO veri yapıları (RecipeSO, IngredientSO, DayPhaseSettingsSO, NetworkStructs)
+- [x] RestaurantManager + Restaurant (static layout)
+- [x] CookingStation (state machine, burn timer, throttled sync)
+- [x] ServingCounter (NetworkList plated dishes)
+- [x] IngredientSource (infinite MVP)
+- [x] EconomyManager (server-auth team money)
+- [x] PlayerInteraction (E/Q, carry system, RPCs)
+- [x] RecipeSelectUI (recipe popup)
+- [x] CookingProgressUI (world-space progress bar)
+- [x] DayPhaseHUD (money, timer, carried item)
+- [ ] CustomerManager + Customer NPC — başka developer yapıyor
+- [ ] OrderSystem (sipariş, timer) — customer system'e bağlı
 
 ### Faz 4: Economy & Shops & Restaurant Upgrade ⬜
 - [ ] EconomyManager (takım para yönetimi)
