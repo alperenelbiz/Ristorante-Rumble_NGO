@@ -96,6 +96,7 @@ public class GameManager : NetworkBehaviour
 
     private void StartTransition()
     {
+        GameEvents.DayPhaseCleanup();
         CurrentState.Value = GameState.Transition;
         PhaseTimer.Value = settings.transitionDuration;
         Debug.Log("[GameManager] Transition started");
