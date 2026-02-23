@@ -16,10 +16,10 @@ public class CookingStation : NetworkBehaviour
     public CookingStationType StationType => stationType;
     public int StationId => stationId;
     public int TeamId => teamId;
-    public bool IsIdle => StationState.Value.Status == 0;
-    public bool IsCooking => StationState.Value.Status == 1;
-    public bool IsDone => StationState.Value.Status == 2;
-    public bool IsBurned => StationState.Value.Status == 3;
+    public bool IsIdle => StationState.Value.Status == CookingStatus.Idle;
+    public bool IsCooking => StationState.Value.Status == CookingStatus.Cooking;
+    public bool IsDone => StationState.Value.Status == CookingStatus.Done;
+    public bool IsBurned => StationState.Value.Status == CookingStatus.Burned;
 
     private float burnTimer;
     private float syncTimer;
@@ -35,7 +35,7 @@ public class CookingStation : NetworkBehaviour
                 StationId = stationId,
                 RecipeIndex = -1,
                 CookProgress = 0f,
-                Status = 0
+                Status = CookingStatus.Idle
             };
         }
 
@@ -74,7 +74,7 @@ public class CookingStation : NetworkBehaviour
                 StationId = stationId,
                 RecipeIndex = state.RecipeIndex,
                 CookProgress = 1f,
-                Status = 2
+                Status = CookingStatus.Done
             };
             burnTimer = settings.burnTimeAfterDone;
             GameEvents.CookingCompleted(teamId, stationId, state.RecipeIndex);
@@ -92,7 +92,7 @@ public class CookingStation : NetworkBehaviour
                 StationId = stationId,
                 RecipeIndex = state.RecipeIndex,
                 CookProgress = progress,
-                Status = 1
+                Status = CookingStatus.Cooking
             };
         }
     }
@@ -108,7 +108,7 @@ public class CookingStation : NetworkBehaviour
                 StationId = stationId,
                 RecipeIndex = state.RecipeIndex,
                 CookProgress = 1f,
-                Status = 3
+                Status = CookingStatus.Burned
             };
             Debug.Log($"[CookingStation] Station {stationId} BURNED!");
         }
@@ -132,7 +132,7 @@ public class CookingStation : NetworkBehaviour
             StationId = stationId,
             RecipeIndex = recipeIndex,
             CookProgress = 0f,
-            Status = 1
+            Status = CookingStatus.Cooking
         };
 
         localProgress = 0f;
@@ -161,7 +161,7 @@ public class CookingStation : NetworkBehaviour
             StationId = stationId,
             RecipeIndex = -1,
             CookProgress = 0f,
-            Status = 0
+            Status = CookingStatus.Idle
         };
     }
 

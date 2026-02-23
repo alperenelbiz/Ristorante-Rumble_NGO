@@ -22,7 +22,7 @@ public class CookingProgressUI : MonoBehaviour
         if (station == null) return;
 
         var state = station.StationState.Value;
-        bool showUI = state.Status != 0; // show when not idle
+        bool showUI = state.Status != CookingStatus.Idle;
 
         if (progressPanel.activeSelf != showUI)
             progressPanel.SetActive(showUI);
@@ -33,16 +33,16 @@ public class CookingProgressUI : MonoBehaviour
 
         switch (state.Status)
         {
-            case 1: // cooking
+            case CookingStatus.Cooking:
                 progressFill.color = Color.yellow;
                 var recipe = RecipeDatabase.Instance.GetRecipe(state.RecipeIndex);
                 statusText.text = recipe != null ? recipe.recipeName : "Cooking...";
                 break;
-            case 2: // done
+            case CookingStatus.Done:
                 progressFill.color = Color.green;
                 statusText.text = "Ready!";
                 break;
-            case 3: // burned
+            case CookingStatus.Burned:
                 progressFill.color = Color.red;
                 statusText.text = "Burned!";
                 break;

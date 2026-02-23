@@ -118,7 +118,7 @@ public class PlayerInteraction : NetworkBehaviour
 
     private void HandleServingCounter(ServingCounter counter)
     {
-        if (IsCarrying && CarriedItem.Value.ItemType == 2)
+        if (IsCarrying && CarriedItem.Value.ItemType == CarriedItemType.Dish)
         {
             PlaceDishRpc(counter.NetworkObjectId, CarriedItem.Value.ItemIndex);
         }
@@ -188,7 +188,7 @@ public class PlayerInteraction : NetworkBehaviour
         int recipeIndex = station.CollectDish();
         if (recipeIndex < 0) return;
 
-        CarriedItem.Value = new CarriedItemData { ItemType = 2, ItemIndex = recipeIndex };
+        CarriedItem.Value = new CarriedItemData { ItemType = CarriedItemType.Dish, ItemIndex = recipeIndex };
         Debug.Log($"[PlayerInteraction] Player {OwnerClientId} collected dish: recipe {recipeIndex}");
     }
 
@@ -235,7 +235,7 @@ public class PlayerInteraction : NetworkBehaviour
 
         // TODO: proximity check skipped for MVP — infinite sources, low exploit risk
 
-        CarriedItem.Value = new CarriedItemData { ItemType = 1, ItemIndex = ingredientIndex };
+        CarriedItem.Value = new CarriedItemData { ItemType = CarriedItemType.Ingredient, ItemIndex = ingredientIndex };
         Debug.Log($"[PlayerInteraction] Player {OwnerClientId} picked up ingredient {ingredientIndex}");
     }
 

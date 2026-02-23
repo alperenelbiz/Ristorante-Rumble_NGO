@@ -24,6 +24,8 @@ public class LobbyManager : MonoBehaviour
     private float heartbeatTimer;
     private float pollTimer;
     private bool gameStarted;
+    private bool isHeartbeating;
+    private bool isPolling;
 
     private const string KEY_RELAY_CODE = "RelayJoinCode";
     private const float HEARTBEAT_INTERVAL = 15f;
@@ -100,12 +102,13 @@ public class LobbyManager : MonoBehaviour
 
     private async void HandleHeartbeat()
     {
-        if (hostLobby == null || gameStarted) return;
+        if (hostLobby == null || gameStarted || isHeartbeating) return;
 
         heartbeatTimer -= Time.deltaTime;
         if (heartbeatTimer <= 0f)
         {
             heartbeatTimer = HEARTBEAT_INTERVAL;
+            isHeartbeating = true;
             try
             {
                 await LobbyService.Instance.SendHeartbeatPingAsync(hostLobby.Id);
@@ -114,17 +117,22 @@ public class LobbyManager : MonoBehaviour
             {
                 Debug.LogError($"[LobbyManager] Heartbeat failed: {e.Message}");
             }
+            finally
+            {
+                isHeartbeating = false;
+            }
         }
     }
 
     private async void HandleLobbyPoll()
     {
-        if (joinedLobby == null || gameStarted) return;
+        if (joinedLobby == null || gameStarted || isPolling) return;
 
         pollTimer -= Time.deltaTime;
         if (pollTimer <= 0f)
         {
             pollTimer = POLL_INTERVAL;
+            isPolling = true;
             try
             {
                 joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
@@ -134,12 +142,17 @@ public class LobbyManager : MonoBehaviour
                     joinedLobby.Data.TryGetValue(KEY_RELAY_CODE, out var relayData) &&
                     !string.IsNullOrEmpty(relayData.Value))
                 {
+                    gameStarted = true;
                     await JoinGame(relayData.Value);
                 }
             }
             catch (LobbyServiceException e)
             {
                 Debug.LogError($"[LobbyManager] Poll failed: {e.Message}");
+            }
+            finally
+            {
+                isPolling = false;
             }
         }
     }
@@ -341,7 +354,6 @@ public class LobbyManager : MonoBehaviour
 
             SceneController.Instance?.SubscribeToSceneEvents();
 
-            gameStarted = true;
             OnGameStarting?.Invoke();
             Debug.Log("[LobbyManager] Joined game as CLIENT!");
         }
@@ -423,6 +435,8 @@ public class LobbyManager : MonoBehaviour
         hostLobby = null;
         joinedLobby = null;
         gameStarted = false;
+        isHeartbeating = false;
+        isPolling = false;
         RelayManager.Instance?.Cleanup();
     }
 

@@ -25,7 +25,10 @@ public class SceneController : MonoBehaviour
     private void OnEnable()
     {
         if (NetworkManager.Singleton != null && NetworkManager.Singleton.SceneManager != null)
+        {
+            NetworkManager.Singleton.SceneManager.OnLoadComplete -= OnSceneLoadComplete;
             NetworkManager.Singleton.SceneManager.OnLoadComplete += OnSceneLoadComplete;
+        }
     }
 
     private void OnDisable()

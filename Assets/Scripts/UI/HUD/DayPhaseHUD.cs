@@ -26,6 +26,14 @@ public class DayPhaseHUD : MonoBehaviour
         GameEvents.OnMoneyChanged += OnMoneyChanged;
         GameEvents.OnPhaseTimerUpdated += OnTimerUpdated;
         GameEvents.OnGameStateChanged += OnGameStateChanged;
+
+        // I2 — late-joiner: check current state so HUD isn't stuck hidden
+        if (GameManager.Instance != null)
+        {
+            var state = GameManager.Instance.CurrentState.Value;
+            bool show = state == GameState.DayPhase;
+            if (hudPanel != null) hudPanel.SetActive(show);
+        }
     }
 
     private void OnDisable()
@@ -65,7 +73,7 @@ public class DayPhaseHUD : MonoBehaviour
         if (!carrying) return;
 
         var db = RecipeDatabase.Instance;
-        if (carried.ItemType == 1) // ingredient
+        if (carried.ItemType == CarriedItemType.Ingredient)
         {
             var ingredient = db.GetIngredient(carried.ItemIndex);
             if (ingredient != null)
@@ -74,7 +82,7 @@ public class DayPhaseHUD : MonoBehaviour
                 carriedItemName.text = ingredient.ingredientName;
             }
         }
-        else if (carried.ItemType == 2) // dish
+        else if (carried.ItemType == CarriedItemType.Dish)
         {
             var recipe = db.GetRecipe(carried.ItemIndex);
             if (recipe != null)

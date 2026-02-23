@@ -27,6 +27,9 @@ public class GameManager : NetworkBehaviour
     private float timerSyncTimer;
     private const float TIMER_SYNC_INTERVAL = 0.1f;
 
+    // I5 — smooth client-side timer
+    private float clientLocalTimer;
+
     private void Awake()
     {
         // W1 — singleton guard
@@ -47,6 +50,8 @@ public class GameManager : NetworkBehaviour
 
         if (IsServer)
             CurrentState.Value = GameState.WaitingForPlayers;
+        else
+            clientLocalTimer = PhaseTimer.Value;
     }
 
     public override void OnNetworkDespawn()
@@ -61,32 +66,37 @@ public class GameManager : NetworkBehaviour
         Debug.Log($"[GameManager] {prev} -> {current}");
     }
 
-    // C3 — clients receive timer updates via network sync
+    // I5 — snap client timer on network sync
     private void OnTimerValueChanged(float prev, float current)
     {
         if (!IsServer)
-            GameEvents.PhaseTimerUpdated(current);
+            clientLocalTimer = current;
     }
 
     private void Update()
     {
-        if (!IsServer) return;
-
-        switch (CurrentState.Value)
+        if (IsServer)
         {
-            case GameState.WaitingForPlayers:
-                CheckMinPlayers();
-                break;
-            case GameState.Starting:
-                TickCountdown();
-                break;
-            case GameState.DayPhase:
-            case GameState.NightPhase:
-                TickPhaseTimer();
-                break;
-            case GameState.Transition:
-                TickTransition();
-                break;
+            switch (CurrentState.Value)
+            {
+                case GameState.WaitingForPlayers:
+                    CheckMinPlayers();
+                    break;
+                case GameState.Starting:
+                    TickCountdown();
+                    break;
+                case GameState.DayPhase:
+                case GameState.NightPhase:
+                    TickPhaseTimer();
+                    break;
+                case GameState.Transition:
+                    TickTransition();
+                    break;
+            }
+        }
+        else
+        {
+            TickClientTimer();
         }
     }
 
@@ -172,8 +182,16 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    // I5 — smooth client-side timer interpolation
+    private void TickClientTimer()
+    {
+        clientLocalTimer -= Time.deltaTime;
+        GameEvents.PhaseTimerUpdated(clientLocalTimer);
+    }
+
     private void EndRound()
     {
+        GameEvents.DayPhaseCleanup();
         CurrentRound.Value++;
         Debug.Log($"[GameManager] Round ended, starting round {CurrentRound.Value}");
         StartDayPhase();

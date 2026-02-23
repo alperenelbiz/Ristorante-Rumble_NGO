@@ -46,6 +46,10 @@ public class EconomyManager : NetworkBehaviour
             TeamBMoney.Value = settings.startingMoney;
             Debug.Log($"[EconomyManager] Starting money: {settings.startingMoney}");
         }
+
+        // I1 — fire initial values so late-joiners see correct money
+        GameEvents.MoneyChanged(TeamManager.TEAM_A, TeamAMoney.Value);
+        GameEvents.MoneyChanged(TeamManager.TEAM_B, TeamBMoney.Value);
     }
 
     public override void OnNetworkDespawn()

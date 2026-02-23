@@ -1,20 +1,43 @@
 using System;
 using Unity.Netcode;
 
+public enum OrderStatus : byte
+{
+    Waiting = 0,
+    Completed = 1,
+    Expired = 2
+}
+
+public enum CookingStatus : byte
+{
+    Idle = 0,
+    Cooking = 1,
+    Done = 2,
+    Burned = 3
+}
+
+public enum CarriedItemType : byte
+{
+    None = 0,
+    Ingredient = 1,
+    Dish = 2
+}
+
 public struct OrderData : INetworkSerializable, IEquatable<OrderData>
 {
     public int OrderId;
     public int RecipeIndex;
     public float PatienceTimer;
-    /// <summary>0 = waiting, 1 = completed, 2 = expired</summary>
-    public byte Status;
+    public OrderStatus Status;
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref OrderId);
         serializer.SerializeValue(ref RecipeIndex);
         serializer.SerializeValue(ref PatienceTimer);
-        serializer.SerializeValue(ref Status);
+        byte status = (byte)Status;
+        serializer.SerializeValue(ref status);
+        Status = (OrderStatus)status;
     }
 
     public bool Equals(OrderData other) => OrderId == other.OrderId;
@@ -28,15 +51,16 @@ public struct CookingStationData : INetworkSerializable, IEquatable<CookingStati
     public int RecipeIndex;
     /// <summary>0-1 progress</summary>
     public float CookProgress;
-    /// <summary>0 = idle, 1 = cooking, 2 = done, 3 = burned</summary>
-    public byte Status;
+    public CookingStatus Status;
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref StationId);
         serializer.SerializeValue(ref RecipeIndex);
         serializer.SerializeValue(ref CookProgress);
-        serializer.SerializeValue(ref Status);
+        byte status = (byte)Status;
+        serializer.SerializeValue(ref status);
+        Status = (CookingStatus)status;
     }
 
     public bool Equals(CookingStationData other) => StationId == other.StationId;
@@ -45,18 +69,19 @@ public struct CookingStationData : INetworkSerializable, IEquatable<CookingStati
 
 public struct CarriedItemData : INetworkSerializable, IEquatable<CarriedItemData>
 {
-    /// <summary>0 = none, 1 = ingredient, 2 = dish</summary>
-    public byte ItemType;
+    public CarriedItemType ItemType;
     /// <summary>Index into RecipeDatabase (ingredient or recipe)</summary>
     public int ItemIndex;
 
-    public bool IsEmpty => ItemType == 0;
+    public bool IsEmpty => ItemType == CarriedItemType.None;
 
-    public static CarriedItemData Empty => new() { ItemType = 0, ItemIndex = -1 };
+    public static CarriedItemData Empty => new() { ItemType = CarriedItemType.None, ItemIndex = -1 };
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
-        serializer.SerializeValue(ref ItemType);
+        byte itemType = (byte)ItemType;
+        serializer.SerializeValue(ref itemType);
+        ItemType = (CarriedItemType)itemType;
         serializer.SerializeValue(ref ItemIndex);
     }
 
