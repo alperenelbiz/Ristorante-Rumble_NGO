@@ -9,6 +9,14 @@ public class CookingProgressUI : MonoBehaviour
     [SerializeField] private Image progressFill;
     [SerializeField] private TMP_Text statusText;
 
+    // W10 — cached camera
+    private Camera cachedCamera;
+
+    private void Start()
+    {
+        cachedCamera = Camera.main;
+    }
+
     private void Update()
     {
         if (station == null) return;
@@ -41,7 +49,7 @@ public class CookingProgressUI : MonoBehaviour
         }
 
         // Billboard — face camera
-        if (Camera.main != null)
-            transform.forward = Camera.main.transform.forward;
+        if (cachedCamera != null)
+            transform.forward = cachedCamera.transform.forward;
     }
 }

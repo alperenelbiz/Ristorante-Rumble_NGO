@@ -19,6 +19,12 @@ public class PlayerSpawnManager : NetworkBehaviour
 
     private void Awake()
     {
+        // W1 — singleton guard
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
 

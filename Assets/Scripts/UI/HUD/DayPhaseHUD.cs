@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class DayPhaseHUD : MonoBehaviour
 {
+    [Header("Panel")]
+    [SerializeField] private GameObject hudPanel;
+
     [Header("Money")]
     [SerializeField] private TMP_Text moneyText;
 
@@ -84,7 +87,6 @@ public class DayPhaseHUD : MonoBehaviour
 
     private void OnMoneyChanged(int teamId, int newAmount)
     {
-        // Show own team money
         var nm = NetworkManager.Singleton;
         if (nm == null || nm.LocalClient == null) return;
 
@@ -100,9 +102,11 @@ public class DayPhaseHUD : MonoBehaviour
         timerText.text = $"{seconds / 60}:{seconds % 60:D2}";
     }
 
+    // C4 — toggle child panel instead of gameObject so events stay subscribed
     private void OnGameStateChanged(GameState prev, GameState cur)
     {
         bool show = cur == GameState.DayPhase;
-        gameObject.SetActive(show);
+        if (hudPanel != null)
+            hudPanel.SetActive(show);
     }
 }

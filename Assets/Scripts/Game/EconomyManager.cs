@@ -17,15 +17,28 @@ public class EconomyManager : NetworkBehaviour
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Server);
 
+    // C1 — stored delegates for proper unsub
+    private NetworkVariable<int>.OnValueChangedDelegate onTeamAMoneyChanged;
+    private NetworkVariable<int>.OnValueChangedDelegate onTeamBMoneyChanged;
+
     private void Awake()
     {
+        // W1 — singleton guard
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
 
     public override void OnNetworkSpawn()
     {
-        TeamAMoney.OnValueChanged += (_, val) => GameEvents.MoneyChanged(TeamManager.TEAM_A, val);
-        TeamBMoney.OnValueChanged += (_, val) => GameEvents.MoneyChanged(TeamManager.TEAM_B, val);
+        onTeamAMoneyChanged = (_, val) => GameEvents.MoneyChanged(TeamManager.TEAM_A, val);
+        onTeamBMoneyChanged = (_, val) => GameEvents.MoneyChanged(TeamManager.TEAM_B, val);
+
+        TeamAMoney.OnValueChanged += onTeamAMoneyChanged;
+        TeamBMoney.OnValueChanged += onTeamBMoneyChanged;
 
         if (IsServer)
         {
@@ -33,6 +46,12 @@ public class EconomyManager : NetworkBehaviour
             TeamBMoney.Value = settings.startingMoney;
             Debug.Log($"[EconomyManager] Starting money: {settings.startingMoney}");
         }
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        TeamAMoney.OnValueChanged -= onTeamAMoneyChanged;
+        TeamBMoney.OnValueChanged -= onTeamBMoneyChanged;
     }
 
     public int GetMoney(int teamId)

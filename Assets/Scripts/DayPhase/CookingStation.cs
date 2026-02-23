@@ -24,6 +24,7 @@ public class CookingStation : NetworkBehaviour
     private float burnTimer;
     private float syncTimer;
     private const float SYNC_INTERVAL = 0.1f;
+    private float localProgress;
 
     public override void OnNetworkSpawn()
     {
@@ -62,7 +63,9 @@ public class CookingStation : NetworkBehaviour
         var recipe = RecipeDatabase.Instance.GetRecipe(state.RecipeIndex);
         if (recipe == null) { ClearStation(); return; }
 
-        float progress = state.CookProgress + Time.deltaTime / recipe.cookingTime;
+        // W4 — use localProgress instead of stale state.CookProgress
+        localProgress += Time.deltaTime / recipe.cookingTime;
+        float progress = localProgress;
 
         if (progress >= 1f)
         {
@@ -132,6 +135,7 @@ public class CookingStation : NetworkBehaviour
             Status = 1
         };
 
+        localProgress = 0f;
         syncTimer = 0f;
         GameEvents.CookingStarted(teamId, stationId);
         Debug.Log($"[CookingStation] Station {stationId} started cooking recipe {recipeIndex}");
@@ -151,6 +155,7 @@ public class CookingStation : NetworkBehaviour
     {
         if (!IsServer) return;
 
+        localProgress = 0f;
         StationState.Value = new CookingStationData
         {
             StationId = stationId,

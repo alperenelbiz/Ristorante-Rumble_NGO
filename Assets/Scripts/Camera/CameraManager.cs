@@ -15,6 +15,12 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
+        // W1 — singleton guard
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
 
@@ -77,6 +83,9 @@ public class CameraManager : MonoBehaviour
 
     public void SetFollowTarget(Transform target)
     {
+        // W2 — null guard
+        if (target == null) return;
+
         if (dayCamera != null)
             dayCamera.Follow = target;
         if (nightCamera != null)

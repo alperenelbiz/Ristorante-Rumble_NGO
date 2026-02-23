@@ -4,6 +4,9 @@ using UnityEngine;
 public class ServingCounter : NetworkBehaviour
 {
     [SerializeField] private int maxDishes = 3;
+    [SerializeField] private int teamId;
+
+    public int TeamId => teamId;
 
     private NetworkList<int> platedDishes;
 

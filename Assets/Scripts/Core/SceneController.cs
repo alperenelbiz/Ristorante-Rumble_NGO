@@ -34,10 +34,14 @@ public class SceneController : MonoBehaviour
             NetworkManager.Singleton.SceneManager.OnLoadComplete -= OnSceneLoadComplete;
     }
 
+    // W3 — unsub before sub (idempotent)
     public void SubscribeToSceneEvents()
     {
         if (NetworkManager.Singleton != null && NetworkManager.Singleton.SceneManager != null)
+        {
+            NetworkManager.Singleton.SceneManager.OnLoadComplete -= OnSceneLoadComplete;
             NetworkManager.Singleton.SceneManager.OnLoadComplete += OnSceneLoadComplete;
+        }
     }
 
     public void LoadGameScene()

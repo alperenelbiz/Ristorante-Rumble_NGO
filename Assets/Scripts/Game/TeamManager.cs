@@ -11,8 +11,18 @@ public class TeamManager : NetworkBehaviour
     private NetworkList<ulong> teamAPlayers;
     private NetworkList<ulong> teamBPlayers;
 
+    // W9 — stored delegates for proper unsub
+    private NetworkList<ulong>.OnListChangedDelegate onTeamAChanged;
+    private NetworkList<ulong>.OnListChangedDelegate onTeamBChanged;
+
     private void Awake()
     {
+        // W1 — singleton guard
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
         teamAPlayers = new NetworkList<ulong>();
         teamBPlayers = new NetworkList<ulong>();
@@ -20,8 +30,17 @@ public class TeamManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        teamAPlayers.OnListChanged += _ => Debug.Log($"[TeamManager] TeamA count: {teamAPlayers.Count}");
-        teamBPlayers.OnListChanged += _ => Debug.Log($"[TeamManager] TeamB count: {teamBPlayers.Count}");
+        onTeamAChanged = _ => Debug.Log($"[TeamManager] TeamA count: {teamAPlayers.Count}");
+        onTeamBChanged = _ => Debug.Log($"[TeamManager] TeamB count: {teamBPlayers.Count}");
+
+        teamAPlayers.OnListChanged += onTeamAChanged;
+        teamBPlayers.OnListChanged += onTeamBChanged;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        teamAPlayers.OnListChanged -= onTeamAChanged;
+        teamBPlayers.OnListChanged -= onTeamBChanged;
     }
 
     public void AutoAssignPlayer(ulong clientId)

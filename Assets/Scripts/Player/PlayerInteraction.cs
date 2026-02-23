@@ -16,6 +16,10 @@ public class PlayerInteraction : NetworkBehaviour
     private InputAction dropAction;
     private Camera mainCam;
 
+    // C5 — interaction cooldown
+    private float interactionCooldown;
+    private const float INTERACTION_COOLDOWN = 0.25f;
+
     public bool IsCarrying => !CarriedItem.Value.IsEmpty;
 
     public override void OnNetworkSpawn()
@@ -33,11 +37,21 @@ public class PlayerInteraction : NetworkBehaviour
 
     private void Update()
     {
+        // C5 — tick cooldown
+        if (interactionCooldown > 0f)
+        {
+            interactionCooldown -= Time.deltaTime;
+            return;
+        }
+
         if (interactAction != null && interactAction.WasPressedThisFrame())
             TryInteract();
 
         if (dropAction != null && dropAction.WasPressedThisFrame() && IsCarrying)
+        {
             DropItemRpc();
+            interactionCooldown = INTERACTION_COOLDOWN;
+        }
     }
 
     private void TryInteract()
@@ -64,6 +78,7 @@ public class PlayerInteraction : NetworkBehaviour
         if (closest.TryGetComponent(out CookingStation station))
         {
             HandleCookingStation(station);
+            interactionCooldown = INTERACTION_COOLDOWN;
             return;
         }
 
@@ -71,13 +86,15 @@ public class PlayerInteraction : NetworkBehaviour
         if (closest.TryGetComponent(out ServingCounter counter))
         {
             HandleServingCounter(counter);
+            interactionCooldown = INTERACTION_COOLDOWN;
             return;
         }
 
-        // IngredientSource interaction (future use)
+        // IngredientSource interaction
         if (closest.TryGetComponent(out IngredientSource source))
         {
             HandleIngredientSource(source);
+            interactionCooldown = INTERACTION_COOLDOWN;
             return;
         }
     }
@@ -86,18 +103,15 @@ public class PlayerInteraction : NetworkBehaviour
     {
         if (station.IsIdle)
         {
-            // Open recipe select UI
             if (RecipeSelectUI.Instance != null)
                 RecipeSelectUI.Instance.Open(station);
         }
         else if (station.IsDone && !IsCarrying)
         {
-            // Pick up finished dish
             CollectDishRpc(station.NetworkObjectId);
         }
         else if (station.IsBurned)
         {
-            // Clear burned station
             ClearStationRpc(station.NetworkObjectId);
         }
     }
@@ -106,7 +120,6 @@ public class PlayerInteraction : NetworkBehaviour
     {
         if (IsCarrying && CarriedItem.Value.ItemType == 2)
         {
-            // Place dish on counter
             PlaceDishRpc(counter.NetworkObjectId, CarriedItem.Value.ItemIndex);
         }
     }
@@ -115,6 +128,29 @@ public class PlayerInteraction : NetworkBehaviour
     {
         if (!IsCarrying)
             PickUpIngredientRpc(source.IngredientIndex);
+    }
+
+    // --- Server validation helpers ---
+
+    // W5 — team validation
+    private bool ValidateTeam(ulong senderClientId, int stationTeamId)
+    {
+        int playerTeam = TeamManager.Instance.GetPlayerTeam(senderClientId);
+        if (playerTeam != stationTeamId)
+        {
+            Debug.Log($"[PlayerInteraction] Team mismatch: player {senderClientId} team {playerTeam} vs station team {stationTeamId}");
+            return false;
+        }
+        return true;
+    }
+
+    // W6 — proximity validation
+    private bool ValidateProximity(Vector3 targetPos)
+    {
+        var playerObj = NetworkManager.SpawnManager.GetPlayerNetworkObject(OwnerClientId);
+        if (playerObj == null) return false;
+        float dist = Vector3.Distance(playerObj.transform.position, targetPos);
+        return dist <= interactRange * 1.5f;
     }
 
     // --- RPCs ---
@@ -126,6 +162,12 @@ public class PlayerInteraction : NetworkBehaviour
         var station = netObj.GetComponent<CookingStation>();
         if (station == null || !station.IsIdle) return;
 
+        // W5 — team check
+        if (!ValidateTeam(OwnerClientId, station.TeamId)) return;
+
+        // W6 — proximity check
+        if (!ValidateProximity(netObj.transform.position)) return;
+
         station.StartCooking(recipeIndex);
         Debug.Log($"[PlayerInteraction] Player {OwnerClientId} started cooking recipe {recipeIndex} on station {station.StationId}");
     }
@@ -136,6 +178,12 @@ public class PlayerInteraction : NetworkBehaviour
         if (!NetworkManager.SpawnManager.SpawnedObjects.TryGetValue(stationNetId, out var netObj)) return;
         var station = netObj.GetComponent<CookingStation>();
         if (station == null || !station.IsDone) return;
+
+        // W5 — team check
+        if (!ValidateTeam(OwnerClientId, station.TeamId)) return;
+
+        // W6 — proximity check
+        if (!ValidateProximity(netObj.transform.position)) return;
 
         int recipeIndex = station.CollectDish();
         if (recipeIndex < 0) return;
@@ -151,6 +199,12 @@ public class PlayerInteraction : NetworkBehaviour
         var station = netObj.GetComponent<CookingStation>();
         if (station == null) return;
 
+        // W5 — team check
+        if (!ValidateTeam(OwnerClientId, station.TeamId)) return;
+
+        // W6 — proximity check
+        if (!ValidateProximity(netObj.transform.position)) return;
+
         station.ClearStation();
     }
 
@@ -161,6 +215,12 @@ public class PlayerInteraction : NetworkBehaviour
         var counter = netObj.GetComponent<ServingCounter>();
         if (counter == null) return;
 
+        // W5 — team check
+        if (!ValidateTeam(OwnerClientId, counter.TeamId)) return;
+
+        // W6 — proximity check
+        if (!ValidateProximity(netObj.transform.position)) return;
+
         if (counter.AddDish(recipeIndex))
             CarriedItem.Value = CarriedItemData.Empty;
     }
@@ -169,6 +229,12 @@ public class PlayerInteraction : NetworkBehaviour
     private void PickUpIngredientRpc(int ingredientIndex)
     {
         if (IsCarrying) return;
+
+        // W6 — bounds check
+        if (ingredientIndex < 0 || ingredientIndex >= RecipeDatabase.Instance.IngredientCount) return;
+
+        // TODO: proximity check skipped for MVP — infinite sources, low exploit risk
+
         CarriedItem.Value = new CarriedItemData { ItemType = 1, ItemIndex = ingredientIndex };
         Debug.Log($"[PlayerInteraction] Player {OwnerClientId} picked up ingredient {ingredientIndex}");
     }

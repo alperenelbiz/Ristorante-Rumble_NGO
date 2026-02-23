@@ -16,6 +16,12 @@ public class RecipeSelectUI : MonoBehaviour
 
     private void Awake()
     {
+        // W1 — singleton guard
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
         panel.SetActive(false);
     }
@@ -23,8 +29,11 @@ public class RecipeSelectUI : MonoBehaviour
     public void Open(CookingStation station)
     {
         currentStation = station;
-        playerInteraction = NetworkManager.Singleton.LocalClient.PlayerObject
-            .GetComponent<PlayerInteraction>();
+
+        // W8 — null-check chain
+        var nm = NetworkManager.Singleton;
+        if (nm == null || nm.LocalClient == null || nm.LocalClient.PlayerObject == null) return;
+        playerInteraction = nm.LocalClient.PlayerObject.GetComponent<PlayerInteraction>();
 
         // Clear old buttons
         foreach (Transform child in buttonContainer)
