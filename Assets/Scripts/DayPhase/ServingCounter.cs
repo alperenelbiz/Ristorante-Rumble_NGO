@@ -15,6 +15,21 @@ public class ServingCounter : NetworkBehaviour
         platedDishes = new NetworkList<int>();
     }
 
+    public override void OnNetworkSpawn()
+    {
+        GameEvents.OnDayPhaseCleanup += OnDayPhaseCleanup;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        GameEvents.OnDayPhaseCleanup -= OnDayPhaseCleanup;
+    }
+
+    private void OnDayPhaseCleanup()
+    {
+        if (IsServer) ClearAll();
+    }
+
     public int GetDishCount() => platedDishes.Count;
 
     public bool HasDish(int recipeIndex)

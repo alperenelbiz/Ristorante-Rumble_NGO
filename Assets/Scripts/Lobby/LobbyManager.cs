@@ -21,7 +21,7 @@ public class LobbyManager : MonoBehaviour
 
     private Lobby hostLobby;
     private Lobby joinedLobby;
-    private float heartbeatTimer;
+    private float heartbeatTimer = HEARTBEAT_INTERVAL;
     private float pollTimer;
     private bool gameStarted;
     private bool isHeartbeating;

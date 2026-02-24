@@ -40,8 +40,12 @@ public struct OrderData : INetworkSerializable, IEquatable<OrderData>
         Status = (OrderStatus)status;
     }
 
-    public bool Equals(OrderData other) => OrderId == other.OrderId;
-    public override int GetHashCode() => OrderId;
+    public bool Equals(OrderData other) =>
+        OrderId == other.OrderId &&
+        RecipeIndex == other.RecipeIndex &&
+        PatienceTimer == other.PatienceTimer &&
+        Status == other.Status;
+    public override int GetHashCode() => HashCode.Combine(OrderId, RecipeIndex, PatienceTimer, Status);
 }
 
 public struct CookingStationData : INetworkSerializable, IEquatable<CookingStationData>
@@ -63,8 +67,12 @@ public struct CookingStationData : INetworkSerializable, IEquatable<CookingStati
         Status = (CookingStatus)status;
     }
 
-    public bool Equals(CookingStationData other) => StationId == other.StationId;
-    public override int GetHashCode() => StationId;
+    public bool Equals(CookingStationData other) =>
+        StationId == other.StationId &&
+        RecipeIndex == other.RecipeIndex &&
+        CookProgress == other.CookProgress &&
+        Status == other.Status;
+    public override int GetHashCode() => HashCode.Combine(StationId, RecipeIndex, CookProgress, Status);
 }
 
 public struct CarriedItemData : INetworkSerializable, IEquatable<CarriedItemData>

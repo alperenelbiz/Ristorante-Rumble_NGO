@@ -97,6 +97,12 @@ public class PlayerSpawnManager : NetworkBehaviour
     {
         GameObject player = Instantiate(playerPrefab, position, Quaternion.identity);
         NetworkObject netObj = player.GetComponent<NetworkObject>();
+        if (netObj == null)
+        {
+            Debug.LogError($"[SpawnManager] Player prefab missing NetworkObject component!");
+            Destroy(player);
+            return;
+        }
         netObj.SpawnAsPlayerObject(clientId);
 
         spawnedPlayers[clientId] = netObj;

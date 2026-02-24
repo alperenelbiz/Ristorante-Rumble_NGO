@@ -189,6 +189,7 @@ public class GameManager : NetworkBehaviour
         GameEvents.PhaseTimerUpdated(clientLocalTimer);
     }
 
+    // MVP: loops indefinitely; GameOver/RoundEnd states will be wired when win condition is implemented
     private void EndRound()
     {
         GameEvents.DayPhaseCleanup();

@@ -1,5 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 
@@ -13,6 +14,7 @@ public class RecipeSelectUI : MonoBehaviour
 
     private CookingStation currentStation;
     private PlayerInteraction playerInteraction;
+    private InputAction cancelAction;
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class RecipeSelectUI : MonoBehaviour
         }
         Instance = this;
         panel.SetActive(false);
+        cancelAction = InputSystem.actions.FindAction("Cancel");
     }
 
     public void Open(CookingStation station)
@@ -80,7 +83,7 @@ public class RecipeSelectUI : MonoBehaviour
     private void Update()
     {
         // Close on Escape
-        if (panel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        if (panel.activeSelf && cancelAction != null && cancelAction.WasPressedThisFrame())
             Close();
     }
 }
