@@ -118,6 +118,5 @@ jobs:
               the checklist results and your decision (APPROVE or REQUEST_CHANGES).
             - Only post GitHub comments — do not submit review text as plain messages.
 
-          claude_args: |
-            --max-turns 20
-            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*),Read,Glob,Grep"
+          allowed_tools: "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*),Read,Glob,Grep"
+          max_turns: "20"
