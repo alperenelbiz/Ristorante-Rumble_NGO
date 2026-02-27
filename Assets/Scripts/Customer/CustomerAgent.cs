@@ -23,6 +23,9 @@ public class CustomerAgent : NetworkBehaviour
     [SerializeField] private Transform[] destroyPoints;
     [SerializeField] private float maxExitTravelSeconds = 20f;
 
+    [Header("Timeouts")]
+    [SerializeField] private float maxWaitUntilReachedSeconds = 30f;
+
     private NavMeshAgent _agent;
     private SeatAnchor _reservedSeat;
     private Restaurant _targetRestaurant;
@@ -67,6 +70,10 @@ public class CustomerAgent : NetworkBehaviour
             yield return WaitForAnySeatThenMove();
         }
 
+        // Fix #2: If we still have no seat after waiting (timeout despawned us), stop.
+        if (_reservedSeat == null)
+            yield break;
+
         // Move to seat
         _state = State.MovingToSeat;
         yield return MoveToSeatRoutine();
@@ -87,7 +94,8 @@ public class CustomerAgent : NetworkBehaviour
             NetworkObject.Despawn(true);
     }
 
-    // Try to pick ANY restaurant that has at least one free seat, then claim that seat.
+    // Fix #1: Atomic seat selection using Restaurant.TryClaimRandomFreeSeat.
+    // Single-pass with reservoir sampling across all restaurants — no race condition.
     private bool TryPickRestaurantWithFreeSeat(out Restaurant restaurant, out SeatAnchor seat)
     {
         restaurant = null;
@@ -96,44 +104,32 @@ public class CustomerAgent : NetworkBehaviour
         var all = RestaurantRegistry.All;
         if (all == null || all.Count == 0) return false;
 
-        // No allocations: two-pass approach (count candidates, then pick).
-        int candidateCount = 0;
-        for (int i = 0; i < all.Count; i++)
-        {
-            var r = all[i];
-            if (r == null) continue;
-            if (r.GetRandomFreeSeat() != null) candidateCount++;
-        }
-
-        if (candidateCount == 0) return false;
-
-        int pickIndex = Random.Range(0, candidateCount);
-        Restaurant chosen = null;
+        // Shuffle iteration order via reservoir sampling across restaurants
+        // to avoid all customers picking the same restaurant.
+        int restaurantsSeen = 0;
+        Restaurant chosenRestaurant = null;
 
         for (int i = 0; i < all.Count; i++)
         {
             var r = all[i];
             if (r == null) continue;
+
+            // Check if this restaurant has any free seat at all (quick check)
             if (r.GetRandomFreeSeat() == null) continue;
 
-            if (pickIndex == 0)
-            {
-                chosen = r;
-                break;
-            }
-            pickIndex--;
+            restaurantsSeen++;
+            if (Random.Range(0, restaurantsSeen) == 0)
+                chosenRestaurant = r;
         }
 
-        if (chosen == null) return false;
+        if (chosenRestaurant == null) return false;
 
-        var chosenSeat = chosen.GetRandomFreeSeat();
-        if (chosenSeat == null) return false;
-
-        if (!chosenSeat.TryClaimServer(_netObjectId))
+        // Atomically claim a random free seat in the chosen restaurant
+        if (!chosenRestaurant.TryClaimRandomFreeSeat(_netObjectId, out var claimedSeat))
             return false;
 
-        restaurant = chosen;
-        seat = chosenSeat;
+        restaurant = chosenRestaurant;
+        seat = claimedSeat;
         return true;
     }
 
@@ -263,10 +259,18 @@ public class CustomerAgent : NetworkBehaviour
         return tagged != null ? tagged.transform : null;
     }
 
+    // Fix #6: Added timeout to prevent infinite loop when target is unreachable.
     private IEnumerator WaitUntilReached(Vector3 target, float threshold)
     {
+        float deadline = Time.time + maxWaitUntilReachedSeconds;
         while (Vector3.Distance(transform.position, target) > threshold)
         {
+            if (Time.time >= deadline)
+            {
+                // Timeout: stop agent and bail out
+                _agent.isStopped = true;
+                yield break;
+            }
             yield return null;
         }
     }
@@ -279,9 +283,18 @@ public class CustomerAgent : NetworkBehaviour
             anim.SetBool("IsSitting", isSitting);
     }
 
+    // Fix #5: Cancel main coroutine before starting despawn to prevent two
+    // coroutines fighting over the same NavMeshAgent.
     public void ForceLeaveServer()
     {
         if (!IsServer) return;
+
+        // Stop the main lifecycle coroutine first
+        if (_mainRoutine != null)
+        {
+            StopCoroutine(_mainRoutine);
+            _mainRoutine = null;
+        }
 
         // Release and despawn now
         if (_reservedSeat != null)
@@ -293,13 +306,12 @@ public class CustomerAgent : NetworkBehaviour
         StartCoroutine(ServerDespawnNextFrame());
     }
 
+    // Fix #7: Guard against accessing IsServer after network teardown.
     private void OnDestroy()
     {
-        if (IsServer && _reservedSeat != null)
+        if (IsSpawned && IsServer && _reservedSeat != null)
         {
             _reservedSeat.ReleaseServer(_netObjectId);
         }
     }
 }
-
-

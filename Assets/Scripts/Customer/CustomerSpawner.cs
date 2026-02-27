@@ -28,12 +28,22 @@ public class CustomerSpawner : NetworkBehaviour
         }
     }
 
-    private void OnDisable()
+    // Fix #8: Matched unsubscribe lifecycle with subscribe (OnNetworkSpawn → OnNetworkDespawn).
+    // Using OnDisable previously could cause double-subscribe on disable/re-enable cycles.
+    public override void OnNetworkDespawn()
     {
         if (IsServer)
         {
-            if (_spawnLoop != null) StopCoroutine(_spawnLoop);
-            NetworkManager.OnClientDisconnectCallback -= OnClientDisconnected;
+            if (_spawnLoop != null)
+            {
+                StopCoroutine(_spawnLoop);
+                _spawnLoop = null;
+            }
+
+            if (NetworkManager != null)
+            {
+                NetworkManager.OnClientDisconnectCallback -= OnClientDisconnected;
+            }
         }
     }
 
