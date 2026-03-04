@@ -2,92 +2,93 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NetworkObject))]
-public class CustomerSpawner : NetworkBehaviour
+namespace RistoranteRumble
 {
-    [Header("Spawning")]
-    [SerializeField] private NetworkObject customerPrefab;
-    [SerializeField] private float spawnIntervalSeconds = 2.0f;
-    [SerializeField] private int burstPerInterval = 2;
-    [SerializeField] private int maxAliveCustomers = 50;
-
-    [Header("Placement")]
-    [SerializeField] private Transform[] spawnPoints;
-
-    private readonly List<NetworkObject> _alive = new List<NetworkObject>();
-    private Coroutine _spawnLoop;
-
-    public override void OnNetworkSpawn()
+    [RequireComponent(typeof(NetworkObject))]
+    public class CustomerSpawner : NetworkBehaviour
     {
-        if (IsServer)
-        {
-            _spawnLoop = StartCoroutine(SpawnLoop());
-            NetworkManager.OnClientDisconnectCallback += OnClientDisconnected;
-        }
-    }
+        [Header("Spawning")]
+        [SerializeField] private NetworkObject customerPrefab;
+        [SerializeField] private float spawnIntervalSeconds = 2.0f;
+        [SerializeField] private int burstPerInterval = 2;
+        [SerializeField] private int maxAliveCustomers = 50;
 
-    // Fix #8: Matched unsubscribe lifecycle with subscribe (OnNetworkSpawn → OnNetworkDespawn).
-    // Using OnDisable previously could cause double-subscribe on disable/re-enable cycles.
-    public override void OnNetworkDespawn()
-    {
-        if (IsServer)
-        {
-            if (_spawnLoop != null)
-            {
-                StopCoroutine(_spawnLoop);
-                _spawnLoop = null;
-            }
+        [Header("Placement")]
+        [SerializeField] private Transform[] spawnPoints;
 
-            if (NetworkManager != null)
+        private readonly List<NetworkObject> _alive = new List<NetworkObject>();
+        private Coroutine _spawnLoop;
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer)
             {
-                NetworkManager.OnClientDisconnectCallback -= OnClientDisconnected;
+                _spawnLoop = StartCoroutine(SpawnLoop());
+                NetworkManager.OnClientDisconnectCallback += OnClientDisconnected;
             }
         }
-    }
 
-    private void OnClientDisconnected(ulong obj)
-    {
-        // No client-owned customers here; all are server-owned; nothing required.
-    }
-
-    private IEnumerator SpawnLoop()
-    {
-        var wait = new WaitForSeconds(spawnIntervalSeconds);
-        while (true)
+        // Matched unsubscribe lifecycle with subscribe (OnNetworkSpawn → OnNetworkDespawn).
+        public override void OnNetworkDespawn()
         {
-            // Cull null/despawned references
-            _alive.RemoveAll(n => n == null || !n.IsSpawned);
-
-            if (_alive.Count < maxAliveCustomers && customerPrefab != null)
+            if (IsServer)
             {
-                int canSpawn = Mathf.Min(burstPerInterval, maxAliveCustomers - _alive.Count);
-                for (int i = 0; i < canSpawn; i++)
+                if (_spawnLoop != null)
                 {
-                    SpawnOne();
+                    StopCoroutine(_spawnLoop);
+                    _spawnLoop = null;
+                }
+
+                if (NetworkManager != null)
+                {
+                    NetworkManager.OnClientDisconnectCallback -= OnClientDisconnected;
                 }
             }
-
-            yield return wait;
         }
-    }
 
-    private void SpawnOne()
-    {
-        var spawnT = ChooseSpawnPoint();
-        var no = Instantiate(customerPrefab, spawnT.position, spawnT.rotation);
-        no.Spawn(true); // server spawns; visible to all clients
-
-        _alive.Add(no);
-    }
-
-    private Transform ChooseSpawnPoint()
-    {
-        if (spawnPoints != null && spawnPoints.Length > 0)
+        private void OnClientDisconnected(ulong obj)
         {
-            return spawnPoints[Random.Range(0, spawnPoints.Length)];
+            // No client-owned customers here; all are server-owned; nothing required.
         }
-        return transform;
+
+        private IEnumerator SpawnLoop()
+        {
+            var wait = new WaitForSeconds(spawnIntervalSeconds);
+            while (true)
+            {
+                // Cull null/despawned references
+                _alive.RemoveAll(n => n == null || !n.IsSpawned);
+
+                if (_alive.Count < maxAliveCustomers && customerPrefab != null)
+                {
+                    int canSpawn = Mathf.Min(burstPerInterval, maxAliveCustomers - _alive.Count);
+                    for (int i = 0; i < canSpawn; i++)
+                    {
+                        SpawnOne();
+                    }
+                }
+
+                yield return wait;
+            }
+        }
+
+        private void SpawnOne()
+        {
+            var spawnT = ChooseSpawnPoint();
+            var no = Instantiate(customerPrefab, spawnT.position, spawnT.rotation);
+            no.Spawn(true); // server spawns; visible to all clients
+
+            _alive.Add(no);
+        }
+
+        private Transform ChooseSpawnPoint()
+        {
+            if (spawnPoints != null && spawnPoints.Length > 0)
+            {
+                return spawnPoints[Random.Range(0, spawnPoints.Length)];
+            }
+            return transform;
+        }
     }
 }
