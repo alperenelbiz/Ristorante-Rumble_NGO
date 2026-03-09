@@ -1,0 +1,122 @@
+name: Claude PR Review
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches: [main]
+
+  issue_comment:
+    types: [created]
+
+jobs:
+  review:
+    if: >-
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.pull_request &&
+       contains(github.event.comment.body, '@claude') &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      actions: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          track_progress: true
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
+
+            This is a Unity multiplayer cooking & combat game (Ristorante Rumble) built with
+            Netcode for GameObjects (NGO). Reference these architecture docs:
+            - CLAUDE.md — project context, active scripts, coding rules
+            - Assets/TECH_ARCHITECTURE.md — main technical guide
+            - Assets/PROJECT_ARCHITECTURE.md — full game design (GDD)
+
+            You have two jobs. Do them in order.
+
+            ---
+
+            ## Job 1: Review Guide
+
+            Post a PR comment (via `gh pr comment`) with a reviewer guide to help human
+            reviewers understand the PR quickly. Format:
+
+            ```
+            ## Review Guide
+
+            ### Summary
+            [2-3 sentence description of what this PR does and why]
+
+            ### Suggested Reading Order
+            1. **`Assets/Scripts/Path/File.cs`** — [what changed and why, 1 sentence]
+            2. **`Assets/Scripts/Path/File2.cs`** — [what changed and why, 1 sentence]
+            ...
+
+            ### Risk Areas
+            - **`Assets/Scripts/Path/File.cs:L42`** — [why this needs careful human attention]
+            ...
+            (or "No significant risk areas identified." if none)
+            ```
+
+            Guidelines for the guide:
+            - Reading order should go from most important/central change to peripheral changes.
+            - Only list files that have meaningful changes — skip trivial formatting or using-only diffs.
+            - Risk areas: flag networking logic, state synchronization, race conditions,
+              breaking changes, or anything where AI review alone is insufficient.
+
+            ---
+
+            ## Job 2: Code Review
+
+            After posting the guide, review the PR against this checklist:
+
+            ### Code Quality
+            - [ ] Follows existing C# and Unity conventions in the codebase
+            - [ ] No commented-out code or Debug.Log leftovers
+            - [ ] Error handling is explicit — no silent catch blocks or ignored callbacks
+            - [ ] DRY principle followed, no unnecessary abstractions
+
+            ### Networking (NGO)
+            - [ ] NetworkVariable usage is correct (read/write permissions, OnValueChanged)
+            - [ ] ServerRpc has [ServerRpc(RequireOwnership = ...)] set correctly
+            - [ ] ClientRpc targets are appropriate (no unnecessary broadcast to all clients)
+            - [ ] Network object ownership and authority handled properly
+            - [ ] No game logic running on clients that should be server-authoritative
+            - [ ] Relay/Lobby service calls have proper error handling and timeout
+
+            ### Unity Best Practices
+            - [ ] No memory leaks (event subscriptions cleaned up in OnDestroy/OnNetworkDespawn)
+            - [ ] Coroutines and async operations are properly managed
+            - [ ] Scene references and prefab connections are not broken
+            - [ ] No Update() polling where events or callbacks would be more efficient
+
+            ### Security
+            - [ ] No hardcoded API keys, secrets, or service credentials in scripts
+            - [ ] Client input is validated on server side before applying game state changes
+            - [ ] No trust-the-client patterns for critical game logic (economy, scoring, combat)
+
+            ### Testing & Reliability
+            - [ ] Breaking changes to network protocol are documented
+            - [ ] Edge cases considered (host migration, late join, disconnect/reconnect)
+            - [ ] Multiplayer scenarios tested (2+ players, host vs client perspective)
+
+            ### How to post review feedback
+            - Use `mcp__github_inline_comment__create_inline_comment` to leave comments on specific lines.
+            - For each unchecked checklist item, post an inline comment on the relevant code.
+            - After all inline comments, post a final summary comment (via `gh pr comment`) with
+              the checklist results and your decision (APPROVE or REQUEST_CHANGES).
+            - Only post GitHub comments — do not submit review text as plain messages.
+
+          allowed_tools: "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*),Read,Glob,Grep"
+          max_turns: "20"
