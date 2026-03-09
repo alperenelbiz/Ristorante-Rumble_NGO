@@ -2,8 +2,8 @@ name: Claude PR Review
 
 on:
   pull_request:
-    types: [opened, synchronize]
-    branches: [develop, main]
+    types: [opened, reopened, synchronize]
+    branches: [main]
 
   issue_comment:
     types: [created]
@@ -39,9 +39,9 @@ jobs:
 
             This is a Unity multiplayer cooking & combat game (Ristorante Rumble) built with
             Netcode for GameObjects (NGO). Reference these architecture docs:
-            - Assets/PROJECT_ARCHITECTURE.md — full game design
-            - Assets/NETCODE_ARCHITECTURE.md — networking patterns & conventions
-            - Assets/MULTIPLAYER_ROADMAP.md — development phases & priorities
+            - CLAUDE.md — project context, active scripts, coding rules
+            - Assets/TECH_ARCHITECTURE.md — main technical guide
+            - Assets/PROJECT_ARCHITECTURE.md — full game design (GDD)
 
             You have two jobs. Do them in order.
 
