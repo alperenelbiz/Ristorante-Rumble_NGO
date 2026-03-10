@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1366707760556434783}
   - component: {fileID: 7805733226434939008}
   - component: {fileID: 7164277482546968518}
-  - component: {fileID: 7197085517018833297}
+  - component: {fileID: 4973491844227466442}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -209,7 +209,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &7197085517018833297
+--- !u!114 &4973491844227466442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 194f003981222f24f9ba2a8d3701dac5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  m_EditorClassIdentifier: Assembly-CSharp::RistoranteRumble.CustomerAgent
   ShowTopMostFoldoutHeaderGroup: 1
   sitSnapDistance: 0.35
   repathInterval: 0.5
@@ -230,3 +230,4 @@ MonoBehaviour:
   destroyPoints:
   - {fileID: 3544098111945664109, guid: 7143b141a288f674c8d7f0b4785cc235, type: 3}
   maxExitTravelSeconds: 20
+  maxWaitUntilReachedSeconds: 30
