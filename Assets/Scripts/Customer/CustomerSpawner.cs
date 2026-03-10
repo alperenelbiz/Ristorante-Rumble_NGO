@@ -20,6 +20,8 @@ namespace RistoranteRumble
         private readonly List<NetworkObject> _alive = new List<NetworkObject>();
         private Coroutine _spawnLoop;
 
+        private static readonly System.Predicate<NetworkObject> _isDespawned = n => n == null || !n.IsSpawned;
+
         public override void OnNetworkSpawn()
         {
             if (IsServer)
@@ -47,7 +49,7 @@ namespace RistoranteRumble
             while (true)
             {
                 // Cull null/despawned references
-                _alive.RemoveAll(n => n == null || !n.IsSpawned);
+                _alive.RemoveAll(_isDespawned);
 
                 if (_alive.Count < maxAliveCustomers && customerPrefab != null)
                 {
