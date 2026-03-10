@@ -38,7 +38,7 @@ namespace RistoranteRumble
             _seats.Remove(seat);
         }
 
-        public IReadOnlyList<SeatAnchor> Seats => _seats.AsReadOnly();
+        public IReadOnlyList<SeatAnchor> Seats => _seats;
 
         /// <summary>
         /// Atomically finds a random free seat and claims it in a single pass.

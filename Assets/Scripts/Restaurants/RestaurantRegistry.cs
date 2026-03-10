@@ -29,12 +29,14 @@ namespace RistoranteRumble
             _restaurants.Clear();
         }
 
+        private static readonly System.Predicate<Restaurant> _isNull = r => r == null;
+
         public static IReadOnlyList<Restaurant> All
         {
             get
             {
                 // Defensive null filtering before returning
-                _restaurants.RemoveAll(r => r == null);
+                _restaurants.RemoveAll(_isNull);
             return _restaurants;
             }
         }

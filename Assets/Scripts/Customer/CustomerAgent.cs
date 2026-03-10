@@ -36,6 +36,10 @@ namespace RistoranteRumble
 
         private ulong _netObjectId;
 
+        private static Transform _cachedTaggedDestroyPoint;
+        private static bool _destroyPointLookedUp;
+        private static readonly WaitForSeconds _seatRetryWait = new WaitForSeconds(0.5f);
+
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -139,7 +143,7 @@ namespace RistoranteRumble
                 if (TryPickRestaurantWithFreeSeat(out _targetRestaurant, out _reservedSeat))
                     yield break;
 
-                yield return new WaitForSeconds(0.5f);
+                yield return _seatRetryWait;
             }
 
             // Timeout: no seats anywhere; despawn.
@@ -158,6 +162,7 @@ namespace RistoranteRumble
             }
 
             float nextRepath = 0f;
+            float seatNavDeadline = Time.time + maxWaitUntilReachedSeconds;
 
             while (true)
             {
@@ -172,6 +177,20 @@ namespace RistoranteRumble
                             yield break; // despawned already
                     }
                     nextRepath = 0f;
+                    seatNavDeadline = Time.time + maxWaitUntilReachedSeconds;
+                }
+
+                // Timeout: can't reach seat — release it and despawn
+                if (Time.time >= seatNavDeadline)
+                {
+                    _agent.isStopped = true;
+                    if (_reservedSeat != null)
+                    {
+                        _reservedSeat.ReleaseServer(_netObjectId);
+                        _reservedSeat = null;
+                    }
+                    yield return ServerDespawnNextFrame();
+                    yield break;
                 }
 
                 Vector3 seatPos = _reservedSeat.SitPoint.position;
@@ -254,8 +273,14 @@ namespace RistoranteRumble
             if (destroyPoints != null && destroyPoints.Length > 0)
                 return destroyPoints[Random.Range(0, destroyPoints.Length)];
 
-            var tagged = GameObject.FindGameObjectWithTag("CustomerDestroyPoint");
-            return tagged != null ? tagged.transform : null;
+            // Fallback: cache the tag lookup so it only runs once across all customers
+            if (!_destroyPointLookedUp)
+            {
+                _destroyPointLookedUp = true;
+                var tagged = GameObject.FindGameObjectWithTag("CustomerDestroyPoint");
+                _cachedTaggedDestroyPoint = tagged != null ? tagged.transform : null;
+            }
+            return _cachedTaggedDestroyPoint;
         }
 
         private IEnumerator WaitUntilReached(Vector3 target, float threshold)

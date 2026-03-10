@@ -25,7 +25,6 @@ namespace RistoranteRumble
             if (IsServer)
             {
                 _spawnLoop = StartCoroutine(SpawnLoop());
-                NetworkManager.OnClientDisconnectCallback += OnClientDisconnected;
             }
         }
 
@@ -39,17 +38,7 @@ namespace RistoranteRumble
                     StopCoroutine(_spawnLoop);
                     _spawnLoop = null;
                 }
-
-                if (NetworkManager != null)
-                {
-                    NetworkManager.OnClientDisconnectCallback -= OnClientDisconnected;
-                }
             }
-        }
-
-        private void OnClientDisconnected(ulong obj)
-        {
-            // No client-owned customers here; all are server-owned; nothing required.
         }
 
         private IEnumerator SpawnLoop()
