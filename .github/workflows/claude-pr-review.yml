@@ -2,7 +2,7 @@ name: Claude PR Review
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [opened, synchronize]
     branches: [main]
 
   issue_comment:
@@ -31,92 +31,155 @@ jobs:
 
       - uses: anthropics/claude-code-action@v1
         with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           track_progress: true
           prompt: |
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
 
-            This is a Unity multiplayer cooking & combat game (Ristorante Rumble) built with
-            Netcode for GameObjects (NGO). Reference these architecture docs:
+            You are a senior Unity/NGO engineer reviewing this PR for Ristorante Rumble —
+            a 5v5 multiplayer cooking & combat game. Read these for context:
             - CLAUDE.md — project context, active scripts, coding rules
             - Assets/TECH_ARCHITECTURE.md — main technical guide
             - Assets/PROJECT_ARCHITECTURE.md — full game design (GDD)
 
-            You have two jobs. Do them in order.
-
             ---
 
-            ## Job 1: Review Guide
+            ## Step 1: Review Guide
 
-            Post a PR comment (via `gh pr comment`) with a reviewer guide to help human
-            reviewers understand the PR quickly. Format:
+            Post a PR comment (via `gh pr comment`) to orient human reviewers:
 
             ```
             ## Review Guide
 
             ### Summary
-            [2-3 sentence description of what this PR does and why]
+            [2-3 sentences: what this PR does and why]
 
-            ### Suggested Reading Order
+            ### Reading Order
             1. **`Assets/Scripts/Path/File.cs`** — [what changed and why, 1 sentence]
             2. **`Assets/Scripts/Path/File2.cs`** — [what changed and why, 1 sentence]
             ...
-
-            ### Risk Areas
-            - **`Assets/Scripts/Path/File.cs:L42`** — [why this needs careful human attention]
-            ...
-            (or "No significant risk areas identified." if none)
             ```
 
-            Guidelines for the guide:
-            - Reading order should go from most important/central change to peripheral changes.
-            - Only list files that have meaningful changes — skip trivial formatting or using-only diffs.
-            - Risk areas: flag networking logic, state synchronization, race conditions,
-              breaking changes, or anything where AI review alone is insufficient.
+            - Go from the most central change to peripheral.
+            - Only list files with meaningful changes — skip formatting-only or
+              using-only diffs.
 
             ---
 
-            ## Job 2: Code Review
+            ## Step 2: Inline Review
 
-            After posting the guide, review the PR against this checklist:
+            Read the full diff, then read surrounding code in each changed file to
+            understand local context and patterns. For every issue found, post an
+            inline comment using `mcp__github_inline_comment__create_inline_comment`.
 
-            ### Code Quality
-            - [ ] Follows existing C# and Unity conventions in the codebase
-            - [ ] No commented-out code or Debug.Log leftovers
-            - [ ] Error handling is explicit — no silent catch blocks or ignored callbacks
-            - [ ] DRY principle followed, no unnecessary abstractions
+            Prefix each inline comment with one of:
 
-            ### Networking (NGO)
-            - [ ] NetworkVariable usage is correct (read/write permissions, OnValueChanged)
-            - [ ] ServerRpc has [ServerRpc(RequireOwnership = ...)] set correctly
-            - [ ] ClientRpc targets are appropriate (no unnecessary broadcast to all clients)
-            - [ ] Network object ownership and authority handled properly
-            - [ ] No game logic running on clients that should be server-authoritative
-            - [ ] Relay/Lobby service calls have proper error handling and timeout
+            - **🚫 BLOCKING** — Must fix before merge.
+            - **💡 SUGGESTION** — Recommended improvement. The PR can merge without
+              this, but adopting it improves the codebase over time. Always explain
+              the "why" so the author learns the principle, not just the fix.
 
-            ### Unity Best Practices
-            - [ ] No memory leaks (event subscriptions cleaned up in OnDestroy/OnNetworkDespawn)
-            - [ ] Coroutines and async operations are properly managed
-            - [ ] Scene references and prefab connections are not broken
-            - [ ] No Update() polling where events or callbacks would be more efficient
+            ---
 
-            ### Security
-            - [ ] No hardcoded API keys, secrets, or service credentials in scripts
-            - [ ] Client input is validated on server side before applying game state changes
-            - [ ] No trust-the-client patterns for critical game logic (economy, scoring, combat)
+            ### Review Areas
 
-            ### Testing & Reliability
-            - [ ] Breaking changes to network protocol are documented
-            - [ ] Edge cases considered (host migration, late join, disconnect/reconnect)
-            - [ ] Multiplayer scenarios tested (2+ players, host vs client perspective)
+            **Correctness & Safety**
+            - Logic errors, unhandled edge cases, race conditions
+            - Security: hardcoded secrets, injection vectors, missing input validation
+            - Silent failures: bare catch blocks, swallowed errors, ignored callbacks
+            - Breaking changes without migration path
 
-            ### How to post review feedback
-            - Use `mcp__github_inline_comment__create_inline_comment` to leave comments on specific lines.
-            - For each unchecked checklist item, post an inline comment on the relevant code.
-            - After all inline comments, post a final summary comment (via `gh pr comment`) with
-              the checklist results and your decision (APPROVE or REQUEST_CHANGES).
-            - Only post GitHub comments — do not submit review text as plain messages.
+            **Networking (NGO)**
+            - NetworkVariable usage (read/write permissions, OnValueChanged cleanup)
+            - RPC attributes: [Rpc] with correct SendTo/RequireOwnership settings
+            - No game logic on clients that should be server-authoritative
+            - Network object ownership and authority handled properly
+            - Relay/Lobby service calls have proper error handling and timeout
+            - Edge cases: host migration, late join, disconnect/reconnect
 
-          allowed_tools: "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*),Read,Glob,Grep"
-          max_turns: "20"
+            **Unity Best Practices**
+            - No memory leaks (event subs cleaned up in OnDestroy/OnNetworkDespawn)
+            - Coroutines and async operations properly managed
+            - No Update() polling where events/callbacks would be more efficient
+            - Scene references and prefab connections not broken
+
+            **Structural Consistency**
+            - Before commenting on structure, READ neighboring code to understand
+              existing patterns (file placement, naming, imports, module organization).
+            - If the PR follows the local pattern and pattern is sound → move on.
+            - If the PR follows a local pattern that is an anti-pattern →
+              💡 SUGGESTION explaining better approach. Do NOT block.
+            - If the PR deviates from a clear local pattern without justification →
+              🚫 BLOCKING. Point to the existing pattern.
+            - If the codebase is inconsistent (two areas do it differently) →
+              💡 SUGGESTION toward the better practice. Do NOT block.
+
+            **Code Quality**
+            - Dead code, Debug.Log leftovers, commented-out code
+            - Over-engineering: unnecessary abstractions, premature generalization
+            - DRY violations (but 3 similar lines beats a premature abstraction)
+            - Magic numbers where SerializeField or constants should be used
+
+            ### What NOT to flag
+            - Style preferences (spacing, brace placement) unless they break
+              consistency within the same file
+            - Missing XML docs on private/internal helpers
+            - Nitpicks that don't affect correctness, readability, or maintainability
+            - Files not changed by this PR — do not scope-creep
+            - Test coverage demands unless the PR introduces a clearly risky path
+
+            ---
+
+            ## Step 3: Summary
+
+            After all inline comments, post a final summary comment via
+            `gh pr comment` (do NOT use `gh pr review` — never submit an
+            approve or request-changes status; that decision belongs to a
+            human reviewer):
+
+            **If zero blocking issues:**
+
+            ```
+            ## ✅ Review Summary
+
+            Looks good! [1-2 sentences on what the PR does well — be specific
+            and genuine]
+
+            [If suggestions were left:]
+            A few optional suggestions were left as inline comments — feel
+            free to adopt them now or in a follow-up.
+            ```
+
+            **If blocking issues exist:**
+
+            ```
+            ## Review Summary
+
+            ### Blocking
+            - `File.cs:L42` — [one-line description]
+            - `File.cs:L88` — [one-line description]
+
+            ### Suggestions (non-blocking)
+            - `File.cs:L10` — [one-line description]
+            ...
+
+            Please address the blocking issues. Happy to re-review after.
+            ```
+
+            **If this is a re-review and all blocking issues are resolved:**
+
+            ```
+            ## ✅ Review Summary
+
+            All blocking issues from the previous review have been addressed.
+            [1 sentence on what improved] — nice work, this is ready for
+            human approval. 🚀
+            ```
+
+            Only post GitHub comments — never output review text as plain
+            messages.
+
+          claude_args: |
+            --max-turns 20
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*),Read,Glob,Grep"
