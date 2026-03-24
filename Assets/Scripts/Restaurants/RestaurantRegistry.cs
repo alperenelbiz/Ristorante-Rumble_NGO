@@ -29,6 +29,21 @@ namespace RistoranteRumble
             _restaurants.Clear();
         }
 
+        /// <summary>
+        /// Find restaurant by team ID. Returns null if not found.
+        /// Replaces RestaurantManager.GetRestaurant().
+        /// </summary>
+        public static Restaurant GetByTeamId(int teamId)
+        {
+            for (int i = 0; i < _restaurants.Count; i++)
+            {
+                var r = _restaurants[i];
+                if (r != null && r.TeamId == teamId)
+                    return r;
+            }
+            return null;
+        }
+
         private static readonly System.Predicate<Restaurant> _isNull = r => r == null;
 
         public static IReadOnlyList<Restaurant> All

@@ -1133,7 +1133,6 @@ Transform:
   - {fileID: 1817238673}
   - {fileID: 148430554}
   - {fileID: 317736793}
-  - {fileID: 597421134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &405316951
@@ -1945,79 +1944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeamManager
   ShowTopMostFoldoutHeaderGroup: 1
---- !u!1 &597421133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 597421134}
-  - component: {fileID: 597421135}
-  - component: {fileID: 597421136}
-  m_Layer: 0
-  m_Name: RestaurantManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &597421134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597421133}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 358153460}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &597421135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597421133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3784221906
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
---- !u!114 &597421136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597421133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04563a5017f2cd42b64c3f6d676b074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RestaurantManager
-  ShowTopMostFoldoutHeaderGroup: 1
-  teamARestaurant: {fileID: 1629020118}
-  teamBRestaurant: {fileID: 945829125}
 --- !u!1 &629522300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,7 +2549,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 939167098}
-  - component: {fileID: 939167099}
   m_Layer: 0
   m_Name: Table_1
   m_TagString: Untagged
@@ -2647,19 +2572,6 @@ Transform:
   - {fileID: 13565693}
   m_Father: {fileID: 1629020117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &939167099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939167097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe769ee2e91da7a45a3ce4b2a1389b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Table
-  seatPosition: {fileID: 13565693}
 --- !u!1 &945829123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,9 +2622,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 945829123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edbe140981ecc684ea183a2c2982e28f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2863976c46033264cbb7914c795da144, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Restaurant
+  m_EditorClassIdentifier: Assembly-CSharp::RistoranteRumble.Restaurant
   teamId: 0
   cookingStations:
   - {fileID: 2025226368}
@@ -2723,11 +2635,7 @@ MonoBehaviour:
   - {fileID: 839070718}
   - {fileID: 1157262249}
   servingCounter: {fileID: 151331864}
-  tables:
-  - {fileID: 1982077101}
-  - {fileID: 1091671151}
-  doorPosition: {fileID: 0}
-  exitPosition: {fileID: 0}
+  entryPoints: []
 --- !u!1 &965125534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,7 +3137,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1091671150}
-  - component: {fileID: 1091671151}
   m_Layer: 0
   m_Name: Table_1
   m_TagString: Untagged
@@ -3253,19 +3160,6 @@ Transform:
   - {fileID: 159302678}
   m_Father: {fileID: 945829124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1091671151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091671149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe769ee2e91da7a45a3ce4b2a1389b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Table
-  seatPosition: {fileID: 159302678}
 --- !u!1 &1152461123
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,9 +4154,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629020116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edbe140981ecc684ea183a2c2982e28f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2863976c46033264cbb7914c795da144, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Restaurant
+  m_EditorClassIdentifier: Assembly-CSharp::RistoranteRumble.Restaurant
   teamId: 1
   cookingStations:
   - {fileID: 140582996}
@@ -4273,11 +4167,7 @@ MonoBehaviour:
   - {fileID: 134583122}
   - {fileID: 1996928072}
   servingCounter: {fileID: 1081297593}
-  tables:
-  - {fileID: 1788368704}
-  - {fileID: 939167099}
-  doorPosition: {fileID: 0}
-  exitPosition: {fileID: 0}
+  entryPoints: []
 --- !u!1 &1646111109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,7 +4581,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1788368703}
-  - component: {fileID: 1788368704}
   m_Layer: 0
   m_Name: Table_0
   m_TagString: Untagged
@@ -4715,19 +4604,6 @@ Transform:
   - {fileID: 1581166541}
   m_Father: {fileID: 1629020117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1788368704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788368702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe769ee2e91da7a45a3ce4b2a1389b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Table
-  seatPosition: {fileID: 1581166541}
 --- !u!1 &1788592849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,7 +5585,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982077100}
-  - component: {fileID: 1982077101}
   m_Layer: 0
   m_Name: Table_0
   m_TagString: Untagged
@@ -5733,19 +5608,6 @@ Transform:
   - {fileID: 1781761948}
   m_Father: {fileID: 945829124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1982077101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982077099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe769ee2e91da7a45a3ce4b2a1389b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Table
-  seatPosition: {fileID: 1781761948}
 --- !u!1 &1984023972
 GameObject:
   m_ObjectHideFlags: 0
