@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: deabd40eacb4f4705846defc77b4b833
+PackageManifestImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347162
+  packageName: Gerty for Unity
+  packageVersion: 1.0.0
+  assetPath: Packages/com.gerty.editor/package.json
+  uploadId: 831328

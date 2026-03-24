@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: c87478708d163460aa62b3e35e9fe9d5
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 1
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 1
+      settings:
+        DefaultValueInitialized: true
+  - first:
+      Windows Store Apps: WindowsStoreApps
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347162
+  packageName: Gerty for Unity
+  packageVersion: 1.0.0
+  assetPath: Packages/com.gerty.editor/Editor/Plugins/Roslyn/Microsoft.CodeAnalysis.CSharp.dll
+  uploadId: 831328

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2f2dd57e084ea4baf9630f8c2d58ed7c
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347162
+  packageName: Gerty for Unity
+  packageVersion: 1.0.0
+  assetPath: Packages/com.gerty.editor/Editor/Plugins/Roslyn/License.txt
+  uploadId: 831328

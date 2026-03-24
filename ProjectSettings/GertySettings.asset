@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1093339437, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Gerty.Editor.dll::Gerty.GertySettings
+  port: 4689
+  authToken: YofngJ0zAnjXQALdIenJ7voSgNA5XIxq6YyhiaNsKOI
+  autoStartServer: 1
+  autoSetupClaudeConfig: 1
+  executionTimeoutSeconds: 30
+  enableSandboxing: 1
+  logExecutions: 1

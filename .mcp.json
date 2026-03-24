@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gerty": {
+      "type": "http",
+      "url": "http://localhost:4689",
+      "headers": {
+        "Authorization": "Bearer YofngJ0zAnjXQALdIenJ7voSgNA5XIxq6YyhiaNsKOI"
+      }
+    }
+  }
+}

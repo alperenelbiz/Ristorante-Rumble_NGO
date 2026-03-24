@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5cf240bb405a64c80a19381a50446adb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347162
+  packageName: Gerty for Unity
+  packageVersion: 1.0.0
+  assetPath: Packages/com.gerty.editor/Editor/Helpers/AIHelper.cs
+  uploadId: 831328

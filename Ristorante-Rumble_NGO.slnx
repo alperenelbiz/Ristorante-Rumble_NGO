@@ -1,6 +1,7 @@
 ﻿<Solution>
   <Project Path="Unity.Multiplayer.Samples.Utilities.Testing.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Gerty.Helpers.csproj" />
   <Project Path="Unity.Multiplayer.Samples.Utilities.csproj" />
   <Project Path="ParrelSync.csproj" />
   <Project Path="Unity.Multiplayer.Samples.Utilities.ClientAuthority.csproj" />

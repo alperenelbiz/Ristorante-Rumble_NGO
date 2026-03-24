@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 31677126717e14fcb98ce870a30e4455
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347162
+  packageName: Gerty for Unity
+  packageVersion: 1.0.0
+  assetPath: Packages/com.gerty.editor/Editor/Resources/ClaudeConfig/gerty-agent.md.txt
+  uploadId: 831328
