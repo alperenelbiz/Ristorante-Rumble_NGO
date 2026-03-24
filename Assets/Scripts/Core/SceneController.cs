@@ -62,6 +62,7 @@ public class SceneController : MonoBehaviour
     public void ReturnToMenu()
     {
         Debug.Log("[SceneController] Returning to menu...");
+        GameEvents.ResetAll();
 
         if (NetworkManager.Singleton != null)
             NetworkManager.Singleton.Shutdown();

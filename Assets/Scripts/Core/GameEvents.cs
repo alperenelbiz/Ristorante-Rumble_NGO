@@ -36,4 +36,18 @@ public static class GameEvents
     public static void CookingCompleted(int teamId, int stationId, int recipeIndex) => OnCookingCompleted?.Invoke(teamId, stationId, recipeIndex);
     public static void MoneyChanged(int teamId, int newAmount) => OnMoneyChanged?.Invoke(teamId, newAmount);
     public static void DayPhaseCleanup() => OnDayPhaseCleanup?.Invoke();
+
+    // D-04 — null all delegates for clean session reset
+    public static void ResetAll()
+    {
+        OnGameStateChanged = null;
+        OnPhaseTimerUpdated = null;
+        OnPlayerTeamAssigned = null;
+        OnAllPlayersReady = null;
+        OnSceneLoaded = null;
+        OnCookingStarted = null;
+        OnCookingCompleted = null;
+        OnMoneyChanged = null;
+        OnDayPhaseCleanup = null;
+    }
 }

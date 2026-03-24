@@ -60,7 +60,7 @@ public class CookingStation : NetworkBehaviour
     private void TickCooking()
     {
         var state = StationState.Value;
-        var recipe = RecipeDatabase.Instance.GetRecipe(state.RecipeIndex);
+        var recipe = RecipeDatabase.Instance?.GetRecipe(state.RecipeIndex);
         if (recipe == null) { ClearStation(); return; }
 
         // W4 — use localProgress instead of stale state.CookProgress
@@ -118,7 +118,7 @@ public class CookingStation : NetworkBehaviour
     {
         if (!IsServer || !IsIdle) return;
 
-        var recipe = RecipeDatabase.Instance.GetRecipe(recipeIndex);
+        var recipe = RecipeDatabase.Instance?.GetRecipe(recipeIndex);
         if (recipe == null) return;
 
         if (recipe.requiredStation != CookingStationType.Any && recipe.requiredStation != stationType)

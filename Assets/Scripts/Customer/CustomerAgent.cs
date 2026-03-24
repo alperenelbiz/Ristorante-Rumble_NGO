@@ -27,6 +27,9 @@ namespace RistoranteRumble
         [Header("Timeouts")]
         [SerializeField] private float maxWaitUntilReachedSeconds = 30f;
 
+        private const float ENTRY_ARRIVE_THRESHOLD = 1.25f;
+        private const float MIN_SEATED_DURATION = 0.1f;
+
         private NavMeshAgent _agent;
         private Animator _animator;
         private SeatAnchor _reservedSeat;
@@ -53,6 +56,24 @@ namespace RistoranteRumble
             if (IsServer)
             {
                 StartServerBehavior();
+            }
+        }
+
+        public override void OnNetworkDespawn()
+        {
+            if (IsServer)
+            {
+                if (_mainRoutine != null)
+                {
+                    StopCoroutine(_mainRoutine);
+                    _mainRoutine = null;
+                }
+
+                if (_reservedSeat != null)
+                {
+                    _reservedSeat.ReleaseServer(_netObjectId);
+                    _reservedSeat = null;
+                }
             }
         }
 
@@ -158,7 +179,7 @@ namespace RistoranteRumble
             {
                 _agent.isStopped = false;
                 _agent.SetDestination(entry.position);
-                yield return WaitUntilReached(entry.position, 1.25f);
+                yield return WaitUntilReached(entry.position, ENTRY_ARRIVE_THRESHOLD);
             }
 
             float nextRepath = 0f;
@@ -220,7 +241,7 @@ namespace RistoranteRumble
         private IEnumerator SeatedRoutine()
         {
             // Stay seated for duration
-            float end = Time.time + Mathf.Max(0.1f, seatedDurationSeconds);
+            float end = Time.time + Mathf.Max(MIN_SEATED_DURATION, seatedDurationSeconds);
             while (Time.time < end)
             {
                 yield return null;
