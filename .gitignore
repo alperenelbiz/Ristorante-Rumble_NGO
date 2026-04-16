@@ -77,3 +77,6 @@ crashlytics-build.properties
 # Claude Code
 *.claude
 *CLAUDE.md
+
+# Get Shit Done
+.planning/

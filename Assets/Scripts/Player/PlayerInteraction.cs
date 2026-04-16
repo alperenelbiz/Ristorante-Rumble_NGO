@@ -19,6 +19,7 @@ public class PlayerInteraction : NetworkBehaviour
     // C5 — interaction cooldown
     private float interactionCooldown;
     private const float INTERACTION_COOLDOWN = 0.25f;
+    private const float PROXIMITY_TOLERANCE = 1.5f;
 
     public bool IsCarrying => !CarriedItem.Value.IsEmpty;
 
@@ -33,6 +34,13 @@ public class PlayerInteraction : NetworkBehaviour
         interactAction = InputSystem.actions.FindAction("Interact");
         dropAction = InputSystem.actions.FindAction("Drop");
         mainCam = Camera.main;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        interactAction = null;
+        dropAction = null;
+        mainCam = null;
     }
 
     private void Update()
@@ -106,7 +114,7 @@ public class PlayerInteraction : NetworkBehaviour
             if (RecipeSelectUI.Instance != null)
                 RecipeSelectUI.Instance.Open(station);
         }
-        else if (station.IsDone && !IsCarrying)
+        else if (station.IsDone)
         {
             CollectDishRpc(station.NetworkObjectId);
         }
@@ -135,6 +143,11 @@ public class PlayerInteraction : NetworkBehaviour
     // W5 — team validation
     private bool ValidateTeam(ulong senderClientId, int stationTeamId)
     {
+        if (TeamManager.Instance == null)
+        {
+            Debug.LogWarning("[PlayerInteraction] TeamManager not initialized");
+            return false;
+        }
         int playerTeam = TeamManager.Instance.GetPlayerTeam(senderClientId);
         if (playerTeam != stationTeamId)
         {
@@ -150,7 +163,7 @@ public class PlayerInteraction : NetworkBehaviour
         var playerObj = NetworkManager.SpawnManager.GetPlayerNetworkObject(OwnerClientId);
         if (playerObj == null) return false;
         float dist = Vector3.Distance(playerObj.transform.position, targetPos);
-        return dist <= interactRange * 1.5f;
+        return dist <= interactRange * PROXIMITY_TOLERANCE;
     }
 
     // --- RPCs ---
@@ -231,7 +244,7 @@ public class PlayerInteraction : NetworkBehaviour
         if (IsCarrying) return;
 
         // W6 — bounds check
-        if (ingredientIndex < 0 || ingredientIndex >= RecipeDatabase.Instance.IngredientCount) return;
+        if (RecipeDatabase.Instance == null || ingredientIndex < 0 || ingredientIndex >= RecipeDatabase.Instance.IngredientCount) return;
 
         // TODO: proximity check skipped for MVP — infinite sources, low exploit risk
 

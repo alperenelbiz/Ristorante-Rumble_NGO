@@ -9,7 +9,20 @@ namespace RistoranteRumble
         [Tooltip("Optional: used to bias customers toward visible/accessible entry points.")]
         [SerializeField] private Transform[] entryPoints;
 
+        [Header("Team")]
+        [SerializeField] private int teamId;
+
+        [Header("Day Phase Equipment")]
+        [SerializeField] private CookingStation[] cookingStations;
+        [SerializeField] private IngredientSource[] ingredientSources;
+        [SerializeField] private ServingCounter servingCounter;
+
         private readonly List<SeatAnchor> _seats = new List<SeatAnchor>();
+
+        public int TeamId => teamId;
+        public CookingStation[] CookingStations => cookingStations;
+        public IngredientSource[] IngredientSources => ingredientSources;
+        public ServingCounter ServingCounter => servingCounter;
 
         public override void OnNetworkSpawn()
         {

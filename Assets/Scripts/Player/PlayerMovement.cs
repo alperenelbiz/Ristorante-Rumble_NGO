@@ -14,6 +14,9 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
+    private const float MIN_MOVE_SQR_MAGNITUDE = 0.01f;
+    private const float GROUND_CHECK_OFFSET = 0.1f;
+
     private Rigidbody rb;
     private Animator animator;
 
@@ -45,8 +48,17 @@ public class PlayerMovement : NetworkBehaviour
             CameraManager.Instance.SetFollowTarget(transform);
     }
 
+    public override void OnNetworkDespawn()
+    {
+        moveAction = null;
+        jumpAction = null;
+        sprintAction = null;
+    }
+
     private void Update()
     {
+        if (moveAction == null) return;
+
         moveInput = moveAction.ReadValue<Vector2>();
         isSprinting = sprintAction.IsPressed();
 
@@ -65,7 +77,7 @@ public class PlayerMovement : NetworkBehaviour
 
         // Rotation — smooth via MoveRotation
         Vector3 moveDir = new Vector3(moveInput.x, 0f, moveInput.y);
-        if (moveDir.sqrMagnitude > 0.01f)
+        if (moveDir.sqrMagnitude > MIN_MOVE_SQR_MAGNITUDE)
         {
             Quaternion target = Quaternion.LookRotation(moveDir);
             rb.MoveRotation(Quaternion.Slerp(rb.rotation, target, rotationSpeed * Time.fixedDeltaTime));
@@ -87,9 +99,9 @@ public class PlayerMovement : NetworkBehaviour
     private void GroundCheck()
     {
         isGrounded = Physics.Raycast(
-            rb.position + Vector3.up * 0.1f,
+            rb.position + Vector3.up * GROUND_CHECK_OFFSET,
             Vector3.down,
-            groundCheckDistance + 0.1f,
+            groundCheckDistance + GROUND_CHECK_OFFSET,
             groundLayer
         );
     }

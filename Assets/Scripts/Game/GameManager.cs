@@ -92,6 +92,10 @@ public class GameManager : NetworkBehaviour
                 case GameState.Transition:
                     TickTransition();
                     break;
+                case GameState.RoundEnd:
+                case GameState.GameOver:
+                    // No tick — transient states
+                    break;
             }
         }
         else
@@ -189,12 +193,40 @@ public class GameManager : NetworkBehaviour
         GameEvents.PhaseTimerUpdated(clientLocalTimer);
     }
 
-    // MVP: loops indefinitely; GameOver/RoundEnd states will be wired when win condition is implemented
     private void EndRound()
     {
+        CurrentState.Value = GameState.RoundEnd;
         GameEvents.DayPhaseCleanup();
         CurrentRound.Value++;
         Debug.Log($"[GameManager] Round ended, starting round {CurrentRound.Value}");
         StartDayPhase();
     }
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    /// <summary>
+    /// Debug-only: force state transition using proper game logic.
+    /// </summary>
+    public void DebugForceState(GameState target)
+    {
+        if (!IsServer) return;
+        switch (target)
+        {
+            case GameState.DayPhase:
+                StartDayPhase();
+                break;
+            case GameState.NightPhase:
+                StartNightPhase();
+                break;
+            case GameState.RoundEnd:
+                EndRound();
+                break;
+            case GameState.GameOver:
+                CurrentState.Value = GameState.GameOver;
+                break;
+            default:
+                CurrentState.Value = target;
+                break;
+        }
+    }
+#endif
 }
