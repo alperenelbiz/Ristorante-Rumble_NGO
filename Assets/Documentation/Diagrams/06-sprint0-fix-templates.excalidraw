@@ -1,0 +1,908 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hand-authored",
+  "elements": [
+
+    {
+      "type": "text", "version": 1, "versionNonce": 1, "isDeleted": false, "id": "title",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 200, "y": 15, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 1100, "height": 45, "seed": 1, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 34, "fontFamily": 1, "text": "Sprint 0 Fix Sablonlari — M1-M6 Cozum Kaliplari", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "Sprint 0 Fix Sablonlari — M1-M6 Cozum Kaliplari", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 2, "isDeleted": false, "id": "subtitle",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 200, "y": 58, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 1100, "height": 20, "seed": 2, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE (kirmizi) -> AFTER (yesil)  |  Her fix icin kod konumu, sablon ve etkilenen dosyalar  |  3x2 grid", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE (kirmizi) -> AFTER (yesil)  |  Her fix icin kod konumu, sablon ve etkilenen dosyalar  |  3x2 grid", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 100, "isDeleted": false, "id": "m1_frame",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 20, "y": 90, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 490, "height": 520, "seed": 100, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 101, "isDeleted": false, "id": "m1_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 95, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 470, "height": 25, "seed": 101, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 18, "fontFamily": 1, "text": "M1 — Late-Join State Sync [KRITIK]", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "M1 — Late-Join State Sync [KRITIK]", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 102, "isDeleted": false, "id": "m1_file",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 118, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 470, "height": 16, "seed": 102, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "GameManager.cs :: OnNetworkSpawn() ~line 55", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "GameManager.cs :: OnNetworkSpawn() ~line 55", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 110, "isDeleted": false, "id": "m1_before_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 30, "y": 140, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 220, "height": 230, "seed": 110, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 111, "isDeleted": false, "id": "m1_before_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 100, "y": 145, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 111, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 112, "isDeleted": false, "id": "m1_before_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 38, "y": 168, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 195, "seed": 112, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Player joins mid-game\n       |\n2. OnClientConnected fires\n       |\n3. PlayerSpawnManager\n   spawns player\n       |\n4. GameManager.OnNetworkSpawn\n   runs on CLIENT\n       |\n5. CurrentState = DayPhase\n   via NetworkVariable  OK\n       |\n6. OnValueChanged NOT fired\n   for initial value!  FAIL\n       |\n7. UI/Camera/Lighting\n   stuck in WaitingForPlayers", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Player joins mid-game\n       |\n2. OnClientConnected fires\n       |\n3. PlayerSpawnManager\n   spawns player\n       |\n4. GameManager.OnNetworkSpawn\n   runs on CLIENT\n       |\n5. CurrentState = DayPhase\n   via NetworkVariable  OK\n       |\n6. OnValueChanged NOT fired\n   for initial value!  FAIL\n       |\n7. UI/Camera/Lighting\n   stuck in WaitingForPlayers", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 1, "versionNonce": 115, "isDeleted": false, "id": "m1_arrow",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 255, "y": 250, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 25, "height": 0, "seed": 115, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null, "startArrowhead": null, "endArrowhead": "arrow",
+      "points": [[0,0],[25,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 120, "isDeleted": false, "id": "m1_after_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 285, "y": 140, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 220, "height": 230, "seed": 120, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 121, "isDeleted": false, "id": "m1_after_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 355, "y": 145, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 121, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFTER", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 122, "isDeleted": false, "id": "m1_after_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 293, "y": 168, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 195, "seed": 122, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Player joins mid-game\n       |\n2. Same spawn flow\n       |\n3. GameManager.OnNetworkSpawn\n   CLIENT path fires:\n       |\n4. OnStateValueChanged(\n     WaitingForPlayers,\n     CurrentState.Value)\n   MANUALLY called  FIX\n       |\n5. All subscribers fire:\n   CameraManager  OK\n   LightingManager  OK\n   DayPhaseHUD  OK\n       |\n6. Client sees correct phase", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Player joins mid-game\n       |\n2. Same spawn flow\n       |\n3. GameManager.OnNetworkSpawn\n   CLIENT path fires:\n       |\n4. OnStateValueChanged(\n     WaitingForPlayers,\n     CurrentState.Value)\n   MANUALLY called  FIX\n       |\n5. All subscribers fire:\n   CameraManager  OK\n   LightingManager  OK\n   DayPhaseHUD  OK\n       |\n6. Client sees correct phase", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 130, "isDeleted": false, "id": "m1_code_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 380, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 475, "height": 110, "seed": 130, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 131, "isDeleted": false, "id": "m1_code_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 38, "y": 384, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 200, "height": 14, "seed": 131, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 3, "text": "// GameManager.cs  OnNetworkSpawn()  add after line ~55:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// GameManager.cs  OnNetworkSpawn()  add after line ~55:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 132, "isDeleted": false, "id": "m1_code",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 38, "y": 402, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 80, "seed": 132, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 3, "text": "if (IsServer)\n    CurrentState.Value = GameState.WaitingForPlayers;\nelse\n{\n    clientLocalTimer = PhaseTimer.Value;\n    // M1 FIX: CLIENT catch up to current state\n    OnStateValueChanged(GameState.WaitingForPlayers, CurrentState.Value);\n}", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "if (IsServer)\n    CurrentState.Value = GameState.WaitingForPlayers;\nelse\n{\n    clientLocalTimer = PhaseTimer.Value;\n    // M1 FIX: CLIENT catch up to current state\n    OnStateValueChanged(GameState.WaitingForPlayers, CurrentState.Value);\n}", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 133, "isDeleted": false, "id": "m1_note",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 498, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 475, "height": 14, "seed": 133, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "Root Cause: NGO NetworkVariable.OnValueChanged does NOT fire for the initial synced value.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Root Cause: NGO NetworkVariable.OnValueChanged does NOT fire for the initial synced value.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 200, "isDeleted": false, "id": "m2_frame",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 530, "y": 90, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 490, "height": 520, "seed": 200, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 201, "isDeleted": false, "id": "m2_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 95, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 470, "height": 25, "seed": 201, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 18, "fontFamily": 1, "text": "M2 — RPC Phase Guard [YUKSEK]", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "M2 — RPC Phase Guard [YUKSEK]", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 202, "isDeleted": false, "id": "m2_file",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 118, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 470, "height": 16, "seed": 202, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "PlayerInteraction.cs :: All Server RPCs", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "PlayerInteraction.cs :: All Server RPCs", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 210, "isDeleted": false, "id": "m2_before_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 540, "y": 140, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 220, "height": 195, "seed": 210, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 211, "isDeleted": false, "id": "m2_before_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 610, "y": 145, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 211, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 212, "isDeleted": false, "id": "m2_before_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 168, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 160, "seed": 212, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. DayPhase active\n       |\n2. Player presses E\n   -> StartCookingRpc sent\n       |\n3. MEANWHILE GameState\n   changes to Transition\n       |\n4. Server receives RPC\n       |\n5. NO state check!\n       |\n6. Cooking starts\n   during Transition!  BUG", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. DayPhase active\n       |\n2. Player presses E\n   -> StartCookingRpc sent\n       |\n3. MEANWHILE GameState\n   changes to Transition\n       |\n4. Server receives RPC\n       |\n5. NO state check!\n       |\n6. Cooking starts\n   during Transition!  BUG", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 1, "versionNonce": 215, "isDeleted": false, "id": "m2_arrow",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 765, "y": 230, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 25, "height": 0, "seed": 215, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null, "startArrowhead": null, "endArrowhead": "arrow",
+      "points": [[0,0],[25,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 220, "isDeleted": false, "id": "m2_after_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 795, "y": 140, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 220, "height": 195, "seed": 220, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 221, "isDeleted": false, "id": "m2_after_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 865, "y": 145, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 221, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFTER", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 222, "isDeleted": false, "id": "m2_after_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 803, "y": 168, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 160, "seed": 222, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Same client-side flow\n       |\n2. Server receives RPC\n       |\n3. FIRST: check GameState\n   == DayPhase\n       |\n4. If NOT DayPhase:\n   -> return; (reject RPC)\n       |\n5. If DayPhase:\n   -> proceed normally\n       |\n6. Cooking does NOT start\n   during Transition  FIX", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Same client-side flow\n       |\n2. Server receives RPC\n       |\n3. FIRST: check GameState\n   == DayPhase\n       |\n4. If NOT DayPhase:\n   -> return; (reject RPC)\n       |\n5. If DayPhase:\n   -> proceed normally\n       |\n6. Cooking does NOT start\n   during Transition  FIX", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 230, "isDeleted": false, "id": "m2_code_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 345, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 475, "height": 100, "seed": 230, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 231, "isDeleted": false, "id": "m2_code_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 349, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 400, "height": 14, "seed": 231, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 3, "text": "// Template pattern — add to EACH server RPC:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// Template pattern — add to EACH server RPC:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 232, "isDeleted": false, "id": "m2_code",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 367, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 70, "seed": 232, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 3, "text": "[Rpc(SendTo.Server)]\nprivate void StartCookingRpc(...)\n{\n    // M2 GUARD — reject if not in correct phase\n    if (GameManager.Instance.CurrentState.Value != GameState.DayPhase)\n        return;\n    // ... existing logic\n}", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "[Rpc(SendTo.Server)]\nprivate void StartCookingRpc(...)\n{\n    // M2 GUARD — reject if not in correct phase\n    if (GameManager.Instance.CurrentState.Value != GameState.DayPhase)\n        return;\n    // ... existing logic\n}", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 235, "isDeleted": false, "id": "m2_rpc_list_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 455, "strokeColor": "#e67700", "backgroundColor": "#fff3bf",
+      "width": 475, "height": 80, "seed": 235, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 236, "isDeleted": false, "id": "m2_rpc_list_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 459, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 250, "height": 14, "seed": 236, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "ALL RPCs NEEDING THIS GUARD:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "ALL RPCs NEEDING THIS GUARD:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 237, "isDeleted": false, "id": "m2_rpc_list",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 477, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 55, "seed": 237, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "1. StartCookingRpc       (line 172)  -> guard: DayPhase\n2. CollectDishRpc        (line 188)  -> guard: DayPhase\n3. PlaceDishRpc          (line 224)  -> guard: DayPhase\n4. PickUpIngredientRpc   (line 241)  -> guard: DayPhase\n5. DropItemRpc           (line 255)  -> guard: DayPhase", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. StartCookingRpc       (line 172)  -> guard: DayPhase\n2. CollectDishRpc        (line 188)  -> guard: DayPhase\n3. PlaceDishRpc          (line 224)  -> guard: DayPhase\n4. PickUpIngredientRpc   (line 241)  -> guard: DayPhase\n5. DropItemRpc           (line 255)  -> guard: DayPhase", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 238, "isDeleted": false, "id": "m2_note",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 543, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 475, "height": 28, "seed": 238, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "Race window: ~100-300ms between client pressing E and state\nchanging to Transition. Without guard, stale RPCs execute.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Race window: ~100-300ms between client pressing E and state\nchanging to Transition. Without guard, stale RPCs execute.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 300, "isDeleted": false, "id": "m3_frame",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 1040, "y": 90, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 490, "height": 520, "seed": 300, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 301, "isDeleted": false, "id": "m3_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 95, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 470, "height": 25, "seed": 301, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 18, "fontFamily": 1, "text": "M3 — CarriedItem Round Reset [YUKSEK]", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "M3 — CarriedItem Round Reset [YUKSEK]", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 302, "isDeleted": false, "id": "m3_file",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 118, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 470, "height": 16, "seed": 302, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "PlayerInteraction.cs :: OnNetworkSpawn / OnNetworkDespawn", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "PlayerInteraction.cs :: OnNetworkSpawn / OnNetworkDespawn", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 310, "isDeleted": false, "id": "m3_before_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 140, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 220, "height": 170, "seed": 310, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 311, "isDeleted": false, "id": "m3_before_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1120, "y": 145, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 311, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 312, "isDeleted": false, "id": "m3_before_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 168, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 135, "seed": 312, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Round ends\n       |\n2. DayPhaseCleanup fires\n       |\n3. CookingStation clears  OK\n   ServingCounter clears  OK\n       |\n4. PlayerInteraction\n   NOT subscribed!  MISS\n       |\n5. CarriedItem unchanged\n       |\n6. Player starts new round\n   carrying old dish  BUG", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Round ends\n       |\n2. DayPhaseCleanup fires\n       |\n3. CookingStation clears  OK\n   ServingCounter clears  OK\n       |\n4. PlayerInteraction\n   NOT subscribed!  MISS\n       |\n5. CarriedItem unchanged\n       |\n6. Player starts new round\n   carrying old dish  BUG", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 1, "versionNonce": 315, "isDeleted": false, "id": "m3_arrow",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1275, "y": 220, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 25, "height": 0, "seed": 315, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null, "startArrowhead": null, "endArrowhead": "arrow",
+      "points": [[0,0],[25,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 320, "isDeleted": false, "id": "m3_after_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1305, "y": 140, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 220, "height": 170, "seed": 320, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 321, "isDeleted": false, "id": "m3_after_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1375, "y": 145, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 321, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFTER", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 322, "isDeleted": false, "id": "m3_after_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1313, "y": 168, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 135, "seed": 322, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Round ends\n       |\n2. DayPhaseCleanup fires\n       |\n3. CookingStation clears  OK\n   ServingCounter clears  OK\n       |\n4. PlayerInteraction\n   IS subscribed  FIX\n       |\n5. ClearCarriedItem()\n   CarriedItem = Empty  OK\n       |\n6. Player starts clean  OK", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Round ends\n       |\n2. DayPhaseCleanup fires\n       |\n3. CookingStation clears  OK\n   ServingCounter clears  OK\n       |\n4. PlayerInteraction\n   IS subscribed  FIX\n       |\n5. ClearCarriedItem()\n   CarriedItem = Empty  OK\n       |\n6. Player starts clean  OK", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 330, "isDeleted": false, "id": "m3_code_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 320, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 475, "height": 175, "seed": 330, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 331, "isDeleted": false, "id": "m3_code_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 324, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 400, "height": 14, "seed": 331, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 3, "text": "// PlayerInteraction.cs — subscribe to cleanup event:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// PlayerInteraction.cs — subscribe to cleanup event:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 332, "isDeleted": false, "id": "m3_code",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 342, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 145, "seed": 332, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 3, "text": "// In OnNetworkSpawn — add after existing code:\nif (IsServer)\n    GameEvents.OnDayPhaseCleanup += ClearCarriedItem;\n\n// In OnNetworkDespawn — add:\nif (IsServer)\n    GameEvents.OnDayPhaseCleanup -= ClearCarriedItem;\n\n// New method:\nprivate void ClearCarriedItem()\n{\n    if (!IsServer) return;\n    CarriedItem.Value = CarriedItemData.Empty;\n}", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// In OnNetworkSpawn — add after existing code:\nif (IsServer)\n    GameEvents.OnDayPhaseCleanup += ClearCarriedItem;\n\n// In OnNetworkDespawn — add:\nif (IsServer)\n    GameEvents.OnDayPhaseCleanup -= ClearCarriedItem;\n\n// New method:\nprivate void ClearCarriedItem()\n{\n    if (!IsServer) return;\n    CarriedItem.Value = CarriedItemData.Empty;\n}", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 333, "isDeleted": false, "id": "m3_note",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 503, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 475, "height": 28, "seed": 333, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "Note: Only server writes to CarriedItem (WritePermission.Server).\nSubscribe only on server to avoid client-side no-op subscriptions.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Note: Only server writes to CarriedItem (WritePermission.Server).\nSubscribe only on server to avoid client-side no-op subscriptions.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 400, "isDeleted": false, "id": "m4_frame",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 20, "y": 630, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 490, "height": 520, "seed": 400, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 401, "isDeleted": false, "id": "m4_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 635, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 470, "height": 25, "seed": 401, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 18, "fontFamily": 1, "text": "M4 — Disconnect Item Cleanup [ORTA]", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "M4 — Disconnect Item Cleanup [ORTA]", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 402, "isDeleted": false, "id": "m4_file",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 658, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 470, "height": 16, "seed": 402, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "PlayerSpawnManager.cs :: OnClientDisconnected() ~line 65", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "PlayerSpawnManager.cs :: OnClientDisconnected() ~line 65", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 410, "isDeleted": false, "id": "m4_before_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 30, "y": 680, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 220, "height": 160, "seed": 410, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 411, "isDeleted": false, "id": "m4_before_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 100, "y": 685, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 411, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 412, "isDeleted": false, "id": "m4_before_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 38, "y": 708, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 125, "seed": 412, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Player carrying dish\n       |\n2. Player disconnects\n       |\n3. OnClientDisconnected\n   fires in SpawnManager\n       |\n4. Just despawn + remove\n   from dict  ONLY\n       |\n5. No logging of what\n   item was lost\n   (invisible state leak)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Player carrying dish\n       |\n2. Player disconnects\n       |\n3. OnClientDisconnected\n   fires in SpawnManager\n       |\n4. Just despawn + remove\n   from dict  ONLY\n       |\n5. No logging of what\n   item was lost\n   (invisible state leak)", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 1, "versionNonce": 415, "isDeleted": false, "id": "m4_arrow",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 255, "y": 760, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 25, "height": 0, "seed": 415, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null, "startArrowhead": null, "endArrowhead": "arrow",
+      "points": [[0,0],[25,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 420, "isDeleted": false, "id": "m4_after_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 285, "y": 680, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 220, "height": 160, "seed": 420, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 421, "isDeleted": false, "id": "m4_after_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 355, "y": 685, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 421, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFTER", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 422, "isDeleted": false, "id": "m4_after_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 293, "y": 708, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 125, "seed": 422, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Player carrying dish\n       |\n2. Player disconnects\n       |\n3. OnClientDisconnected\n   fires in SpawnManager\n       |\n4. CHECK CarriedItem on\n   PlayerInteraction  NEW\n       |\n5. Log warning if carrying\n   -> then Despawn  FIX\n   (clean + auditable)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Player carrying dish\n       |\n2. Player disconnects\n       |\n3. OnClientDisconnected\n   fires in SpawnManager\n       |\n4. CHECK CarriedItem on\n   PlayerInteraction  NEW\n       |\n5. Log warning if carrying\n   -> then Despawn  FIX\n   (clean + auditable)", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 430, "isDeleted": false, "id": "m4_code_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 850, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 475, "height": 145, "seed": 430, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 431, "isDeleted": false, "id": "m4_code_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 38, "y": 854, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 400, "height": 14, "seed": 431, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 3, "text": "// PlayerSpawnManager.cs  OnClientDisconnected() — replace body:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// PlayerSpawnManager.cs  OnClientDisconnected() — replace body:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 432, "isDeleted": false, "id": "m4_code",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 38, "y": 872, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 115, "seed": 432, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 3, "text": "if (spawnedPlayers.TryGetValue(clientId, out var netObj))\n{\n    if (netObj != null)\n    {\n        // M4 FIX: log carried item before despawn\n        var interaction = netObj.GetComponent<PlayerInteraction>();\n        if (interaction != null && interaction.IsCarrying)\n            Debug.LogWarning($\"[SpawnManager] Player {clientId} \"\n                + $\"disconnected carrying: {interaction.CarriedItem.Value}\");\n        netObj.Despawn();\n    }\n    spawnedPlayers.Remove(clientId);\n}", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "if (spawnedPlayers.TryGetValue(clientId, out var netObj))\n{\n    if (netObj != null)\n    {\n        // M4 FIX: log carried item before despawn\n        var interaction = netObj.GetComponent<PlayerInteraction>();\n        if (interaction != null && interaction.IsCarrying)\n            Debug.LogWarning($\"[SpawnManager] Player {clientId} \"\n                + $\"disconnected carrying: {interaction.CarriedItem.Value}\");\n        netObj.Despawn();\n    }\n    spawnedPlayers.Remove(clientId);\n}", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 433, "isDeleted": false, "id": "m4_note",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 1002, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 475, "height": 28, "seed": 433, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "Impact: Prevents invisible item loss. LogWarning gives server\nauditors a trace when players disconnect mid-carry.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Impact: Prevents invisible item loss. LogWarning gives server\nauditors a trace when players disconnect mid-carry.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 500, "isDeleted": false, "id": "m5_frame",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 530, "y": 630, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 490, "height": 520, "seed": 500, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 501, "isDeleted": false, "id": "m5_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 635, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 470, "height": 25, "seed": 501, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 18, "fontFamily": 1, "text": "M5 — Host Disconnect Recovery [YUKSEK]", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "M5 — Host Disconnect Recovery [YUKSEK]", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 502, "isDeleted": false, "id": "m5_file",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 658, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 470, "height": 16, "seed": 502, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "GameManager.cs :: OnNetworkDespawn()  +  GameEvents.cs  +  SceneController.cs", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "GameManager.cs :: OnNetworkDespawn()  +  GameEvents.cs  +  SceneController.cs", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 510, "isDeleted": false, "id": "m5_before_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 540, "y": 680, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 220, "height": 160, "seed": 510, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 511, "isDeleted": false, "id": "m5_before_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 610, "y": 685, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 511, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 512, "isDeleted": false, "id": "m5_before_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 708, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 125, "seed": 512, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Host leaves game\n       |\n2. NetworkManager shuts\n   down on all clients\n       |\n3. OnNetworkDespawn fires\n   on GameManager\n       |\n4. Only unsubscribes from\n   OnValueChanged  ONLY\n       |\n5. Clients stuck on\n   game scene, no cleanup\n   frozen UI  BUG", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Host leaves game\n       |\n2. NetworkManager shuts\n   down on all clients\n       |\n3. OnNetworkDespawn fires\n   on GameManager\n       |\n4. Only unsubscribes from\n   OnValueChanged  ONLY\n       |\n5. Clients stuck on\n   game scene, no cleanup\n   frozen UI  BUG", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 1, "versionNonce": 515, "isDeleted": false, "id": "m5_arrow",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 765, "y": 760, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 25, "height": 0, "seed": 515, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null, "startArrowhead": null, "endArrowhead": "arrow",
+      "points": [[0,0],[25,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 520, "isDeleted": false, "id": "m5_after_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 795, "y": 680, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 220, "height": 160, "seed": 520, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 521, "isDeleted": false, "id": "m5_after_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 865, "y": 685, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 521, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFTER", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 522, "isDeleted": false, "id": "m5_after_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 803, "y": 708, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 125, "seed": 522, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "1. Host leaves game\n       |\n2. NetworkManager shuts\n   down on all clients\n       |\n3. OnNetworkDespawn fires\n   on GameManager\n       |\n4. Detect: !IsServer path\n   -> GameEvents.ResetAll()\n   -> SceneController\n      .ReturnToMenu()  FIX\n       |\n5. Clients return to menu\n   clean state  OK", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Host leaves game\n       |\n2. NetworkManager shuts\n   down on all clients\n       |\n3. OnNetworkDespawn fires\n   on GameManager\n       |\n4. Detect: !IsServer path\n   -> GameEvents.ResetAll()\n   -> SceneController\n      .ReturnToMenu()  FIX\n       |\n5. Clients return to menu\n   clean state  OK", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 530, "isDeleted": false, "id": "m5_code_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 850, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 475, "height": 130, "seed": 530, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 531, "isDeleted": false, "id": "m5_code_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 854, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 400, "height": 14, "seed": 531, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 3, "text": "// GameManager.cs  OnNetworkDespawn() — add client recovery:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// GameManager.cs  OnNetworkDespawn() — add client recovery:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 532, "isDeleted": false, "id": "m5_code",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 548, "y": 872, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 100, "seed": 532, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 3, "text": "public override void OnNetworkDespawn()\n{\n    CurrentState.OnValueChanged -= OnStateValueChanged;\n    PhaseTimer.OnValueChanged -= OnTimerValueChanged;\n\n    // M5 FIX: host disconnect -> return clients to menu\n    if (!IsServer)\n    {\n        Debug.LogWarning(\"[GameManager] Host disconnected, returning to menu\");\n        GameEvents.ResetAll();\n        SceneController.ReturnToMenu();\n    }\n}", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "public override void OnNetworkDespawn()\n{\n    CurrentState.OnValueChanged -= OnStateValueChanged;\n    PhaseTimer.OnValueChanged -= OnTimerValueChanged;\n\n    // M5 FIX: host disconnect -> return clients to menu\n    if (!IsServer)\n    {\n        Debug.LogWarning(\"[GameManager] Host disconnected, returning to menu\");\n        GameEvents.ResetAll();\n        SceneController.ReturnToMenu();\n    }\n}", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 533, "isDeleted": false, "id": "m5_note",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 540, "y": 988, "strokeColor": "#e67700", "backgroundColor": "transparent",
+      "width": 475, "height": 42, "seed": 533, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "GameEvents.ResetAll() nulls all delegates (line 41 in GameEvents.cs).\nSceneController.ReturnToMenu() loads the lobby/menu scene.\nTogether they ensure a full clean reset on all remaining clients.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "GameEvents.ResetAll() nulls all delegates (line 41 in GameEvents.cs).\nSceneController.ReturnToMenu() loads the lobby/menu scene.\nTogether they ensure a full clean reset on all remaining clients.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 600, "isDeleted": false, "id": "m6_frame",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 1040, "y": 630, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 490, "height": 520, "seed": 600, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 601, "isDeleted": false, "id": "m6_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 635, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 470, "height": 25, "seed": 601, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 18, "fontFamily": 1, "text": "M6 — Double Cleanup Removal [ORTA]", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "M6 — Double Cleanup Removal [ORTA]", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 602, "isDeleted": false, "id": "m6_file",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 658, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 470, "height": 16, "seed": 602, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "GameManager.cs :: StartTransition() line 138  +  EndRound() line 199", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "GameManager.cs :: StartTransition() line 138  +  EndRound() line 199", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 610, "isDeleted": false, "id": "m6_before_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 680, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 220, "height": 195, "seed": 610, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 611, "isDeleted": false, "id": "m6_before_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1120, "y": 685, "strokeColor": "#c92a2a", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 611, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "BEFORE", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 612, "isDeleted": false, "id": "m6_before_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 708, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 160, "seed": 612, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "DayPhase timer expires\n       |\n   TickPhaseTimer()\n       |\n   StartTransition()\n   line 138:\n   DayPhaseCleanup()  1st\n       |    (Transition runs)\n       |\n   EndRound()\n   line 199:\n   DayPhaseCleanup()  2nd\n       |\n   DOUBLE CLEANUP!  BUG\n   Stations cleared twice\n   Potential null refs", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "DayPhase timer expires\n       |\n   TickPhaseTimer()\n       |\n   StartTransition()\n   line 138:\n   DayPhaseCleanup()  1st\n       |    (Transition runs)\n       |\n   EndRound()\n   line 199:\n   DayPhaseCleanup()  2nd\n       |\n   DOUBLE CLEANUP!  BUG\n   Stations cleared twice\n   Potential null refs", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 1, "versionNonce": 615, "isDeleted": false, "id": "m6_arrow",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1275, "y": 770, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 25, "height": 0, "seed": 615, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null, "startArrowhead": null, "endArrowhead": "arrow",
+      "points": [[0,0],[25,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 620, "isDeleted": false, "id": "m6_after_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1305, "y": 680, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 220, "height": 195, "seed": 620, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 621, "isDeleted": false, "id": "m6_after_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1375, "y": 685, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 80, "height": 18, "seed": 621, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFTER", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 622, "isDeleted": false, "id": "m6_after_flow",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1313, "y": 708, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 205, "height": 160, "seed": 622, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "DayPhase timer expires\n       |\n   TickPhaseTimer()\n       |\n   StartTransition()\n   line 138:\n   (REMOVED cleanup call)\n   Only set state + timer\n       |    (Transition runs)\n       |\n   EndRound()\n   line 199:\n   DayPhaseCleanup()  ONLY\n       |\n   SINGLE CLEANUP  FIX\n   Clean, predictable\n   No double-fire risk", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "DayPhase timer expires\n       |\n   TickPhaseTimer()\n       |\n   StartTransition()\n   line 138:\n   (REMOVED cleanup call)\n   Only set state + timer\n       |    (Transition runs)\n       |\n   EndRound()\n   line 199:\n   DayPhaseCleanup()  ONLY\n       |\n   SINGLE CLEANUP  FIX\n   Clean, predictable\n   No double-fire risk", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 630, "isDeleted": false, "id": "m6_code_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 885, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 475, "height": 115, "seed": 630, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 631, "isDeleted": false, "id": "m6_code_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 889, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 400, "height": 14, "seed": 631, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 3, "text": "// GameManager.cs  StartTransition() — REMOVE line 138:", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "// GameManager.cs  StartTransition() — REMOVE line 138:", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 632, "isDeleted": false, "id": "m6_code",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 907, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 460, "height": 85, "seed": 632, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 3, "text": "private void StartTransition()\n{\n    // REMOVED: GameEvents.DayPhaseCleanup();  // M6 FIX\n    CurrentState.Value = GameState.Transition;\n    localTimer = settings.transitionDuration;\n    PhaseTimer.Value = localTimer;\n    Debug.Log(\"[GameManager] Transition started\");\n}", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "private void StartTransition()\n{\n    // REMOVED: GameEvents.DayPhaseCleanup();  // M6 FIX\n    CurrentState.Value = GameState.Transition;\n    localTimer = settings.transitionDuration;\n    PhaseTimer.Value = localTimer;\n    Debug.Log(\"[GameManager] Transition started\");\n}", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 633, "isDeleted": false, "id": "m6_note",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 1008, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 475, "height": 42, "seed": 633, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "Current flow: DayPhase -> StartTransition (cleanup#1) -> Transition\n-> EndRound (cleanup#2). Fix: only fire in EndRound.\nEndRound (line 199) already calls DayPhaseCleanup, so just remove line 138.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Current flow: DayPhase -> StartTransition (cleanup#1) -> Transition\n-> EndRound (cleanup#2). Fix: only fire in EndRound.\nEndRound (line 199) already calls DayPhaseCleanup, so just remove line 138.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 700, "isDeleted": false, "id": "legend_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1050, "y": 1060, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 480, "height": 90, "seed": 700, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 701, "isDeleted": false, "id": "legend_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 1064, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 200, "height": 16, "seed": 701, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "LEGEND", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "LEGEND", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 710, "isDeleted": false, "id": "legend_red",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 1084, "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5",
+      "width": 14, "height": 14, "seed": 710, "groupIds": [], "frameId": null,
+      "roundness": null, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 711, "isDeleted": false, "id": "legend_red_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1078, "y": 1084, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 200, "height": 14, "seed": 711, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "BEFORE — Current buggy flow", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BEFORE — Current buggy flow", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 720, "isDeleted": false, "id": "legend_green",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 1102, "strokeColor": "#2f9e44", "backgroundColor": "#ebfbee",
+      "width": 14, "height": 14, "seed": 720, "groupIds": [], "frameId": null,
+      "roundness": null, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 721, "isDeleted": false, "id": "legend_green_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1078, "y": 1102, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 200, "height": 14, "seed": 721, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "AFTER — Fixed flow", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFTER — Fixed flow", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 730, "isDeleted": false, "id": "legend_gray",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1058, "y": 1120, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 14, "height": 14, "seed": 730, "groupIds": [], "frameId": null,
+      "roundness": null, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 731, "isDeleted": false, "id": "legend_gray_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1078, "y": 1120, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 200, "height": 14, "seed": 731, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "Code template (monospace)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Code template (monospace)", "lineHeight": 1.25
+    },
+
+    {
+      "type": "text", "version": 1, "versionNonce": 740, "isDeleted": false, "id": "legend_arrow_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1300, "y": 1084, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 220, "height": 42, "seed": 740, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "Blue arrows: BEFORE -> AFTER\nOrange labels: YUKSEK priority\nRed labels: KRITIK priority", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Blue arrows: BEFORE -> AFTER\nOrange labels: YUKSEK priority\nRed labels: KRITIK priority", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 1, "versionNonce": 800, "isDeleted": false, "id": "summary_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 20, "y": 1060, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 500, "height": 20, "seed": 800, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "AFFECTED FILES SUMMARY", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "AFFECTED FILES SUMMARY", "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle", "version": 1, "versionNonce": 801, "isDeleted": false, "id": "summary_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 20, "y": 1083, "strokeColor": "#495057", "backgroundColor": "#f8f9fa",
+      "width": 1010, "height": 67, "seed": 801, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 1, "versionNonce": 802, "isDeleted": false, "id": "summary_text",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 28, "y": 1087, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 995, "height": 56, "seed": 802, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 3, "text": "GameManager.cs          -> M1 (OnNetworkSpawn client catch-up)  |  M5 (OnNetworkDespawn host recovery)  |  M6 (remove StartTransition cleanup)\nPlayerInteraction.cs    -> M2 (phase guard on 5 RPCs)  |  M3 (subscribe to DayPhaseCleanup, add ClearCarriedItem)\nPlayerSpawnManager.cs   -> M4 (check + log CarriedItem before despawn in OnClientDisconnected)\nGameEvents.cs           -> No changes needed (ResetAll already exists for M5 use)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "GameManager.cs          -> M1 (OnNetworkSpawn client catch-up)  |  M5 (OnNetworkDespawn host recovery)  |  M6 (remove StartTransition cleanup)\nPlayerInteraction.cs    -> M2 (phase guard on 5 RPCs)  |  M3 (subscribe to DayPhaseCleanup, add ClearCarriedItem)\nPlayerSpawnManager.cs   -> M4 (check + log CarriedItem before despawn in OnClientDisconnected)\nGameEvents.cs           -> No changes needed (ResetAll already exists for M5 use)", "lineHeight": 1.25
+    }
+  ],
+
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

@@ -1,0 +1,1062 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hand-authored",
+  "elements": [
+
+    {
+      "type": "text", "version": 2, "versionNonce": 1, "isDeleted": false, "id": "title",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 200, "y": 12, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 1100, "height": 35, "seed": 1, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 26, "fontFamily": 1, "text": "Player Interaction Akisi — E Tusu Basildiginda Ne Olur?", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "Player Interaction Akisi — E Tusu Basildiginda Ne Olur?", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 2, "isDeleted": false, "id": "subtitle",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 60,
+      "angle": 0, "x": 200, "y": 46, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 1100, "height": 18, "seed": 2, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "PlayerInteraction.cs  |  CookingStation.cs  |  ServingCounter.cs  |  IngredientSource.cs", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "PlayerInteraction.cs  |  CookingStation.cs  |  ServingCounter.cs  |  IngredientSource.cs", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 10, "isDeleted": false, "id": "client_zone",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 10, "y": 70, "strokeColor": "#2f9e44", "backgroundColor": "#b2f2bb",
+      "width": 730, "height": 1030, "seed": 10, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 11, "isDeleted": false, "id": "client_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 20, "y": 74, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 200, "height": 18, "seed": 11, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "CLIENT SIDE (Owner Only)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "CLIENT SIDE (Owner Only)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 12, "isDeleted": false, "id": "server_zone",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 15,
+      "angle": 0, "x": 770, "y": 70, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 730, "height": 1030, "seed": 12, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 13, "isDeleted": false, "id": "server_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 780, "y": 74, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 250, "height": 18, "seed": 13, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 14, "fontFamily": 1, "text": "SERVER SIDE (Authority)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "SERVER SIDE (Authority)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "line", "version": 2, "versionNonce": 14, "isDeleted": false, "id": "boundary_line",
+      "fillStyle": "solid", "strokeWidth": 3, "strokeStyle": "dashed", "roughness": 0, "opacity": 40,
+      "angle": 0, "x": 750, "y": 70, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 0, "height": 1030, "seed": 14, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": null, "points": [[0,0],[0,1030]]
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 15, "isDeleted": false, "id": "boundary_text",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 50,
+      "angle": 0, "x": 735, "y": 555, "strokeColor": "#868e96", "backgroundColor": "transparent",
+      "width": 30, "height": 80, "seed": 15, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "N\nE\nT\nW\nO\nR\nK", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "N\nE\nT\nW\nO\nR\nK", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 2, "versionNonce": 100, "isDeleted": false, "id": "sec1_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 25, "y": 96, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 300, "height": 16, "seed": 100, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "SECTION 1: Input Detection", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "SECTION 1: Input Detection", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 101, "isDeleted": false, "id": "s1_update",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 30, "y": 118, "strokeColor": "#2f9e44", "backgroundColor": "#b2f2bb",
+      "width": 145, "height": 40, "seed": 101, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "s1_update_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 102, "isDeleted": false, "id": "s1_update_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 123, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 135, "height": 30, "seed": 102, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 11, "fontFamily": 1, "text": "Update()\nRuns every frame", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "s1_update", "originalText": "Update()\nRuns every frame", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 103, "isDeleted": false, "id": "arr_update_cooldown",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 175, "y": 138, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 28, "height": 0, "seed": 103, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[28,0]]
+    },
+
+    {
+      "type": "diamond", "version": 2, "versionNonce": 104, "isDeleted": false, "id": "s1_cooldown",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 203, "y": 108, "strokeColor": "#2f9e44", "backgroundColor": "#d3f9d8",
+      "width": 135, "height": 60, "seed": 104, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [{"id": "s1_cooldown_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 105, "isDeleted": false, "id": "s1_cooldown_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 225, "y": 125, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 90, "height": 26, "seed": 105, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "cooldown > 0?\n(0.25s)", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "s1_cooldown", "originalText": "cooldown > 0?\n(0.25s)", "lineHeight": 1.25
+    },
+
+    {
+      "type": "text", "version": 2, "versionNonce": 106, "isDeleted": false, "id": "cooldown_yes",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 60,
+      "angle": 0, "x": 261, "y": 170, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 30, "height": 14, "seed": 106, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "YES", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "YES", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 1061, "isDeleted": false, "id": "cooldown_yes_return",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 60,
+      "angle": 0, "x": 243, "y": 185, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 60, "height": 14, "seed": 1061, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "-> return", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "-> return", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 107, "isDeleted": false, "id": "arr_cooldown_ekey",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 338, "y": 138, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 28, "height": 0, "seed": 107, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[28,0]]
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 1070, "isDeleted": false, "id": "no_label_1",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 60,
+      "angle": 0, "x": 344, "y": 126, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 18, "height": 12, "seed": 1070, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "NO", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "NO", "lineHeight": 1.25
+    },
+
+    {
+      "type": "diamond", "version": 2, "versionNonce": 108, "isDeleted": false, "id": "s1_ekey",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 366, "y": 104, "strokeColor": "#2f9e44", "backgroundColor": "#d3f9d8",
+      "width": 165, "height": 68, "seed": 108, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [{"id": "s1_ekey_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 109, "isDeleted": false, "id": "s1_ekey_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 400, "y": 118, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 100, "height": 40, "seed": 109, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "InteractAction\n.WasPressedThisFrame()\n[E key]", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "s1_ekey", "originalText": "InteractAction\n.WasPressedThisFrame()\n[E key]", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 110, "isDeleted": false, "id": "arr_ekey_sphere",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 531, "y": 138, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 28, "height": 0, "seed": 110, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[28,0]]
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 111, "isDeleted": false, "id": "s1_sphere",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 559, "y": 110, "strokeColor": "#2f9e44", "backgroundColor": "#b2f2bb",
+      "width": 165, "height": 55, "seed": 111, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "s1_sphere_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 112, "isDeleted": false, "id": "s1_sphere_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 564, "y": 115, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 155, "height": 45, "seed": 112, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "TryInteract()\nOverlapSphere(pos, 2.5f)\nFind closest in interactLayer", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "s1_sphere", "originalText": "TryInteract()\nOverlapSphere(pos, 2.5f)\nFind closest in interactLayer", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 2, "versionNonce": 200, "isDeleted": false, "id": "sec2_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 25, "y": 210, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 350, "height": 16, "seed": 200, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "SECTION 2: Target Detection & Branching", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "SECTION 2: Target Detection & Branching", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 201, "isDeleted": false, "id": "arr_sphere_branch",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 641, "y": 165, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 0, "height": 30, "seed": 201, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[0,30]]
+    },
+
+    {
+      "type": "diamond", "version": 2, "versionNonce": 202, "isDeleted": false, "id": "s2_detect",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 550, "y": 195, "strokeColor": "#2f9e44", "backgroundColor": "#d3f9d8",
+      "width": 180, "height": 55, "seed": 202, "groupIds": [], "frameId": null,
+      "roundness": {"type": 2}, "boundElements": [{"id": "s2_detect_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 203, "isDeleted": false, "id": "s2_detect_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 590, "y": 210, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 100, "height": 26, "seed": 203, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "TryGetComponent\non closest?", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "s2_detect", "originalText": "TryGetComponent\non closest?", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 210, "isDeleted": false, "id": "arr_branch_a",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 550, "y": 222, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 260, "height": 55, "seed": 210, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[-260,55]]
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 211, "isDeleted": false, "id": "branch_a_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 25, "y": 280, "strokeColor": "#2f9e44", "backgroundColor": "#b2f2bb",
+      "width": 260, "height": 180, "seed": 211, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 212, "isDeleted": false, "id": "branch_a_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 286, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 240, "height": 16, "seed": 212, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "BRANCH A: CookingStation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BRANCH A: CookingStation", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 213, "isDeleted": false, "id": "branch_a_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 308, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 240, "height": 145, "seed": 213, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "HandleCookingStation(station)\n\nIF station.IsIdle:\n  -> RecipeSelectUI.Instance.Open(station)\n  -> Player selects recipe\n  -> RequestStartCooking(station, idx)\n  -> StartCookingRpc(netId, recipeIndex)\n\nIF station.IsDone:\n  -> CollectDishRpc(netId)\n\nIF station.IsBurned:\n  -> ClearStationRpc(netId)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "HandleCookingStation(station)\n\nIF station.IsIdle:\n  -> RecipeSelectUI.Instance.Open(station)\n  -> Player selects recipe\n  -> RequestStartCooking(station, idx)\n  -> StartCookingRpc(netId, recipeIndex)\n\nIF station.IsDone:\n  -> CollectDishRpc(netId)\n\nIF station.IsBurned:\n  -> ClearStationRpc(netId)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 220, "isDeleted": false, "id": "arr_branch_b",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 580, "y": 250, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 200, "height": 45, "seed": 220, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[-200,45]]
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 221, "isDeleted": false, "id": "branch_b_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 25, "y": 475, "strokeColor": "#2f9e44", "backgroundColor": "#b2f2bb",
+      "width": 260, "height": 100, "seed": 221, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 222, "isDeleted": false, "id": "branch_b_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 481, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 240, "height": 16, "seed": 222, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "BRANCH B: ServingCounter", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BRANCH B: ServingCounter", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 223, "isDeleted": false, "id": "branch_b_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 502, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 240, "height": 65, "seed": 223, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "HandleServingCounter(counter)\n\nIF IsCarrying && ItemType == Dish:\n  -> PlaceDishRpc(netId, recipeIndex)\n\nELSE: nothing", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "HandleServingCounter(counter)\n\nIF IsCarrying && ItemType == Dish:\n  -> PlaceDishRpc(netId, recipeIndex)\n\nELSE: nothing", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 230, "isDeleted": false, "id": "arr_branch_c",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 610, "y": 250, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 250, "height": 140, "seed": 230, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[-250,140]]
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 231, "isDeleted": false, "id": "branch_c_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 25, "y": 590, "strokeColor": "#2f9e44", "backgroundColor": "#b2f2bb",
+      "width": 260, "height": 90, "seed": 231, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 232, "isDeleted": false, "id": "branch_c_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 596, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 240, "height": 16, "seed": 232, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "BRANCH C: IngredientSource", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BRANCH C: IngredientSource", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 233, "isDeleted": false, "id": "branch_c_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 617, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 240, "height": 55, "seed": 233, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "HandleIngredientSource(source)\n\nIF !IsCarrying:\n  -> PickUpIngredientRpc(ingredientIndex)\n\nELSE: nothing (hands full)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "HandleIngredientSource(source)\n\nIF !IsCarrying:\n  -> PickUpIngredientRpc(ingredientIndex)\n\nELSE: nothing (hands full)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 241, "isDeleted": false, "id": "branch_e_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 25, "y": 695, "strokeColor": "#868e96", "backgroundColor": "#dee2e6",
+      "width": 260, "height": 40, "seed": 241, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "branch_e_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 242, "isDeleted": false, "id": "branch_e_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 700, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 250, "height": 30, "seed": 242, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "NOTHING IN RANGE\nhits.Length == 0 -> return", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "branch_e_box", "originalText": "NOTHING IN RANGE\nhits.Length == 0 -> return", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 250, "isDeleted": false, "id": "drop_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 370, "y": 280, "strokeColor": "#e8590c", "backgroundColor": "#ffe8cc",
+      "width": 170, "height": 60, "seed": 250, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "drop_box_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 251, "isDeleted": false, "id": "drop_box_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 375, "y": 285, "strokeColor": "#e8590c", "backgroundColor": "transparent",
+      "width": 160, "height": 50, "seed": 251, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "DROP ACTION (Q key)\nIF IsCarrying:\n  -> DropItemRpc()\n  -> CarriedItem = Empty", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "drop_box", "originalText": "DROP ACTION (Q key)\nIF IsCarrying:\n  -> DropItemRpc()\n  -> CarriedItem = Empty", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 2, "versionNonce": 300, "isDeleted": false, "id": "sec3_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 330, "y": 760, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 350, "height": 16, "seed": 300, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "SECTION 3: RPCs Cross the Network Boundary", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "SECTION 3: RPCs Cross the Network Boundary", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 301, "isDeleted": false, "id": "rpc_list_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 330, "y": 780, "strokeColor": "#1971c2", "backgroundColor": "#d0ebff",
+      "width": 350, "height": 145, "seed": 301, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 302, "isDeleted": false, "id": "rpc_list_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 340, "y": 786, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 330, "height": 16, "seed": 302, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "[Rpc(SendTo.Server)] Calls", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "[Rpc(SendTo.Server)] Calls", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 303, "isDeleted": false, "id": "rpc_list_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 340, "y": 808, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 330, "height": 110, "seed": 303, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "1. StartCookingRpc(stationNetId, recipeIndex)\n   -> from RecipeSelectUI selection\n\n2. CollectDishRpc(stationNetId)\n   -> from station.IsDone\n\n3. ClearStationRpc(stationNetId)\n   -> from station.IsBurned\n\n4. PlaceDishRpc(counterNetId, recipeIndex)\n   -> from carrying dish at counter\n\n5. PickUpIngredientRpc(ingredientIndex)\n   -> from empty hands at source\n\n6. DropItemRpc()  -> from Q key while carrying", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. StartCookingRpc(stationNetId, recipeIndex)\n   -> from RecipeSelectUI selection\n\n2. CollectDishRpc(stationNetId)\n   -> from station.IsDone\n\n3. ClearStationRpc(stationNetId)\n   -> from station.IsBurned\n\n4. PlaceDishRpc(counterNetId, recipeIndex)\n   -> from carrying dish at counter\n\n5. PickUpIngredientRpc(ingredientIndex)\n   -> from empty hands at source\n\n6. DropItemRpc()  -> from Q key while carrying", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 304, "isDeleted": false, "id": "arr_rpc_cross",
+      "fillStyle": "solid", "strokeWidth": 3, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 680, "y": 850, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 100, "height": 0, "seed": 304, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[100,0]]
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 305, "isDeleted": false, "id": "rpc_cross_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 690, "y": 836, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 80, "height": 12, "seed": 305, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "RPC CALL ->", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "RPC CALL ->", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 2, "versionNonce": 400, "isDeleted": false, "id": "sec4_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 790, "y": 96, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 350, "height": 16, "seed": 400, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "SECTION 4: Server Validation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "SECTION 4: Server Validation", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 410, "isDeleted": false, "id": "val_start_cooking",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 118, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 320, "height": 145, "seed": 410, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 411, "isDeleted": false, "id": "val_sc_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 124, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 300, "height": 16, "seed": 411, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "StartCookingRpc Validation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "StartCookingRpc Validation", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 412, "isDeleted": false, "id": "val_sc_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 145, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 110, "seed": 412, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "1. Resolve stationNetId -> NetworkObject\n2. GetComponent<CookingStation>()\n3. station.IsIdle? (CookingStatus.Idle)\n4. ValidateTeam(OwnerClientId, station.TeamId)\n   -> TeamManager.GetPlayerTeam()\n5. ValidateProximity(station.transform.position)\n   -> dist <= interactRange * 1.5f\n6. station.StartCooking(recipeIndex)\n   -> Checks requiredStation type match\n   -> Sets Status = Cooking, progress = 0\n   -> GameEvents.CookingStarted()", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Resolve stationNetId -> NetworkObject\n2. GetComponent<CookingStation>()\n3. station.IsIdle? (CookingStatus.Idle)\n4. ValidateTeam(OwnerClientId, station.TeamId)\n   -> TeamManager.GetPlayerTeam()\n5. ValidateProximity(station.transform.position)\n   -> dist <= interactRange * 1.5f\n6. station.StartCooking(recipeIndex)\n   -> Checks requiredStation type match\n   -> Sets Status = Cooking, progress = 0\n   -> GameEvents.CookingStarted()", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 413, "isDeleted": false, "id": "bug_m2",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 155, "strokeColor": "#e03131", "backgroundColor": "#ffc9c9",
+      "width": 350, "height": 55, "seed": 413, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 414, "isDeleted": false, "id": "bug_m2_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 160, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 330, "height": 45, "seed": 414, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "BUG M2: GameState guard EKSIK\nStartCookingRpc'de GameState == DayPhase\nkontrolu yok. Gece fazinda cooking baslatilabilir!", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BUG M2: GameState guard EKSIK\nStartCookingRpc'de GameState == DayPhase\nkontrolu yok. Gece fazinda cooking baslatilabilir!", "lineHeight": 1.25
+    },
+    {
+      "type": "arrow", "version": 2, "versionNonce": 415, "isDeleted": false, "id": "arr_bug_m2",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 182, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 20, "height": 0, "seed": 415, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": "arrow", "endArrowhead": null, "points": [[0,0],[-20,0]]
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 420, "isDeleted": false, "id": "val_collect_dish",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 278, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 320, "height": 135, "seed": 420, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 421, "isDeleted": false, "id": "val_cd_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 284, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 300, "height": 16, "seed": 421, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "CollectDishRpc Validation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "CollectDishRpc Validation", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 422, "isDeleted": false, "id": "val_cd_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 305, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 100, "seed": 422, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "1. Resolve stationNetId -> NetworkObject\n2. GetComponent<CookingStation>()\n3. station.IsDone? (CookingStatus.Done)\n4. ValidateTeam(OwnerClientId, station.TeamId)\n5. ValidateProximity(station.transform.position)\n6. station.CollectDish() -> returns recipeIndex\n   -> ClearStation() resets to Idle\n7. CarriedItem.Value = {Dish, recipeIndex}\n   -> NetworkVariable write -> all clients", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Resolve stationNetId -> NetworkObject\n2. GetComponent<CookingStation>()\n3. station.IsDone? (CookingStatus.Done)\n4. ValidateTeam(OwnerClientId, station.TeamId)\n5. ValidateProximity(station.transform.position)\n6. station.CollectDish() -> returns recipeIndex\n   -> ClearStation() resets to Idle\n7. CarriedItem.Value = {Dish, recipeIndex}\n   -> NetworkVariable write -> all clients", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 423, "isDeleted": false, "id": "bug_r2",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 318, "strokeColor": "#e03131", "backgroundColor": "#ffc9c9",
+      "width": 350, "height": 55, "seed": 423, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 424, "isDeleted": false, "id": "bug_r2_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 323, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 330, "height": 45, "seed": 424, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "BUG R2: Bos el kontrolu EKSIK\nCollectDishRpc'de CarriedItem.IsEmpty kontrolu\nyok. Elinde item varken uzerine dish yazilir!", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BUG R2: Bos el kontrolu EKSIK\nCollectDishRpc'de CarriedItem.IsEmpty kontrolu\nyok. Elinde item varken uzerine dish yazilir!", "lineHeight": 1.25
+    },
+    {
+      "type": "arrow", "version": 2, "versionNonce": 425, "isDeleted": false, "id": "arr_bug_r2",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 345, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 20, "height": 0, "seed": 425, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": "arrow", "endArrowhead": null, "points": [[0,0],[-20,0]]
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 430, "isDeleted": false, "id": "val_clear_station",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 428, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 320, "height": 100, "seed": 430, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 431, "isDeleted": false, "id": "val_cs_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 434, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 300, "height": 16, "seed": 431, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "ClearStationRpc Validation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "ClearStationRpc Validation", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 432, "isDeleted": false, "id": "val_cs_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 455, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 65, "seed": 432, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "1. Resolve stationNetId -> NetworkObject\n2. GetComponent<CookingStation>()\n3. ValidateTeam(OwnerClientId, station.TeamId)\n4. ValidateProximity(station.transform.position)\n5. station.ClearStation()\n   -> Resets to Idle, progress = 0", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Resolve stationNetId -> NetworkObject\n2. GetComponent<CookingStation>()\n3. ValidateTeam(OwnerClientId, station.TeamId)\n4. ValidateProximity(station.transform.position)\n5. station.ClearStation()\n   -> Resets to Idle, progress = 0", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 440, "isDeleted": false, "id": "val_place_dish",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 543, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 320, "height": 115, "seed": 440, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 441, "isDeleted": false, "id": "val_pd_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 549, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 300, "height": 16, "seed": 441, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "PlaceDishRpc Validation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "PlaceDishRpc Validation", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 442, "isDeleted": false, "id": "val_pd_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 570, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 80, "seed": 442, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "1. Resolve counterNetId -> NetworkObject\n2. GetComponent<ServingCounter>()\n3. ValidateTeam(OwnerClientId, counter.TeamId)\n4. ValidateProximity(counter.transform.position)\n5. counter.AddDish(recipeIndex)\n   -> platedDishes.Count < maxDishes (3)?\n   -> NetworkList<int>.Add(recipeIndex)\n6. CarriedItem.Value = Empty", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. Resolve counterNetId -> NetworkObject\n2. GetComponent<ServingCounter>()\n3. ValidateTeam(OwnerClientId, counter.TeamId)\n4. ValidateProximity(counter.transform.position)\n5. counter.AddDish(recipeIndex)\n   -> platedDishes.Count < maxDishes (3)?\n   -> NetworkList<int>.Add(recipeIndex)\n6. CarriedItem.Value = Empty", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 450, "isDeleted": false, "id": "val_pickup",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 673, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 320, "height": 100, "seed": 450, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 451, "isDeleted": false, "id": "val_pu_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 679, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 300, "height": 16, "seed": 451, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "PickUpIngredientRpc Validation", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "PickUpIngredientRpc Validation", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 452, "isDeleted": false, "id": "val_pu_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 700, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 65, "seed": 452, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "1. IsCarrying? -> return (hands full)\n2. RecipeDatabase bounds check\n   -> ingredientIndex >= 0 && < IngredientCount\n3. NO proximity check (see note)\n4. CarriedItem.Value = {Ingredient, index}\n   -> NetworkVariable write -> all clients", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "1. IsCarrying? -> return (hands full)\n2. RecipeDatabase bounds check\n   -> ingredientIndex >= 0 && < IngredientCount\n3. NO proximity check (see note)\n4. CarriedItem.Value = {Ingredient, index}\n   -> NetworkVariable write -> all clients", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 453, "isDeleted": false, "id": "note_proximity",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 693, "strokeColor": "#e8590c", "backgroundColor": "#ffe8cc",
+      "width": 310, "height": 45, "seed": 453, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 454, "isDeleted": false, "id": "note_proximity_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 698, "strokeColor": "#e8590c", "backgroundColor": "transparent",
+      "width": 290, "height": 35, "seed": 454, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "MVP NOTE: Proximity check skipped\nInfinite sources, low exploit risk.\n// TODO in code", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "MVP NOTE: Proximity check skipped\nInfinite sources, low exploit risk.\n// TODO in code", "lineHeight": 1.25
+    },
+    {
+      "type": "arrow", "version": 2, "versionNonce": 455, "isDeleted": false, "id": "arr_note_prox",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 715, "strokeColor": "#e8590c", "backgroundColor": "transparent",
+      "width": 20, "height": 0, "seed": 455, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": "arrow", "endArrowhead": null, "points": [[0,0],[-20,0]]
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 460, "isDeleted": false, "id": "val_drop",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 788, "strokeColor": "#1971c2", "backgroundColor": "#a5d8ff",
+      "width": 320, "height": 50, "seed": 460, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "val_drop_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 461, "isDeleted": false, "id": "val_drop_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 793, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 40, "seed": 461, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "DropItemRpc — No validation\nCarriedItem.Value = CarriedItemData.Empty\n(Unconditional server-side reset)", "textAlign": "left",
+      "verticalAlign": "middle", "containerId": "val_drop", "originalText": "DropItemRpc — No validation\nCarriedItem.Value = CarriedItemData.Empty\n(Unconditional server-side reset)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 2, "versionNonce": 500, "isDeleted": false, "id": "sec5_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 790, "y": 860, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 380, "height": 16, "seed": 500, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "SECTION 5: NetworkVariable Sync (SERVER -> ALL CLIENTS)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "SECTION 5: NetworkVariable Sync (SERVER -> ALL CLIENTS)", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 501, "isDeleted": false, "id": "sync_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 882, "strokeColor": "#5c940d", "backgroundColor": "#d8f5a2",
+      "width": 320, "height": 105, "seed": 501, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 502, "isDeleted": false, "id": "sync_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 800, "y": 888, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 300, "height": 95, "seed": 502, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "After server validates & executes:\n\nCarriedItem.Value changes\n  -> OnValueChanged fires on ALL clients\n  -> WritePermission: Server only\n\nCookingStation.StationState changes\n  -> CookProgress synced at ~10Hz (0.1s)\n  -> Status: Idle/Cooking/Done/Burned\n\nServingCounter.platedDishes (NetworkList)\n  -> OnListChanged fires on ALL clients", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "After server validates & executes:\n\nCarriedItem.Value changes\n  -> OnValueChanged fires on ALL clients\n  -> WritePermission: Server only\n\nCookingStation.StationState changes\n  -> CookProgress synced at ~10Hz (0.1s)\n  -> Status: Idle/Cooking/Done/Burned\n\nServingCounter.platedDishes (NetworkList)\n  -> OnListChanged fires on ALL clients", "lineHeight": 1.25
+    },
+
+    {
+      "type": "arrow", "version": 2, "versionNonce": 503, "isDeleted": false, "id": "arr_sync_back",
+      "fillStyle": "solid", "strokeWidth": 3, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 790, "y": 950, "strokeColor": "#5c940d", "backgroundColor": "transparent",
+      "width": 100, "height": 0, "seed": 503, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": null, "endArrowhead": "arrow", "points": [[0,0],[-100,0]]
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 504, "isDeleted": false, "id": "sync_back_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 700, "y": 938, "strokeColor": "#5c940d", "backgroundColor": "transparent",
+      "width": 90, "height": 12, "seed": 504, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "<- SYNC ALL", "textAlign": "center",
+      "verticalAlign": "top", "containerId": null, "originalText": "<- SYNC ALL", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "text", "version": 2, "versionNonce": 600, "isDeleted": false, "id": "sec6_label",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 25, "y": 960, "strokeColor": "#2f9e44", "backgroundColor": "transparent",
+      "width": 350, "height": 16, "seed": 600, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "SECTION 6: UI Response (All Clients)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "SECTION 6: UI Response (All Clients)", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 601, "isDeleted": false, "id": "ui_carried",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 25, "y": 982, "strokeColor": "#862e9c", "backgroundColor": "#d0bfff",
+      "width": 200, "height": 50, "seed": 601, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "ui_carried_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 602, "isDeleted": false, "id": "ui_carried_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 30, "y": 987, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 190, "height": 40, "seed": 602, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "DayPhaseHUD\nReads CarriedItem\n-> Shows/hides carried item panel", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "ui_carried", "originalText": "DayPhaseHUD\nReads CarriedItem\n-> Shows/hides carried item panel", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 603, "isDeleted": false, "id": "ui_cooking",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 240, "y": 982, "strokeColor": "#862e9c", "backgroundColor": "#d0bfff",
+      "width": 200, "height": 50, "seed": 603, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "ui_cooking_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 604, "isDeleted": false, "id": "ui_cooking_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 245, "y": 987, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 190, "height": 40, "seed": 604, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "CookingProgressUI\nReads StationState\n-> Progress bar + burn timer", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "ui_cooking", "originalText": "CookingProgressUI\nReads StationState\n-> Progress bar + burn timer", "lineHeight": 1.25
+    },
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 605, "isDeleted": false, "id": "ui_recipe",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 455, "y": 982, "strokeColor": "#862e9c", "backgroundColor": "#d0bfff",
+      "width": 200, "height": 50, "seed": 605, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "ui_recipe_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 606, "isDeleted": false, "id": "ui_recipe_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 460, "y": 987, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 190, "height": 40, "seed": 606, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "RecipeSelectUI\nCloses after selection\n-> Calls RequestStartCooking()", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "ui_recipe", "originalText": "RecipeSelectUI\nCloses after selection\n-> Calls RequestStartCooking()", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 700, "isDeleted": false, "id": "bug_m3",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 882, "strokeColor": "#e03131", "backgroundColor": "#ffc9c9",
+      "width": 350, "height": 55, "seed": 700, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 701, "isDeleted": false, "id": "bug_m3_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 887, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 330, "height": 45, "seed": 701, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "BUG M3: Round bittiginde CarriedItem TEMIZLENMIYOR\nOnDayPhaseCleanup CookingStation & ServingCounter'i\ntemizler ama CarriedItem.Value sifirlanmiyor.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "BUG M3: Round bittiginde CarriedItem TEMIZLENMIYOR\nOnDayPhaseCleanup CookingStation & ServingCounter'i\ntemizler ama CarriedItem.Value sifirlanmiyor.", "lineHeight": 1.25
+    },
+    {
+      "type": "arrow", "version": 2, "versionNonce": 702, "isDeleted": false, "id": "arr_bug_m3",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 920, "strokeColor": "#e03131", "backgroundColor": "transparent",
+      "width": 20, "height": 0, "seed": 702, "groupIds": [], "frameId": null, "roundness": {"type": 2},
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "startBinding": null, "endBinding": null, "lastCommittedPoint": null,
+      "startArrowhead": "arrow", "endArrowhead": null, "points": [[0,0],[-20,0]]
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 800, "isDeleted": false, "id": "general_note",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 780, "strokeColor": "#1971c2", "backgroundColor": "#d0ebff",
+      "width": 350, "height": 80, "seed": 800, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 801, "isDeleted": false, "id": "general_note_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 785, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 330, "height": 70, "seed": 801, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "ARCHITECTURE NOTE\nTum validation server-side = anti-cheat.\nClient sadece RPC gonderir, hicbir state yazmaz.\n\nNetworkVariable WritePermission: Server\nNetworkVariable ReadPermission: Everyone\n-> Client'lar sadece okur, server yazar.", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "ARCHITECTURE NOTE\nTum validation server-side = anti-cheat.\nClient sadece RPC gonderir, hicbir state yazmaz.\n\nNetworkVariable WritePermission: Server\nNetworkVariable ReadPermission: Everyone\n-> Client'lar sadece okur, server yazar.", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 810, "isDeleted": false, "id": "validation_helpers",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 438, "strokeColor": "#1971c2", "backgroundColor": "#d0ebff",
+      "width": 350, "height": 100, "seed": 810, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 811, "isDeleted": false, "id": "val_helpers_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 444, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 330, "height": 16, "seed": 811, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "Shared Validation Helpers", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Shared Validation Helpers", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 812, "isDeleted": false, "id": "val_helpers_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 465, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 330, "height": 65, "seed": 812, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "ValidateTeam(senderClientId, stationTeamId)\n  -> TeamManager.Instance.GetPlayerTeam(clientId)\n  -> Returns false if team mismatch\n\nValidateProximity(targetPos)\n  -> dist <= interactRange * PROXIMITY_TOLERANCE\n  -> interactRange=2.5f, tolerance=1.5f => max 3.75f", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "ValidateTeam(senderClientId, stationTeamId)\n  -> TeamManager.Instance.GetPlayerTeam(clientId)\n  -> Returns false if team mismatch\n\nValidateProximity(targetPos)\n  -> dist <= interactRange * PROXIMITY_TOLERANCE\n  -> interactRange=2.5f, tolerance=1.5f => max 3.75f", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 820, "isDeleted": false, "id": "cooking_lifecycle",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 555, "strokeColor": "#1971c2", "backgroundColor": "#d0ebff",
+      "width": 350, "height": 115, "seed": 820, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 821, "isDeleted": false, "id": "cl_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 561, "strokeColor": "#1971c2", "backgroundColor": "transparent",
+      "width": 330, "height": 16, "seed": 821, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "CookingStation Lifecycle (Server)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "CookingStation Lifecycle (Server)", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 822, "isDeleted": false, "id": "cl_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1140, "y": 582, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 330, "height": 80, "seed": 822, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "Idle -> StartCooking() -> Cooking\n  TickCooking(): progress += dt/cookTime\n  Sync at ~10Hz via SYNC_INTERVAL (0.1s)\n\nCooking -> progress >= 1.0 -> Done\n  burnTimer = settings.burnTimeAfterDone\n  GameEvents.CookingCompleted()\n\nDone -> burnTimer <= 0 -> Burned\n  TickBurnTimer() counts down", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Idle -> StartCooking() -> Cooking\n  TickCooking(): progress += dt/cookTime\n  Sync at ~10Hz via SYNC_INTERVAL (0.1s)\n\nCooking -> progress >= 1.0 -> Done\n  burnTimer = settings.burnTimeAfterDone\n  GameEvents.CookingCompleted()\n\nDone -> burnTimer <= 0 -> Burned\n  TickBurnTimer() counts down", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 900, "isDeleted": false, "id": "cleanup_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 1130, "y": 955, "strokeColor": "#862e9c", "backgroundColor": "#e5dbff",
+      "width": 350, "height": 45, "seed": 900, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [{"id": "cleanup_t", "type": "text"}], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 901, "isDeleted": false, "id": "cleanup_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 1135, "y": 960, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 340, "height": 35, "seed": 901, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "OnDayPhaseCleanup Event\nCookingStation.ClearStation() + ServingCounter.ClearAll()\nBUT: PlayerInteraction.CarriedItem NOT cleared (BUG M3)", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "cleanup_box", "originalText": "OnDayPhaseCleanup Event\nCookingStation.ClearStation() + ServingCounter.ClearAll()\nBUT: PlayerInteraction.CarriedItem NOT cleared (BUG M3)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 910, "isDeleted": false, "id": "legend_box",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 25, "y": 1050, "strokeColor": "#868e96", "backgroundColor": "#f8f9fa",
+      "width": 700, "height": 40, "seed": 910, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 911, "isDeleted": false, "id": "legend_t",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 35, "y": 1057, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 680, "height": 26, "seed": 911, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 10, "fontFamily": 1, "text": "LEGEND:   Green = Client-side (owner only)   |   Blue = Server-side (authority)   |   Red = Bug/Fix needed   |   Orange = MVP note   |   Purple = UI layer", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "LEGEND:   Green = Client-side (owner only)   |   Blue = Server-side (authority)   |   Red = Bug/Fix needed   |   Orange = MVP note   |   Purple = UI layer", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 920, "isDeleted": false, "id": "data_types_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 370, "y": 360, "strokeColor": "#495057", "backgroundColor": "#f1f3f5",
+      "width": 170, "height": 95, "seed": 920, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 921, "isDeleted": false, "id": "data_types_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 366, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 150, "height": 16, "seed": 921, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "Data Types", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Data Types", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 922, "isDeleted": false, "id": "data_types_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 386, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 150, "height": 65, "seed": 922, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "CarriedItemData:\n  ItemType: None/Dish/Ingredient\n  ItemIndex: int (recipe/ingr)\n\nCookingStationData:\n  Status: Idle/Cooking/Done/Burned\n  RecipeIndex, CookProgress", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "CarriedItemData:\n  ItemType: None/Dish/Ingredient\n  ItemIndex: int (recipe/ingr)\n\nCookingStationData:\n  Status: Idle/Cooking/Done/Burned\n  RecipeIndex, CookProgress", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 930, "isDeleted": false, "id": "constants_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 370, "y": 470, "strokeColor": "#495057", "backgroundColor": "#f1f3f5",
+      "width": 170, "height": 80, "seed": 930, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 931, "isDeleted": false, "id": "constants_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 476, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 150, "height": 16, "seed": 931, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "Constants", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Constants", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 932, "isDeleted": false, "id": "constants_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 496, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 150, "height": 50, "seed": 932, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "interactRange = 2.5f\nINTERACTION_COOLDOWN = 0.25f\nPROXIMITY_TOLERANCE = 1.5f\nSYNC_INTERVAL = 0.1f\nServingCounter.maxDishes = 3", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "interactRange = 2.5f\nINTERACTION_COOLDOWN = 0.25f\nPROXIMITY_TOLERANCE = 1.5f\nSYNC_INTERVAL = 0.1f\nServingCounter.maxDishes = 3", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 940, "isDeleted": false, "id": "priority_box",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 370, "y": 565, "strokeColor": "#495057", "backgroundColor": "#f1f3f5",
+      "width": 170, "height": 70, "seed": 940, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 941, "isDeleted": false, "id": "priority_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 571, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 150, "height": 16, "seed": 941, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "Detection Priority", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Detection Priority", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 942, "isDeleted": false, "id": "priority_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 591, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 150, "height": 40, "seed": 942, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "Closest collider wins, then:\n1st: CookingStation\n2nd: ServingCounter\n3rd: IngredientSource\n(component check order)", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Closest collider wins, then:\n1st: CookingStation\n2nd: ServingCounter\n3rd: IngredientSource\n(component check order)", "lineHeight": 1.25
+    },
+
+
+    {
+      "type": "rectangle", "version": 2, "versionNonce": 950, "isDeleted": false, "id": "flow_summary",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 1, "opacity": 100,
+      "angle": 0, "x": 370, "y": 650, "strokeColor": "#495057", "backgroundColor": "#f1f3f5",
+      "width": 170, "height": 80, "seed": 950, "groupIds": [], "frameId": null,
+      "roundness": {"type": 3}, "boundElements": [], "updated": 1, "link": null, "locked": false
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 951, "isDeleted": false, "id": "flow_summary_title",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 656, "strokeColor": "#495057", "backgroundColor": "transparent",
+      "width": 150, "height": 16, "seed": 951, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 12, "fontFamily": 1, "text": "Flow Summary", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "Flow Summary", "lineHeight": 1.25
+    },
+    {
+      "type": "text", "version": 2, "versionNonce": 952, "isDeleted": false, "id": "flow_summary_body",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "angle": 0, "x": 380, "y": 676, "strokeColor": "#1e1e1e", "backgroundColor": "transparent",
+      "width": 150, "height": 50, "seed": 952, "groupIds": [], "frameId": null, "roundness": null,
+      "boundElements": [], "updated": 1, "link": null, "locked": false,
+      "fontSize": 9, "fontFamily": 1, "text": "E pressed -> Detect target\n  -> Branch by component\n  -> Send RPC to server\n  -> Server validates\n  -> NetworkVar updated\n  -> All clients see change", "textAlign": "left",
+      "verticalAlign": "top", "containerId": null, "originalText": "E pressed -> Detect target\n  -> Branch by component\n  -> Send RPC to server\n  -> Server validates\n  -> NetworkVar updated\n  -> All clients see change", "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
